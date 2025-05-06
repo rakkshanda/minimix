@@ -199,3 +199,106 @@
   .home-wrapper {
     animation: fadeIn 0.8s ease-in-out both;
   }
+  /* Vertical timeline scroll-grow */
+.timeline {
+  position: relative;
+  padding-left: 15px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 7px;
+  width: 3px;
+  background-color: #0366d6;
+  height: 0;
+  transition: height 0.4s ease-out;
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  margin-bottom: 40px;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: 0px;
+  width: 22px;
+  height: 22px;
+  background-color: #0366d6;
+  border: 2px solid white;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+
+/* Section scroll-in reveal effect */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.timeline-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111; /* Deep charcoal for strength */
+  margin-bottom: 2px;
+}
+
+.timeline-org {
+  font-size: 15px;
+  color: #444; /* Soft dark gray */
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.timeline-dates {
+  font-size: 14px;
+  font-style: italic;
+  color: #666; /* Lighter gray for date */
+  margin-bottom: 12px;
+}
+
+.timeline-desc {
+  font-size: 15px;
+  color: #222; /* More contrast than gray */
+  padding-left: 10px;
+  line-height: 1.7;
+}
+
+.education-entry {
+  margin-bottom: 24px;
+}
+
+.education-entry strong {
+  font-size: 16px;
+  color: #111;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.education-entry p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0;
+}

@@ -42,16 +42,7 @@ const Navbar = () => {
         </button>
         <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
           <Link to="/" onClick={() => setMobileMenuOpen(false)}>About Me</Link>
-          <a
-            href="https://linkedin.com/in/rakkshanda/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >LinkedIn</a>
-          <a
-            href="https://github.com/rakkshanda"
-            target="_blank"
-            rel="noopener noreferrer"
-          >GitHub</a>
+        
 
           <div className="portfolio-wrapper" ref={dropdownRef}>
             <div className="portfolio-parent" onClick={toggleDropdown}>
@@ -89,6 +80,16 @@ const Navbar = () => {
               </div>
             )}
           </div>
+          <a
+            href="https://linkedin.com/in/rakkshanda/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn</a>
+          <a
+            href="https://github.com/rakkshanda"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub</a>
         </div>
         <div className="logo">Rakshanda.</div>
       </div>
