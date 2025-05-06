@@ -78,7 +78,7 @@ const Home = () => {
               <span className="badge">Product Manager</span>
             </div>
             <p className="description">
-              Product technologist with 3+ years' experience in full-stack development, UI/UX design, and product strategy. I specialize in React, Angular, WordPress, and Flutter, creating accessible, intuitive digital solutions.
+              Product technologist with full-stack development experience, UI/UX design, and product strategy. I specialize in React, Angular, WordPress, and Flutter, creating accessible, intuitive digital solutions.
             </p>
           </div>
         </div>
