@@ -35,7 +35,7 @@
   }
   
   .sidebar button:hover {
-    color: #0366d6;
+    color: #9e7c9f;
   }
   
   /* === Content === */
@@ -62,7 +62,7 @@
   }
   
   .tab.active {
-    background: #0366d6;
+    background: #9e7c9f;
     color: white;
     font-weight: 600;
   }

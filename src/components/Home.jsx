@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../App.css";
 import "./Home.css";
-import profileImg from "../assets/profile2.png";
+import profileImg from "../assets/1.png";
 import psIcon from "../assets/skills.png";
 import Navbar from "./Navbar";
 
@@ -74,8 +74,8 @@ const Home = () => {
             <h2 className="intro-small">Hey, I'm</h2>
             <h1 className="intro-name">Rakshanda</h1>
             <div className="badges">
-              <span className="badge">Frontend Engineer</span>
-              <span className="badge">Product Manager</span>
+              <span className="badge shiny-tab">Frontend Engineer</span>
+              <span className="badge shiny-tab">Product Manager</span>
             </div>
             <p className="description">
               Product technologist with full-stack development experience, UI/UX design, and product strategy. I specialize in React, Angular, WordPress, and Flutter, creating accessible, intuitive digital solutions.
@@ -88,7 +88,7 @@ const Home = () => {
           <section className="reveal">
   <h2 className="section-title">Education</h2>
   <div className="education-entry">
-    <strong>University of Washington | 2023 – Dec 2025</strong>
+    <strong>University of Washington | 2025</strong>
     <p>Master’s in Information Management</p>
   </div>
   {/* <div className="education-entry">
@@ -139,8 +139,8 @@ const Home = () => {
               <p className="exp-role">Director of Outreach</p>
               <p className="exp-org">AIMS UW | 2024 – 2025</p>
               <ul className="exp-bullets">
-                <li>Coordinated sponsor outreach for PM competition and Diwali Night (500+ attendees).</li>
-                <li>Organized Tableau site visit and Chipotle fundraiser.</li>
+                <li>Coordinated sponsor outreach for PM competition and Diwali Night (60+ attendees).</li>
+                <li>Organized Quardrant site visit and Chipotle fundraiser.</li>
               </ul>
             </section>
           </div>
@@ -152,9 +152,9 @@ const Home = () => {
                 <div className="timeline-line"></div>
 
                 <div className="timeline-item">
-                  <h3 className="timeline-title">Software Developer Intern</h3>
+                  <h3 className="timeline-title">Software Engineer </h3>
                   <p className="timeline-org">University of Washington IT</p>
-                  <p className="timeline-dates">Oct 2024 – Present</p>
+                  <p className="timeline-dates">Oct 2023 – Present</p>
                   <ul className="timeline-desc">
                     <li>Built KPI dashboard using React Charts, reducing reporting time by 40%.</li>
                     <li>Created a GitHub metrics tool saving 2+ hours/month of manual effort.</li>

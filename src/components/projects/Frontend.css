@@ -15,7 +15,7 @@
   .frontend-left h2 {
     font-size: 36px;
     font-weight: 700;
-    color: #0366d6;
+    color: #9e7c9f;
     margin-bottom: 10px;
   }
   
@@ -47,13 +47,13 @@
     margin-top: 26px;
     padding: 18px;
     background-color: #f9f9f9;
-    border: 2px dashed #77a7ff;
+    border: 2px dashed #a081a1;
     border-radius: 12px;
   }
   
   .frontend-left .section h4 {
     font-size: 18px;
-    color: #0366d6;
+    color: #9e7c9f;
     margin-bottom: 6px;
     text-transform: uppercase;
     font-weight: 600;

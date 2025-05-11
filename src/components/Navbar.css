@@ -1,14 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 /* src/components/Navbar.css */
 .navbar {
-    width: 100%;
-    background-color: black;
-    color: white;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    padding: 10px 0;
-  }
-  
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0 40px;
+  height: 150px;
+
+ 
+  /* Image background */
+  background-image: url('../assets/j.png'); /* adjust path as needed */
+  background-size: cover;
+  color: white;
+}
+
+
   .navbar-container {
     max-width: 1400px;
     margin: auto;
@@ -30,12 +39,21 @@
   }
   
   .nav-links a,
-  .nav-links .portfolio-parent {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-  }
+.nav-links .portfolio-parent {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 6px rgba(201, 199, 199, 0.8);
+  
+}
+
+.nav-links a:hover,
+.nav-links .portfolio-parent:hover {
+  color: #fefefe;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
   
   .portfolio-wrapper {
     position: relative;
