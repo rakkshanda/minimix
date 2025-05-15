@@ -8,12 +8,14 @@
   left: 0;
   z-index: 1000;
   padding: 0 40px;
-  height: 150px;
+  height: 60px;
 
  
-  /* Image background */
-  background-image: url('../assets/j.png'); /* adjust path as needed */
-  background-size: cover;
+  /* Image background 
+  background-image: url('../assets/j.png'); 
+  background-size: cover;*/
+  background-color: rgba(0, 0, 0, 0.7); /* 70% transparent black */
+
   color: white;
 }
 
