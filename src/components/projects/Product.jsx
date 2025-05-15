@@ -36,7 +36,8 @@ export const productProjects = [
     agency: 'Tapia Conference',
     objective: 'Help job seekers discover roles based on values and work styles',
     process: 'Built match system with visual profile cards and sliders',
-    audience: 'College seniors exploring first jobs'
+    audience: 'College seniors exploring first jobs',
+     link: 'https://drive.google.com/file/d/197BKYaPxJ_8sN4zhQL7rzrWNJO-0vhIA/view' 
   },
   {
     title: 'ClaimRunner',
