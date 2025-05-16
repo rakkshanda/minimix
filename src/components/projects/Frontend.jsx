@@ -1,6 +1,6 @@
 import React from 'react';
 import './Frontend.css';
-import image222 from '../../assets/image222.png'; // adjust path if needed
+import image6 from '../../assets/6.png'; // adjust path if needed
 
 export const frontendProjects = [
   {
@@ -9,7 +9,7 @@ export const frontendProjects = [
     duration: 'Jan 2025 – Present',
     tech: 'PHP, SCSS, JS, WordPress Hooks',
     footerText: 'this proj',
-    images: [image222]
+    images: [image6]
   },
   {
     title: 'Career Cupid',
