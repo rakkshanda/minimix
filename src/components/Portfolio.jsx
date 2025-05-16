@@ -72,33 +72,9 @@ const Portfolio = () => {
 
           <div className="project-details">
             {activeTab === 'frontend' ? (
-              <>
-                <Frontend project={activeProject} />
-                {activeProject.link && (
-                  <a
-                    href={activeProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="view-link-button"
-                  >
-                    View Here
-                  </a>
-                )}
-              </>
+              <Frontend project={activeProject} />
             ) : (
-              <>
-                <Product project={activeProject} />
-                {activeProject.link && (
-                  <a
-                    href={activeProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="view-link-button"
-                  >
-                    View Here
-                  </a>
-                )}
-              </>
+              <Product project={activeProject} />
             )}
           </div>
         </main>

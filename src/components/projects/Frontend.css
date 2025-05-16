@@ -7,11 +7,13 @@
     font-family: 'Inter', sans-serif;
   }
   
+
   .frontend-left {
-    flex: 1;
-    min-width: 300px;
-  }
-  
+  flex: 1;
+  min-width: 300px;
+  max-width: 800px; /* ✅ new line to contain image size */
+}
+
   .frontend-left h2 {
     font-size: 36px;
     font-weight: 700;
@@ -82,14 +84,29 @@
     object-fit: cover;
   }
   
-  @media (max-width: 900px) {
-    .frontend-project-wrapper {
-      flex-direction: column;
-      padding: 40px 30px;
-    }
-  
+
+ 
     .frontend-right {
       justify-content: flex-start;
     }
-  }
+    .footer-section {
+  margin-top: 20px;
+  font-style: italic;
+  color: #444;
+}
+
+.image-gallery {
+  margin-top: 10px;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+ 
+}
+
+
+
+  
   

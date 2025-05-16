@@ -15,8 +15,12 @@
   background-image: url('../assets/j.png'); 
   background-size: cover;*/
   background-color: rgba(0, 0, 0, 0.7); /* 70% transparent black */
+  /* Glassy effect */
+  background-color: rgba(197, 180, 227, 0.3); /* light transparent */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
 
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 
@@ -42,18 +46,17 @@
   
   .nav-links a,
 .nav-links .portfolio-parent {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-  text-shadow: 0 0 6px rgba(201, 199, 199, 0.8);
   
 }
 
 .nav-links a:hover,
 .nav-links .portfolio-parent:hover {
-  color: #fefefe;
+  color: #000000;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
   
