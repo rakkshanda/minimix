@@ -29,9 +29,7 @@ export default function ProjectCarousel() {
 
   return (
     <section className="carousel-section">
-      <h2 className="carousel-heading">
-       My work..
-      </h2>
+      
 
       <div
         className="infinite-carousel-wrapper"
