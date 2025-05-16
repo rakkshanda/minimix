@@ -56,9 +56,20 @@
 
 .nav-links a:hover,
 .nav-links .portfolio-parent:hover {
+ 
   color: #000000;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 6px rgba(201, 199, 199, 0.8); /* base subtle glow */
 }
+.nav-links a:hover,
+.nav-links .portfolio-parent:hover {
+  color: #161616;
+  text-shadow:
+    0 0 8px #fff,
+    0 0 12px #9e7c9f,
+    0 0 16px #9e7c9f,
+    0 0 20px #9e7c9f; /* layered glowing effect */
+}
+
   
   .portfolio-wrapper {
     position: relative;

@@ -44,10 +44,12 @@ const Navbar = () => {
           <Link to="/" onClick={() => setMobileMenuOpen(false)}>About Me</Link>
         
 
-          <div className="portfolio-wrapper" ref={dropdownRef}>
-            <div className="portfolio-parent" onClick={toggleDropdown}>
+          <div className="portfolio-wrapper" >
+            {/* <div className="portfolio-wrapper" ref={dropdownRef}>
+            <div className="portfolio-parent" onClick={toggleDropdown}> */}
+              <div className="portfolio-parent" >
               <Link to="/portfolio" className="portfolio-link">Portfolio</Link>
-              <span className="dropdown-arrow">▾</span>
+              {/* <span className="dropdown-arrow">▾</span> */}
             </div>
 
             {showDropdown && (
