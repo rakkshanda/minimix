@@ -1,21 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.cc4fcc96.css",
-    "main.js": "/static/js/main.d0a399e5.js",
+    "main.css": "/static/css/main.317c7ef0.css",
+    "main.js": "/static/js/main.7b123419.js",
     "static/js/453.af72e82d.chunk.js": "/static/js/453.af72e82d.chunk.js",
     "static/media/3.png": "/static/media/3.58552062afca2a1b23f8.png",
     "static/media/4.png": "/static/media/4.937b794b9cee9bf983b9.png",
     "static/media/2.png": "/static/media/2.618500c614fff54071dd.png",
+    "static/media/aims.png": "/static/media/aims.57fead4706df78d6d444.png",
+    "static/media/plotx.png": "/static/media/plotx.0f5732c52ce97377a0d6.png",
     "static/media/5.png": "/static/media/5.6f680f1521e25f00f1f0.png",
+    "static/media/hunch.png": "/static/media/hunch.eee98854edc1adcb8a5d.png",
+    "static/media/folklore.png": "/static/media/folklore.74edca305f43554fbe5f.png",
     "static/media/1.png": "/static/media/1.f555474f463a2ce6c52e.png",
     "static/media/6.png": "/static/media/6.6d7671fff16463859a9b.png",
+    "static/media/cupid.png": "/static/media/cupid.d02564f4639f1a61d881.png",
     "index.html": "/index.html",
-    "main.cc4fcc96.css.map": "/static/css/main.cc4fcc96.css.map",
-    "main.d0a399e5.js.map": "/static/js/main.d0a399e5.js.map",
+    "main.317c7ef0.css.map": "/static/css/main.317c7ef0.css.map",
+    "main.7b123419.js.map": "/static/js/main.7b123419.js.map",
     "453.af72e82d.chunk.js.map": "/static/js/453.af72e82d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc4fcc96.css",
-    "static/js/main.d0a399e5.js"
+    "static/css/main.317c7ef0.css",
+    "static/js/main.7b123419.js"
   ]
 }
