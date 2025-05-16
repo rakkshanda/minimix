@@ -21,7 +21,7 @@ padding: 0px 60px 43px 60px;
 .infinite-carousel-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 60s linear infinite;
+  animation: scroll-left 30s linear infinite;
 }
 
 .infinite-carousel-track.paused {
