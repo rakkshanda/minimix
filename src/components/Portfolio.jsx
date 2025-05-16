@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import '../App.css';
 import './Portfolio.css';
@@ -7,7 +8,19 @@ import Frontend from './projects/Frontend';
 import Product from './projects/Product';
 
 const Portfolio = () => {
-  const [activeProject, setActiveProject] = useState(allProjects[0]);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const selectedTitle = queryParams.get('project');
+
+  const [activeProject, setActiveProject] = useState(() => {
+    const match = allProjects.find(p => p.title === selectedTitle);
+    return match || allProjects[0];
+  });
+
+  useEffect(() => {
+    const match = allProjects.find(p => p.title === selectedTitle);
+    if (match) setActiveProject(match);
+  }, [selectedTitle]);
 
   return (
     <>
