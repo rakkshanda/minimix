@@ -7,20 +7,22 @@ import plotx from '../../assets/plotx.png';
 import hf from '../../assets/HF.png';
 
 export const allProjects = [
-   {
+   
+{
+  title: 'HuggingFace landing page redesign',
+  image: hf,
+  type: 'frontend',
+  data: {
     title: 'HuggingFace landing page redesign',
-    image: hf,
-    type: 'frontend',
-    data: {
-      title: 'HuggingFace landing page redesign',
-      tagline: 'A modern plugin for faster, smarter directory access.',
-      duration: 'May 2025',
-      tech: 'PHP, SCSS, JS, WordPress Hooks',
-      link: 'https://rakshanda.my.canva.site/hugging-face-redesign',
-      images: [hf],
-      footerText: 'Custom-built WordPress plugin for UW directory search, featuring toggleable views, isolated SCSS styling, and future Google Sheets integration.'
-    }
-  },{
+    tagline: 'Data-driven landing page overhaul that boosts retention and paid conversions.',
+    duration: 'May 2025',
+    tech: 'PHP, SCSS, JS, WordPress Hooks',
+    link: 'https://rakshanda.my.canva.site/hugging-face-redesign',
+    images: [hf],
+    footerText: 'Three-day design sprint finalist: reorganised information architecture, dual CTAs and a guided onboarding flow projected to cut bounce rate by 22 %.'
+  }
+},
+{
     title: 'Folklore',
     image: folklore,
     type: 'frontend',
