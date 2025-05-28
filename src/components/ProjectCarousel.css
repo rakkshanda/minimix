@@ -17,7 +17,7 @@ padding: 0px 60px 43px 60px;
   width: 100%;
   position: relative;
 }
-
+ 
 .infinite-carousel-track {
   display: flex;
   width: max-content;
@@ -110,4 +110,9 @@ padding: 0px 60px 43px 60px;
 /* 👇 This is the key part */
 .carousel-item:nth-child(even) {
   margin-top: 60px;
+}
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 100px;
+  }
 }

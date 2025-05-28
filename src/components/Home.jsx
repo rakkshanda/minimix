@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <div className="scroll-progress-bar" id="scroll-progress" />
       <Navbar />
-<div style={{ marginTop: '10px' }}>
+<div style={{ marginTop: '1.5em' }}>
         <img src={image1} alt="Full Width Visual" className="full-width-image" />
         <img src={image2} alt="Full Width Visual" className="full-width-image" />
         <img src={image3} alt="Full Width Visual" className="full-width-image" />
