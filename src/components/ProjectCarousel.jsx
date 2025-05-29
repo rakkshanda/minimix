@@ -30,7 +30,7 @@ export default function ProjectCarousel() {
   return (
     <section className="carousel-section">
       
-
+     
       <div
         className="infinite-carousel-wrapper"
         onMouseEnter={() => setIsHovering(true)}

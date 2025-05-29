@@ -19,12 +19,12 @@ const Home = () => {
       <Navbar />
 <div style={{ marginTop: '1.5em' }}>
         <img src={image1} alt="Full Width Visual" className="full-width-image" />
+
+        <ProjectCarousel />
         <img src={image2} alt="Full Width Visual" className="full-width-image" />
         <img src={image3} alt="Full Width Visual" className="full-width-image" />
         <img src={image4} alt="Full Width Visual" className="full-width-image" />
-        <img src={font} alt="Full Width Visual" className="full-width-image" />
-
-        <ProjectCarousel />
+     
         <img src={image55} alt="Full Width Visual" className="full-width-image" />
       </div>
     </>

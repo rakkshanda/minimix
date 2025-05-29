@@ -42,7 +42,7 @@
 .nav-links .portfolio-parent {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
@@ -56,6 +56,11 @@
     0 0 16px #9e7c9f,
     0 0 20px #9e7c9f;
 }
+ .logo:hover {
+    filter: drop-shadow(0 0 10px #c395c6);
+    /* Optional extra glow */
+    transform: scale(1.05);
+  }
 
 .portfolio-wrapper {
   position: relative;

@@ -355,3 +355,37 @@
     left: 125%;
   }
 }
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.left-content {
+  max-width: 50%;
+}
+
+.main-heading {
+  font-size: 64px;
+  color: #c395c6;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sub-heading {
+  font-size: 24px;
+  font-family: 'Pacifico', cursive;
+  margin-top: -10px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  margin-top: 20px;
+}
+
+
