@@ -216,8 +216,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top:20px;
 }
-
+.icon{    width: 54px;
+    height: auto;
+    display: block;}
 .project-thumb {
   position: relative;
   cursor: pointer;

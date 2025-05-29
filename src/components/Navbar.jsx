@@ -2,6 +2,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
+import mono from "../assets/monogram.png";
+
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -93,7 +95,8 @@ const Navbar = () => {
             rel="noopener noreferrer"
           >GitHub</a>
         </div>
-        <div className="logo">Rakshanda.</div>
+        <div className="logo">        <img src={mono} alt="Full Width Visual" className="icon" />
+</div>
       </div>
     </nav>
   );
