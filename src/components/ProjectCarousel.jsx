@@ -7,14 +7,16 @@ import cupidImg from '../assets/cupid.png';
 import aimsImg from '../assets/aims.png';
 import hunchImg from '../assets/hunch.png';
 import plotxImg from '../assets/plotx.png';
-
+import hf from '../assets/HF.png';
+import revere from '../assets/revere.png';
 
 const projects = [
-  { title: 'Folklore', image: folkloreImg },
+
   { title: 'Career Cupid', image: cupidImg },
-  { title: 'AIMS website', image: aimsImg },
-  { title: 'Hunch Website', image: hunchImg },
-    { title: 'PlotX website', image: plotxImg },
+
+  { title: 'RevereXR', image: revere },
+    { title: 'Folklore', image: folkloreImg },
+    { title: 'Hugging Face landing page redesign', image: hf },
 ];
 
 const duplicatedProjects = [...projects, ...projects, ...projects];
