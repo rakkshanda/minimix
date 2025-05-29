@@ -17,7 +17,7 @@ export const allProjects = [
       title: 'Career Cupid',
       tagline: 'A research-driven platform connecting personalities to careers.',
       duration: '3 months',
-      tech: 'Figma, Notion, SurveyMonkey',
+      tech: 'Figma, Miro',
       link: 'https://rakshanda.my.canva.site/career-cupid',
       images: [cupid],
 footerText: 'Developed as part of a UX group project, Career Cupid is a web-based tool that connects user personalities to career paths. Led user research through surveys and interviews, created personas, and designed interactive prototypes focused on clarity, engagement, and user retention.'
@@ -45,8 +45,8 @@ footerText: 'Developed as part of a UX group project, Career Cupid is a web-base
     data: {
       title: 'Folklore WP Plugin',
       tagline: 'A modern plugin for faster, smarter directory access.',
-      duration: '6 months',
-      tech: 'PHP, SCSS, JS, WordPress Hooks',
+      duration: '5 months',
+      tech: 'Figma, Miro, Optimal workshop, PHP, SCSS, JS, WordPress Hooks',
       link: 'https://rakshanda.my.canva.site/folklore',
       images: [folklore2],
       footerText: 'Custom-built WordPress plugin for UW directory search, featuring toggleable views, isolated SCSS styling, and future Google Sheets integration.'
@@ -61,8 +61,9 @@ footerText: 'Developed as part of a UX group project, Career Cupid is a web-base
     title: 'HuggingFace landing page redesign',
     tagline: 'Data-driven landing page overhaul that boosts retention and paid conversions.',
     duration: '1 week',
-    tech: 'PHP, SCSS, JS, WordPress Hooks',
+    tech: 'Figma',
     link: 'https://rakshanda.my.canva.site/hugging-face-redesign',
+    
     images: [hf],
     footerText: 'Three-day design sprint finalist: reorganised information architecture, dual CTAs and a guided onboarding flow projected to cut bounce rate by 22 %.'
   }
