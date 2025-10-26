@@ -61,8 +61,8 @@ const Frontend = ({ project }) => {
           </a>
         )}
 
-        <div className="row"><strong>Duration:</strong> {project.duration}</div>
-        <div className="row"><strong>Tools:</strong> {project.tech}</div>
+        {/* <div className="row"><strong>Duration:</strong> {project.duration}</div> */}
+        {/* <div className="row"><strong>Tools:</strong> {project.tech}</div> */}
 
         {project.footerText && (
           <div className="footer-section">

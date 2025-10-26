@@ -73,14 +73,40 @@ const Product = ({ project }) => {
       <div className="frontend-left">
         <h2>{project.title}</h2>
         <p className="tagline">{project.tagline}</p>
-        <div className="row"><strong>Timeline:</strong> {project.duration}</div>
-        <div className="row"><strong>Tools:</strong> {project.tech}</div>
+
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="view-link-button"
+          >
+            View Here
+          </a>
+        )}
+
+        {/* <div className="row"><strong>Timeline:</strong> {project.duration}</div> */}
+        {/* <div className="row"><strong>Tools:</strong> {project.tech}</div> */}
         <div className="row"><strong>Type:</strong> {project.type}</div>
         <div className="row"><strong>Agency:</strong> {project.agency}</div>
 
         <div className="section"><h4>Objective</h4><p>{project.objective}</p></div>
         <div className="section"><h4>Process</h4><p>{project.process}</p></div>
         <div className="section"><h4>Audience</h4><p>{project.audience}</p></div>
+
+        {project.footerText && (
+          <div className="footer-section">
+            <p>{project.footerText}</p>
+          </div>
+        )}
+
+        {project.images && project.images.length > 0 && (
+          <div className="image-gallery">
+            {project.images.map((img, index) => (
+              <img key={index} src={img} alt={`Screenshot ${index + 1}`} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

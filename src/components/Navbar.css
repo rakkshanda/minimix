@@ -9,58 +9,53 @@
   z-index: 1000;
   padding: 0 40px;
   height: 90px;
-
-  /* background-color: rgba(197, 180, 227, 0.3);  */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  color: rgb(0, 0, 0);
+  background-color: transparent;
 }
 
 .navbar-container {
   max-width: 1400px;
   margin: auto;
-  padding: 20px 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 16px;
+  position: relative;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: 700;
-}
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 8px;
+  background-color: #2d2d2d;
+  padding: 8px 0px;
+  border-radius: 6px;
 }
 
 .nav-links a,
 .nav-links .portfolio-parent {
-  color: rgb(0, 0, 0);
+  color: #b8b8b8;
   text-decoration: none;
   font-weight: 400;
+  font-size: 14px;
   cursor: pointer;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 4px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links .portfolio-parent:hover {
-  color: #161616;
-  text-shadow:
-    0 0 8px #fff,
-    0 0 12px #44618f,
-    0 0 16px #44618f,
-    0 0 20px #44618f;
+  color: #fff;
+  background-color: #3d3d3d;
 }
- .logo:hover {
-    filter: drop-shadow(0 0 10px #5a7db8);
-    /* Optional extra glow */
-    transform: scale(1.05);
-  }
+
+.nav-links a.active,
+.nav-links .portfolio-link.active {
+  background-color: #777777;
+  color: #fff;
+}
+
 
 .portfolio-wrapper {
   position: relative;
@@ -105,7 +100,7 @@
   background: none;
   border: none;
   font-size: 24px;
-  color: white;
+  color: #2b2b2b;
   cursor: pointer;
 }
 
@@ -113,20 +108,27 @@
   .hamburger {
     display: block;
   }
+  
+  .navbar-container {
+    justify-content: space-between;
+  }
+  
 
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #f5f5f5; /* lighter background for mobile */
-    color: #000;
+    background-color: #2d2d2d;
+    color: #b8b8b8;
     position: absolute;
     top: 58px;
-    right: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    min-width: 200px;
     padding: 16px;
-    gap: 14px;
-    border-top: 1px solid #ccc;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    gap: 8px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .nav-links.open {
@@ -135,13 +137,13 @@
 
   .nav-links a,
   .nav-links .portfolio-parent {
-    color: #000; /* ensure visible text */
+    color: #b8b8b8;
   }
 
   .dropdown-menu {
     position: static;
-    background: #ffffff;
-    color: black;
+    background: #3d3d3d;
+    color: #b8b8b8;
     margin-top: 10px;
     box-shadow: none;
   }

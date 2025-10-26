@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import './Navbar.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import mono from "../assets/monogram.png";
 
 
@@ -11,6 +11,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleDropdown = () => setShowDropdown(!showDropdown);
   const toggleSubmenu = (menu) =>
@@ -50,7 +51,12 @@ const Navbar = () => {
             {/* <div className="portfolio-wrapper" ref={dropdownRef}>
             <div className="portfolio-parent" onClick={toggleDropdown}> */}
               <div className="portfolio-parent" >
-              <Link to="/portfolio" className="portfolio-link">Portfolio</Link>
+              <Link 
+                to="/portfolio" 
+                className={`portfolio-link ${location.pathname === '/portfolio' || location.pathname === '/' || location.pathname === '/product' ? 'active' : ''}`}
+              >
+                Portfolio
+              </Link>
               {/* <span className="dropdown-arrow">▾</span> */}
             </div>
 
@@ -95,8 +101,6 @@ const Navbar = () => {
             rel="noopener noreferrer"
           >GitHub</a>
         </div>
-        <div className="logo">        <img src={mono} alt="Full Width Visual" className="icon" />
-</div>
       </div>
     </nav>
   );
