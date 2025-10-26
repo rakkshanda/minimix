@@ -44,9 +44,6 @@ const Navbar = () => {
           ☰
         </button>
         <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
-          {/* <Link to="/" onClick={() => setMobileMenuOpen(false)}>About Me</Link> */}
-        
-
           <div className="portfolio-wrapper" >
             {/* <div className="portfolio-wrapper" ref={dropdownRef}>
             <div className="portfolio-parent" onClick={toggleDropdown}> */}
@@ -90,6 +87,13 @@ const Navbar = () => {
               </div>
             )}
           </div>
+          <Link 
+            to="/about" 
+            className={location.pathname === '/about' ? 'active' : ''}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            About
+          </Link>
           <a
             href="https://linkedin.com/in/rakkshanda/"
             target="_blank"
