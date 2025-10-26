@@ -1,6 +1,6 @@
 .carousel-section {
 padding: 0px 60px 43px 60px;
-  background-color: #c9b9e5;
+  background-color: #b8cde8;
   color: rgb(31, 31, 31);
   text-align: center;
   overflow: hidden;
@@ -82,7 +82,7 @@ padding: 0px 60px 43px 60px;
   width: 80px;
   height: 100%;
   z-index: 2;
-  background: linear-gradient(to right, #c9b9e5 0%, transparent 100%);
+  background: linear-gradient(to right, #b8cde8 0%, transparent 100%);
   pointer-events: none;
 }
 
@@ -95,7 +95,7 @@ padding: 0px 60px 43px 60px;
   width: 80px;
   height: 100%;
   z-index: 2;
-  background: linear-gradient(to left, #c9b9e5 0%, transparent 100%);
+  background: linear-gradient(to left, #b8cde8 0%, transparent 100%);
   pointer-events: none;
 }
 .carousel-item {

@@ -52,12 +52,12 @@
   color: #161616;
   text-shadow:
     0 0 8px #fff,
-    0 0 12px #9e7c9f,
-    0 0 16px #9e7c9f,
-    0 0 20px #9e7c9f;
+    0 0 12px #44618f,
+    0 0 16px #44618f,
+    0 0 20px #44618f;
 }
  .logo:hover {
-    filter: drop-shadow(0 0 10px #c395c6);
+    filter: drop-shadow(0 0 10px #5a7db8);
     /* Optional extra glow */
     transform: scale(1.05);
   }

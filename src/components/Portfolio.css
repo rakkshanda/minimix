@@ -35,7 +35,7 @@
   }
   
   .sidebar button:hover {
-    color: #9e7c9f;
+    color: #44618f;
   }
   
   .portfolio-content {
@@ -61,7 +61,7 @@
   }
   
   .tab.active {
-    background: #9e7c9f;
+    background: #44618f;
     color: white;
     font-weight: 600;
   }
@@ -73,7 +73,7 @@
   display: inline-block;
   margin-bottom: 9px;
   padding: 10px 18px;
-  background-color: #9e7c9f;
+  background-color: #44618f;
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -82,7 +82,7 @@
 }
 
 .view-link-button:hover {
-  background-color: #7e6195;
+  background-color: #354a6d;
 }
 
   
@@ -130,7 +130,7 @@
   .meta-block {
     background-color: #f3f4f6;
     padding: 12px 16px;
-    border-left: 4px solid #4b2e83;
+    border-left: 4px solid #44618f;
     border-radius: 6px;
     max-width: 500px;
   }
@@ -138,7 +138,7 @@
   .meta-label {
     display: block;
     font-weight: 600;
-    color: #4b2e83;
+    color: #44618f;
     font-size: 14px;
     margin-bottom: 4px;
     text-transform: uppercase;

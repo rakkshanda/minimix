@@ -43,7 +43,7 @@ const Navbar = () => {
           ☰
         </button>
         <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={() => setMobileMenuOpen(false)}>About Me</Link>
+          {/* <Link to="/" onClick={() => setMobileMenuOpen(false)}>About Me</Link> */}
         
 
           <div className="portfolio-wrapper" >
