@@ -11,11 +11,11 @@
   .frontend-left {
   flex: 1;
   min-width: 300px;
-  max-width: 800px; /* ✅ new line to contain image size */
+  max-width: 600px;
 }
 
   .frontend-left h2 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
     color: #44618f;
     margin-bottom: 10px;
@@ -75,11 +75,12 @@
     justify-content: center;
     align-items: flex-start;
     min-width: 300px;
+    max-width: 500px;
   }
   
   .frontend-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     border-radius: 12px;
     object-fit: cover;
   }
@@ -97,16 +98,101 @@
 
 .image-gallery {
   margin-top: 10px;
+  max-width: 600px;
 }
 
 .image-gallery img {
   width: 100%;
+  max-width: 600px;
   height: auto;
   display: block;
- 
+  margin: 0 auto;
 }
 
+.view-link-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #44618f;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
+.view-link-button:hover {
+  background-color: #365177;
+  transform: translateY(-2px);
+}
 
+@media (max-width: 768px) {
+  .frontend-project-wrapper {
+    gap: 30px;
+    padding: 0;
+  }
   
+  .frontend-left {
+    min-width: 100%;
+  }
   
+  .frontend-left h2 {
+    font-size: 28px;
+  }
+  
+  .frontend-left .tagline {
+    font-size: 16px;
+  }
+  
+  .frontend-left .row {
+    font-size: 14px;
+  }
+  
+  .frontend-left .section {
+    padding: 14px;
+    margin-top: 20px;
+  }
+  
+  .frontend-left .section h4 {
+    font-size: 16px;
+  }
+  
+  .frontend-left .section p {
+    font-size: 14px;
+  }
+  
+  .frontend-right {
+    min-width: 100%;
+  }
+  
+  .frontend-image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .frontend-left h2 {
+    font-size: 24px;
+  }
+  
+  .frontend-left .tagline {
+    font-size: 15px;
+  }
+  
+  .frontend-left .row {
+    font-size: 13px;
+  }
+  
+  .frontend-left .section {
+    padding: 12px;
+  }
+  
+  .frontend-left .section h4 {
+    font-size: 15px;
+  }
+  
+  .frontend-left .section p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}

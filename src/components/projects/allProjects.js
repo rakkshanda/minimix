@@ -123,7 +123,7 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'Folklore WP Plugin',
-      tagline: 'A modern plugin for faster, smarter directory access.',
+      tagline: 'People\'s directory search plugin following UW brand guidelines.',
       duration: '5 months',
       tech: 'Figma, Miro, Optimal workshop, PHP, SCSS, JS, WordPress Hooks',
       link: 'https://rakshanda.my.canva.site/folklore',

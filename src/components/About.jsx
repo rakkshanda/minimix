@@ -28,9 +28,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="about-footer">
-          <p className="copyright">©2025 Rakshanda</p>
-        </div>
+       
       </div>
     </>
   );
