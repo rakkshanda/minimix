@@ -5,7 +5,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import mono from "../assets/monogram.png";
 
 
-const Navbar = () => {
+const Navbar = ({ activeSection }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,6 +37,39 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleAboutClick = (e) => {
+    const isPortfolioPage = location.pathname === '/portfolio' || location.pathname === '/' || location.pathname === '/product';
+    
+    if (isPortfolioPage) {
+      e.preventDefault();
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        const headerOffset = 100;
+        const elementPosition = aboutSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+      setMobileMenuOpen(false);
+    }
+  };
+
+  const handlePortfolioClick = (e) => {
+    const isPortfolioPage = location.pathname === '/portfolio' || location.pathname === '/' || location.pathname === '/product';
+    
+    if (isPortfolioPage) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -50,7 +83,8 @@ const Navbar = () => {
               <div className="portfolio-parent" >
               <Link 
                 to="/portfolio" 
-                className={`portfolio-link ${location.pathname === '/portfolio' || location.pathname === '/' || location.pathname === '/product' ? 'active' : ''}`}
+                className={`portfolio-link ${(location.pathname === '/portfolio' || location.pathname === '/' || location.pathname === '/product') && activeSection === 'portfolio' ? 'active' : ''}`}
+                onClick={handlePortfolioClick}
               >
                 Portfolio
               </Link>
@@ -89,8 +123,8 @@ const Navbar = () => {
           </div>
           <Link 
             to="/about" 
-            className={location.pathname === '/about' ? 'active' : ''}
-            onClick={() => setMobileMenuOpen(false)}
+            className={location.pathname === '/about' || activeSection === 'about' ? 'active' : ''}
+            onClick={handleAboutClick}
           >
             About
           </Link>

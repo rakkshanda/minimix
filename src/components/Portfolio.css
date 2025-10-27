@@ -266,7 +266,7 @@
 /* Custom cursor for desktop only */
 @media (hover: hover) and (pointer: fine) {
   .project-item {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='30' viewBox='0 0 70 30'%3E%3Crect width='70' height='30' rx='15' fill='rgba(255,255,255,0.9)' stroke='black' stroke-width='1'/%3E%3Ctext x='12' y='20' fill='black' font-family='Arial, sans-serif' font-size='14' font-weight='600'%3EView ›%3C/text%3E%3C/svg%3E") 35 15, pointer;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='30' viewBox='0 0 70 30'%3E%3Crect width='70' height='30' rx='15' fill='rgba(255,255,255,0.9)'/%3E%3Ctext x='12' y='20' fill='black' font-family='Arial, sans-serif' font-size='14' font-weight='600'%3EView ›%3C/text%3E%3C/svg%3E") 35 15, pointer;
   }
 }
 
@@ -575,5 +575,70 @@
   
   .project-details-modal {
     padding: 16px 8px;
+  }
+}
+
+/* About Section in Portfolio */
+.about-section-portfolio {
+  max-width: 1200px;
+  margin: 120px auto 80px;
+  padding: 0 32px;
+}
+
+.about-section-portfolio .about-content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.about-section-portfolio .about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-section-portfolio .about-image {
+  flex: 0 0 300px;
+  width: 300px;
+}
+
+.about-section-portfolio .about-image img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.about-section-portfolio .about-intro,
+.about-section-portfolio .about-middle,
+.about-section-portfolio .about-closing {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-section-portfolio {
+    margin: 80px auto 60px;
+    padding: 0 20px;
+  }
+
+  .about-section-portfolio .about-content {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .about-section-portfolio .about-image {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .about-section-portfolio .about-text {
+    max-width: 100%;
+  }
+
+  .about-section-portfolio .about-intro,
+  .about-section-portfolio .about-middle,
+  .about-section-portfolio .about-closing {
+    font-size: 16px;
   }
 }

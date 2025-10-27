@@ -1,0 +1,229 @@
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import './ProjectDetail.css';
+import { frontendProjects, productProjects } from './projects/allProjects';
+
+const ProjectDetail = ({ isProduct = false }) => {
+  const { projectId } = useParams();
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('overview');
+
+  // Set body background to black for this page
+  React.useEffect(() => {
+    document.body.style.backgroundColor = '#000';
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, []);
+
+  // Scroll to top when page loads
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [projectId]);
+
+  const projectList = isProduct ? productProjects : frontendProjects;
+  const project = projectList.find(p => 
+    p.title.toLowerCase().replace(/\s+/g, '-') === projectId
+  );
+
+  const tabs = [
+    { id: 'overview', label: project?.data.title.toUpperCase() || 'OVERVIEW' },
+    { id: 'discovery', label: 'Discovery' },
+    { id: 'ideation', label: 'Ideation' },
+    { id: 'design', label: 'Design' },
+    { id: 'reflection', label: 'Reflection' }
+  ];
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 120;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      setActiveTab(sectionId);
+    }
+  };
+
+  // Update active tab on scroll
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const sections = tabs.map(tab => tab.id);
+      const scrollPosition = window.scrollY + 200;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveTab(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [tabs]);
+
+  if (!project) {
+    return (
+      <div className="project-detail-container">
+        <div className="project-detail-content" style={{ marginTop: '140px' }}>
+          <p style={{ color: '#999' }}>Project not found</p>
+          <button 
+            className="back-button" 
+            onClick={() => navigate(-1)}
+            style={{ marginTop: '20px', display: 'inline-block' }}
+          >
+            ← Go Back
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="project-detail-container">
+        <button className="back-button-outside" onClick={() => navigate(-1)}>
+          ← HOME
+        </button>
+        
+        <div className="project-detail-header">
+          <div className="project-detail-header-content">
+            <div className="project-tabs">
+              {tabs.map(tab => (
+                <button
+                  key={tab.id}
+                  className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
+                  onClick={() => scrollToSection(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        <button className="back-to-top-outside" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          BACK TO TOP ↑
+        </button>
+
+        <div className="project-detail-content">
+          <div id="overview" className="overview-section">
+            <div className="overview-left">
+                <h1 className="project-main-title">{project.data.title}</h1>
+                
+                <div className="project-brief">
+                  <h3>BRIEF</h3>
+                  <p>{project.data.tagline}</p>
+                </div>
+
+                <div className="project-info-grid">
+                  <div className="info-column">
+                    <div className="info-block">
+                      <h4>SCOPE</h4>
+                      <p>{project.data.type}</p>
+                    </div>
+                    
+                    <div className="info-block">
+                      <h4>TEAM</h4>
+                      <p>{project.data.agency}</p>
+                    </div>
+                  </div>
+
+                  <div className="info-column">
+                    <div className="info-block">
+                      <h4>DURATION</h4>
+                      <p>{project.data.duration}</p>
+                    </div>
+
+                    {project.data.tech && (
+                      <div className="info-block">
+                        <h4>TOOLS</h4>
+                        <p>{project.data.tech}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {project.data.objective && (
+                  <div className="project-section">
+                    <h4>OBJECTIVE</h4>
+                    <p>{project.data.objective}</p>
+                  </div>
+                )}
+
+                {project.data.process && (
+                  <div className="project-section">
+                    <h4>PROCESS</h4>
+                    <p>{project.data.process}</p>
+                  </div>
+                )}
+
+                {project.data.audience && (
+                  <div className="project-section">
+                    <h4>TARGET AUDIENCE</h4>
+                    <p>{project.data.audience}</p>
+                  </div>
+                )}
+
+                {project.data.link && (
+                  <a
+                    href={project.data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link-button"
+                  >
+                    View Full Case Study →
+                  </a>
+                )}
+
+                {project.data.footerText && (
+                  <div className="project-footer">
+                    <p>{project.data.footerText}</p>
+                  </div>
+                )}
+              </div>
+
+              <div className="overview-right">
+                {project.data.images && project.data.images.length > 0 && (
+                  <div className="project-images">
+                    {project.data.images.map((img, index) => (
+                      <img key={index} src={img} alt={`${project.data.title} screenshot ${index + 1}`} />
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+          <div id="discovery" className="tab-content section-spacing">
+            <h2>Discovery</h2>
+            <p>Discovery phase content coming soon...</p>
+          </div>
+
+          <div id="ideation" className="tab-content section-spacing">
+            <h2>Ideation</h2>
+            <p>Ideation phase content coming soon...</p>
+          </div>
+
+          <div id="design" className="tab-content section-spacing">
+            <h2>Design</h2>
+            <p>Design phase content coming soon...</p>
+          </div>
+
+          <div id="reflection" className="tab-content section-spacing">
+            <h2>Reflection</h2>
+            <p>Reflection content coming soon...</p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ProjectDetail;
+
