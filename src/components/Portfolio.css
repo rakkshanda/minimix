@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 .portfolio-layout {
     display: flex;
     margin-top: 60px;
@@ -609,6 +611,7 @@
 .about-section-portfolio .about-intro,
 .about-section-portfolio .about-middle,
 .about-section-portfolio .about-closing {
+  font-family: 'Crimson Text', 'Georgia', serif;
   font-size: 18px;
   line-height: 1.8;
   color: #333;
@@ -639,6 +642,7 @@
   .about-section-portfolio .about-intro,
   .about-section-portfolio .about-middle,
   .about-section-portfolio .about-closing {
+    font-family: 'Crimson Text', 'Georgia', serif;
     font-size: 16px;
   }
 }

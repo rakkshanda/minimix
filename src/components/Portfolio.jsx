@@ -39,10 +39,10 @@ const Portfolio = ({ isProduct = false }) => {
       <div className="portfolio-layout">
         <div className="portfolio-header">
           <h1 className="portfolio-name">
-           Rakshanda is a software developer based in Seattle.
+           Rakshanda is a {isProduct ? 'program manager' : 'software developer'} based in Seattle.
           </h1>
           <p className="portfolio-bio">
-          I’m passionate about building products that connect people, simplify workflows, and make technology feel effortless.
+          I'm passionate about building products that connect people, simplify workflows, and make technology feel effortless.
           </p>
         </div>
         
