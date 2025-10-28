@@ -144,7 +144,7 @@ const ProjectDetail = ({ isProduct = false }) => {
                     {project.data.tech && (
                       <div className="info-block">
                         <h4>TOOLS</h4>
-                        <p>{project.data.tech}</p>
+                        <p>{Array.isArray(project.data.tech) ? project.data.tech.join(', ') : project.data.tech}</p>
                       </div>
                     )}
                   </div>
@@ -178,7 +178,7 @@ const ProjectDetail = ({ isProduct = false }) => {
                     rel="noopener noreferrer"
                     className="project-link-button"
                   >
-                    View Full Case Study →
+                    View here →
                   </a>
                 )}
 
@@ -200,89 +200,107 @@ const ProjectDetail = ({ isProduct = false }) => {
               </div>
             </div>
 
-          <div id="discovery" className="tab-content section-spacing">
-            <h2>Discovery</h2>
-            <div className="section-content">
-              <h3>Research & Analysis</h3>
-              <p>
-                The discovery phase began with comprehensive user research to understand pain points and opportunities. Through interviews, surveys, and competitive analysis, we identified key insights that shaped the project direction.
-              </p>
-              <p>
-                We conducted stakeholder interviews to align on business goals and user needs. This helped establish clear success metrics and informed our design decisions throughout the project lifecycle.
-              </p>
-              <h3>Key Findings</h3>
-              <ul>
-                <li>Users needed a more intuitive and streamlined experience</li>
-                <li>Existing solutions lacked proper accessibility features</li>
-                <li>There was a gap in the market for this specific use case</li>
-                <li>Performance and speed were critical to user satisfaction</li>
-              </ul>
+          {project.data.discovery && (
+            <div id="discovery" className="tab-content section-spacing">
+              <h2>Discovery</h2>
+              <div className="section-content">
+                {project.data.discovery.content && (
+                  <>
+                    <h3>Research & Analysis</h3>
+                    <p>{project.data.discovery.content}</p>
+                  </>
+                )}
+                {project.data.discovery.findings && project.data.discovery.findings.length > 0 && (
+                  <>
+                    <h3>Key Findings</h3>
+                    <ul>
+                      {project.data.discovery.findings.map((finding, index) => (
+                        <li key={index}>{finding}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div id="ideation" className="tab-content section-spacing">
-            <h2>Ideation</h2>
-            <div className="section-content">
-              <h3>Brainstorming & Concept Development</h3>
-              <p>
-                During the ideation phase, we explored multiple approaches to solve the identified problems. Using techniques like design thinking workshops and rapid prototyping, we generated diverse solutions and narrowed down to the most promising concepts.
-              </p>
-              <p>
-                We created user flows and wireframes to visualize the experience, iterating based on team feedback and early user testing. This collaborative approach ensured we considered various perspectives and edge cases.
-              </p>
-              <h3>Solution Approach</h3>
-              <ul>
-                <li>Prioritized simplicity and ease of use in the core user journey</li>
-                <li>Designed for accessibility from the ground up</li>
-                <li>Focused on performance optimization and fast load times</li>
-                <li>Created a scalable system that could grow with user needs</li>
-              </ul>
+          {project.data.ideation && (
+            <div id="ideation" className="tab-content section-spacing">
+              <h2>Ideation</h2>
+              <div className="section-content">
+                {project.data.ideation.content && (
+                  <>
+                    <h3>Brainstorming & Concept Development</h3>
+                    <p>{project.data.ideation.content}</p>
+                  </>
+                )}
+                {project.data.ideation.approach && project.data.ideation.approach.length > 0 && (
+                  <>
+                    <h3>Solution Approach</h3>
+                    <ul>
+                      {project.data.ideation.approach.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div id="design" className="tab-content section-spacing">
-            <h2>Design + Refinement</h2>
-            <div className="section-content">
-              <h3>Visual Design & Implementation</h3>
-              <p>
-                The design phase brought our concepts to life with high-fidelity mockups and interactive prototypes. We established a cohesive design system with reusable components, ensuring consistency across all touchpoints.
-              </p>
-              <p>
-                Through iterative user testing and feedback sessions, we refined the interface, interaction patterns, and visual hierarchy. Each iteration brought us closer to a polished, user-centered solution.
-              </p>
-              <h3>Design Decisions</h3>
-              <ul>
-                <li>Clean, modern interface that puts content first</li>
-                <li>Responsive design that works seamlessly across all devices</li>
-                <li>Intuitive navigation with clear information architecture</li>
-                <li>Thoughtful use of color, typography, and white space</li>
-              </ul>
+          {project.data.design && (
+            <div id="design" className="tab-content section-spacing">
+              <h2>Design + Refinement</h2>
+              <div className="section-content">
+                {project.data.design.content && (
+                  <>
+                    <h3>Visual Design & Implementation</h3>
+                    <p>{project.data.design.content}</p>
+                  </>
+                )}
+                {project.data.design.decisions && project.data.design.decisions.length > 0 && (
+                  <>
+                    <h3>Design Decisions</h3>
+                    <ul>
+                      {project.data.design.decisions.map((decision, index) => (
+                        <li key={index}>{decision}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div id="reflection" className="tab-content section-spacing">
-            <h2>Reflection</h2>
-            <div className="section-content">
-              <h3>Learnings & Impact</h3>
-              <p>
-                This project reinforced the importance of user-centered design and iterative development. By staying close to our users throughout the process, we were able to create a solution that truly addressed their needs.
-              </p>
-              <p>
-                Working with cross-functional teams taught me the value of clear communication and collaborative problem-solving. The constraints we faced pushed us to be creative and find innovative solutions.
-              </p>
-              <h3>Key Takeaways</h3>
-              <ul>
-                <li>Early and frequent user testing prevents costly redesigns later</li>
-                <li>Simple solutions are often the most effective</li>
-                <li>Accessibility considerations benefit all users, not just those with disabilities</li>
-                <li>Data-driven decisions lead to better outcomes than assumptions</li>
-              </ul>
-              <h3>What I'd Do Differently</h3>
-              <p>
-                If I could revisit this project, I would allocate more time for the discovery phase to dig deeper into edge cases. I'd also implement more robust analytics earlier to better measure the impact of our design decisions.
-              </p>
+          {project.data.reflection && (
+            <div id="reflection" className="tab-content section-spacing">
+              <h2>Reflection</h2>
+              <div className="section-content">
+                {project.data.reflection.learnings && (
+                  <>
+                    <h3>Learnings & Impact</h3>
+                    <p>{project.data.reflection.learnings}</p>
+                  </>
+                )}
+                {project.data.reflection.takeaways && project.data.reflection.takeaways.length > 0 && (
+                  <>
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                      {project.data.reflection.takeaways.map((takeaway, index) => (
+                        <li key={index}>{takeaway}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                {project.data.reflection.future && (
+                  <>
+                    <h3>What I'd Do Differently</h3>
+                    <p>{project.data.reflection.future}</p>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </>

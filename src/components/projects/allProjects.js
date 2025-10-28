@@ -8,6 +8,8 @@ import hf from '../../assets/HF.png';
 import revere from '../../assets/revere.png';
 import emerald from '../../assets/Emerald.png';
 import eag from '../../assets/eag.gif';
+import claimrunner from '../../assets/claimrunner.png';
+import batchquery from '../../assets/batchquery.png';
 
 // Product Projects (1, 2, 3, 4) - shown at /product
 export const productProjects = [
@@ -240,196 +242,217 @@ export const productProjects = [
 // Frontend Projects (3, 5, 6, 7) - shown at / (default)
 export const frontendProjects = [
   {
-    title: 'Financial Browser Extension',
+    title: 'BatchQuery Chatbot',
+    image: batchquery,
+    type: 'frontend',
+    data: {
+      title: 'BatchQuery Chatbot',
+      tagline: 'AI chat app that answers one question across multiple images at once.',
+      duration: 'Oct 2024 – Dec 2024',
+      tech: ['React', 'Node.js', 'OpenAI API'],
+      link: 'https://batch-query-ena2.vercel.app/',
+      images: [batchquery],
+      footerText: 'Built a unified pipeline to apply a single question to up to four images and render per-image answers. Reduced manual review time through batch evaluation and consistent prompts.'
+    }
+  },
+  {
+    title: 'Emerald Advisors Chrome Extension',
     image: eag,
     type: 'frontend',
     data: {
       title: 'Emerald Advisors Chrome Extension',
-      tagline: 'Real-time financial news dashboard with AI-powered sentiment analysis.',
+      tagline: 'Real-time financial news overlay with AI sentiment and in-panel chatbot.',
       duration: 'May 2025 – Aug 2025',
-      tech: 'React, Chrome Extension API, Java, ChatGPT API, Financial APIs',
+      tech: ['React', 'Chrome Extension APIs', 'TypeScript', 'OpenAI API', 'Financial News APIs'],
       images: [emerald],
-      footerText: 'Built a Chrome extension with financial API integrations that overlaid the firm\'s stock dashboard, enabling instant curated news fetch with sentiment tags, date filters, and impact sorting. Reduced analyst research time by 50%. Added an in-panel AI chatbot for contextual follow-ups within the same article using a ChatGPT-powered interface, delivers TL;DRs, risk highlights, and cited sources directly in the panel, reducing analyst context-switching.',
+      footerText:
+        'Overlaid curated news on the firm’s stock dashboard with sentiment tags, date filters, and impact sorting (-50% research time). Added an in-panel ChatGPT assistant for TL;DRs, risk highlights, and cited sources to cut context switching.',
       discovery: {
-        content: 'Financial analysts at Emerald Advisors were spending hours each day manually researching news for their stock picks. They had to context-switch between multiple tabs, copy stock tickers, and sift through irrelevant articles. Time tracking revealed this research consumed 40% of their workday, reducing time for actual analysis.',
+        content:
+          'Analysts lost hours daily juggling tabs and filtering irrelevant articles; research time audits showed the process consumed a large share of the workday.',
         findings: [
-          'Analysts averaged 15+ tab switches per stock research session',
-          'Manual news filtering led to missed critical information',
-          'No centralized view of sentiment or news impact on stocks',
-          'Copy-pasting between tools was error-prone and time-consuming'
+          '15+ tab switches per research session on average',
+          'Manual filtering caused missed critical updates',
+          'No unified sentiment or impact view per ticker',
+          'Copy-pasting across tools was error-prone'
         ]
       },
       ideation: {
-        content: 'A browser extension emerged as the ideal solution—analysts could stay in their workflow while accessing enhanced functionality. We designed a sidebar overlay that pulled real-time news with AI-powered sentiment analysis. The ChatGPT integration would provide instant summaries and risk highlights.',
+        content:
+          'A sidebar extension preserved analyst flow while enriching context with AI and live feeds.',
         approach: [
-          'Chrome extension with React frontend and Java backend',
-          'Real-time news aggregation from multiple financial APIs',
-          'AI sentiment analysis tagging (bullish/bearish/neutral)',
-          'In-panel chatbot for contextual article analysis and Q&A'
+          'React-based sidebar using Chrome Extension APIs',
+          'Aggregated real-time news from multiple providers',
+          'AI sentiment labeling (bullish/bearish/neutral)',
+          'Contextual in-panel Q&A and summaries'
         ]
       },
       design: {
-        content: 'The interface needed to be dense with information yet scannable. We used color-coded sentiment badges, sortable filters, and expandable article cards. The chatbot panel appeared contextually, allowing analysts to dig deeper without leaving the extension. Dark mode matched the firm\'s trading dashboard aesthetic.',
+        content:
+          'Dense but scannable UI with clear prioritization for speed under market pressure.',
         decisions: [
-          'Compact sidebar design that doesn\'t obscure the main dashboard',
-          'Color-coded sentiment badges (green/red/gray) for instant scanning',
-          'Date range filters and impact sorting for prioritization',
-          'Contextual AI chat panel with cited sources and TL;DR summaries'
+          'Compact sidebar that never obscures the trading UI',
+          'Color-coded sentiment badges for instant parse',
+          'Date range + impact sort to triage fast',
+          'Contextual chat with citations and TL;DRs'
         ]
       },
       reflection: {
-        learnings: 'Building for power users taught me that efficiency trumps aesthetics—analysts valued speed and information density over polish. The 50% time reduction proved that good tools amplify expertise rather than replace it. Working with financial APIs taught me the importance of data accuracy and real-time performance.',
+        learnings:
+          'Building for power users demands latency discipline and information density over flourish.',
         takeaways: [
-          'Power users prefer information density to minimalism',
-          'Context-aware tools beat standalone solutions',
-          'AI augmentation works best when it enhances human expertise',
-          'Real-time data requires robust error handling and fallbacks'
+          'Context-aware overlays beat app switching',
+          'AI should amplify expert workflows',
+          'Real-time data needs graceful fallbacks',
+          'Small latency wins add up for pros'
         ],
-        future: 'I would add customizable alerts for specific stocks or keywords. Historical news search would help identify patterns over time. Integration with the firm\'s internal research notes would create a complete analyst workspace.'
+        future:
+          'Add custom alerts per ticker/keyword and historical search; integrate internal research notes for a complete analyst workspace.'
       }
     }
   },
-  // {
-  //   title: 'UW IT KPI Dashboard',
-  //   image: aims,
-  //   type: 'frontend',
-  //   data: {
-  //     title: 'UW IT KPI Dashboard',
-  //     tagline: 'Real-time data visualization dashboard for tracking key performance metrics.',
-  //     duration: 'Oct 2024 – Aug 2025',
-  //     tech: 'React, React Charts, Data Visualization',
-  //     images: [],
-  //     footerText: 'Built a real-time KPI visualization dashboard with multi-graph views and interactive filters, enabling data-driven tracking of traffic, engagement, and conversions while reducing reporting prep time by 40%.'
-  //   }
-  // },
   {
-    title: 'Folklore',
+    title: 'Claim Runner AI',
+    image: claimrunner,
+    type: 'frontend',
+    data: {
+      title: 'Claim Runner AI',
+      tagline: 'AI-assisted claims intake and triage.',
+      duration: '2024',
+      tech: ['React', 'LLM APIs', 'Cloud Services'],
+      link: 'https://www.claimrunner.ai',
+      images: [claimrunner],
+      footerText: 'Automated claim parsing and routing to streamline review cycles and reduce manual handling.'
+    }
+  },
+  {
+    title: 'Hunch',
+    image: hunch,
+    type: 'frontend',
+    data: {
+      title: 'Hunch',
+      tagline: 'Social platform for readers to discover and discuss ideas.',
+      duration: 'Mar 2022 – Apr 2023',
+      tech: ['Flutter', 'Figma'],
+      link: 'https://hunch.in/',
+      images: [hunch],
+      footerText: 'Built front-end features for engaging reading and community interactions across devices.'
+    }
+  },
+  {
+    title: 'PlotX',
+    image: plotx,
+    type: 'frontend',
+    data: {
+      title: 'PlotX',
+      tagline: 'Responsive portal for crypto prediction markets.',
+      duration: 'Mar 2022 – Apr 2023',
+      tech: ['AngularJS', 'SCSS'],
+      link: 'https://plotx.io/',
+      images: [plotx],
+      footerText: 'Shipped landing and app pages with real-time market views, improving performance and SEO.'
+    }
+  },
+  {
+    title: 'AIMS Website (UW iSchool)',
+    image: aims,
+    type: 'frontend',
+    data: {
+      title: 'AIMS Website (UW iSchool)',
+      tagline: 'Student-run site for events, sponsors, and resources.',
+      duration: 'Jan 2025 – Present',
+      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks'],
+      link: 'https://aims.ischool.uw.edu/',
+      images: [aims],
+      footerText: 'Designed and developed a maintainable WordPress site with dynamic events, sponsor highlights, and resource pages.',
+      discovery: {
+        content: 'AIMS needed a site officers could update without developer help while staying on UW hosting.',
+        findings: [
+          'Non-technical editors needed frictionless updates',
+          'Sponsor visibility mattered for funding',
+          'Mobile traffic was the majority',
+          'Zero budget required using UW infrastructure'
+        ]
+      },
+      ideation: {
+        content: 'Structured the CMS to make content self-serve and brand-consistent.',
+        approach: [
+          'Custom theme with underscores base',
+          'ACF for event management',
+          'SCSS variables for brand control',
+          'Vanilla JS for light interactivity'
+        ]
+      },
+      design: {
+        content: 'Bold, scannable layouts with clear event CTAs and a sponsor grid.',
+        decisions: [
+          'Rotating event hero',
+          'Card-based event layouts',
+          'Sponsor grid with hover states',
+          'Mobile-first interactions'
+        ]
+      },
+      reflection: {
+        learnings: 'Design for handoff—clear structure lets future officers maintain quality.',
+        takeaways: [
+          'Self-serve CMS > dev bottlenecks',
+          'Performance budgets guide decisions',
+          'Documentation reduces thrash',
+          'Brand tokens keep things consistent'
+        ],
+        future: 'Member profiles, RSVP, UW calendar sync, and analytics for content insights.'
+      }
+    }
+  },
+  {
+    title: 'Folklore WP Plugin',
     image: folklore,
     type: 'frontend',
     data: {
       title: 'Folklore WP Plugin',
-      tagline: 'People\'s directory search plugin following UW brand guidelines.',
+      tagline: 'People directory with fast search and accessible views.',
       duration: '5 months',
-      tech: 'Figma, Miro, Optimal workshop, PHP, SCSS, JS, WordPress Hooks',
+      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
       link: 'https://rakshanda.my.canva.site/folklore',
       images: [folklore2],
-      footerText: 'Custom-built WordPress plugin for UW directory search, featuring toggleable views, isolated SCSS styling, and future Google Sheets integration.',
+      footerText: 'Custom directory plugin with toggleable views, isolated SCSS, and optimized queries; designed to support future Sheets integration.',
       discovery: {
-        content: 'The existing UW directory system suffered from slow load times, poor mobile responsiveness, and zero flexibility in how data was displayed. Technical analysis showed the legacy PHP codebase was bloated with unused dependencies, causing 8+ second load times.',
+        content: 'Legacy directory had slow loads, weak mobile UX, and brittle CSS; audits showed heavy query and style conflicts.',
         findings: [
-          'Performance bottleneck from inefficient database queries',
-          'Mobile viewport rendering broke layouts completely',
-          'No structured CSS methodology led to style conflicts',
-          'Departments couldn\'t easily manage their own directory entries'
+          'Inefficient DB queries caused 8s+ loads',
+          'Mobile layouts broke under common viewports',
+          'No CSS methodology—style leakage everywhere',
+          'Departments couldn\'t manage entries easily'
         ]
       },
       ideation: {
-        content: 'We evaluated building a standalone React app, a static site generator, or a WordPress plugin. The WordPress plugin approach won because it leveraged UW\'s existing CMS infrastructure while allowing us to implement modern frontend practices with isolated SCSS and modular JavaScript.',
+        content: 'A WordPress plugin leveraged existing CMS while enabling modern frontend patterns.',
         approach: [
-          'Modern WordPress plugin architecture with namespaced PHP',
-          'BEM methodology for maintainable, conflict-free SCSS',
-          'Vanilla JavaScript for interactivity without jQuery dependency',
-          'Lazy loading and code splitting for optimal performance'
+          'Namespaced PHP plugin architecture',
+          'BEM-based SCSS for isolation',
+          'Vanilla JS for lightweight interactivity',
+          'Lazy loading and code splitting'
         ]
       },
       design: {
-        content: 'From a frontend perspective, I focused on creating responsive, accessible components that worked seamlessly across devices. The dual-view toggle required careful state management and smooth transitions. Every interaction was optimized for performance—debounced search, lazy-loaded images, and efficient DOM manipulation.',
+        content: 'Responsive, accessible components with dual view toggle and smooth transitions.',
         decisions: [
-          'CSS Grid for flexible, responsive layouts without media query hell',
-          'Custom event delegation for efficient click handling',
-          'Intersection Observer API for lazy loading directory entries',
-          'CSS transforms for smooth view-switching animations'
+          'CSS Grid layouts',
+          'Event delegation for efficient handlers',
+          'Intersection Observer for lazy loads',
+          'CSS transforms for view switching'
         ]
       },
       reflection: {
-        learnings: 'This project deepened my vanilla JavaScript skills and taught me when NOT to reach for a framework. The constraint of working within WordPress forced creative solutions—isolated styling prevented countless headaches. Performance optimization isn\'t just backend work; thoughtful frontend architecture makes the difference.',
+        learnings: 'Constraints nudged better fundamentals—vanilla JS and strict CSS isolation paid off.',
         takeaways: [
-          'Vanilla JS is powerful when you don\'t need framework overhead',
-          'CSS isolation is critical when working within legacy systems',
-          'Progressive enhancement ensures broader accessibility',
-          'Small optimizations compound into significant performance gains'
+          'Use frameworks only when they add real value',
+          'Isolated styling prevents regressions',
+          'Progressive enhancement widens access',
+          'Frontend architecture drives perf too'
         ],
-        future: 'I would implement service workers for offline caching and faster subsequent loads. Virtual scrolling would improve performance with large datasets. More granular loading states would provide better user feedback during searches.'
+        future: 'Service workers for caching, virtual scrolling, and granular loading states for large datasets.'
       }
-    }
-  },
-  {
-    title: 'AIMS website',
-    image: aims,
-    type: 'frontend',
-    data: {
-      title: 'AIMS website',
-      tagline: 'A student-led site to promote events and resources.',
-      duration: 'Jan 2025 – Present',
-      tech: 'PHP, SCSS, JS, WordPress Hooks',
-      link: 'https://aims.ischool.uw.edu/',
-      images: [aims],
-      footerText: 'Designed and developed the official AIMS website for UW iSchool student organization, integrating dynamic content, sponsor highlights, and event pages.',
-      discovery: {
-        content: 'AIMS (Association for Information Systems students) needed a digital presence to promote events, showcase sponsors, and build community. As a student-run organization, they lacked technical resources and needed something maintainable by non-developers. WordPress emerged as the obvious choice for content management.',
-        findings: [
-          'Student officers needed to update events without developer help',
-          'Sponsor visibility was crucial for funding and partnerships',
-          'Mobile traffic would be high (students browsing on phones)',
-          'Budget was $0—we had to work within UW\'s existing hosting'
-        ]
-      },
-      ideation: {
-        content: 'Within WordPress constraints, I focused on creating a vibrant, modern site that felt distinctly AIMS. We wireframed a homepage with prominent CTAs for upcoming events, a sponsor showcase grid, and easy-to-update resource pages. Custom post types would let officers manage events without touching code.',
-        approach: [
-          'Custom WordPress theme built on underscores starter theme',
-          'Advanced Custom Fields for event management without coding',
-          'SCSS with variables for brand consistency',
-          'Vanilla JavaScript for interactive elements and animations'
-        ]
-      },
-      design: {
-        content: 'I designed bold, engaging layouts with the iSchool brand colors (purple and teal) while maintaining professional credibility. The events calendar used card-based UI for scannability. Sponsor logos were prominently displayed with hover effects. Every page loaded fast—under 2 seconds even on slow connections.',
-        decisions: [
-          'Hero section with rotating event announcements',
-          'Card-based event layouts with clear date/time/location hierarchy',
-          'Sponsor grid with hover states showcasing partnerships',
-          'Mobile-first approach with touch-friendly interactive elements'
-        ]
-      },
-      reflection: {
-        learnings: 'Building for a student organization taught me to design for handoff—the code needed to be maintainable by my successors. WordPress\'s content management shines when properly structured with custom fields and clear documentation. Balancing visual impact with performance constraints improved my optimization skills.',
-        takeaways: [
-          'Design for the next developer, not just current requirements',
-          'Content management systems succeed when clients can self-serve',
-          'Performance budgets force creative optimization solutions',
-          'Student projects are real projects—they deserve production-quality work'
-        ],
-        future: 'I would add member profiles to foster community connections. An event RSVP system would help officers gauge attendance. Integration with UW\'s calendar system would reduce duplicate data entry. Analytics would show which content drives the most engagement.'
-      }
-    }
-  },
-  {
-    title: 'Hunch Website',
-    image: hunch,
-    type: 'frontend',
-    data: {
-      title: 'Hunch Website',
-      tagline: 'A social platform for readers to discover and discuss ideas.',
-      duration: 'Mar 2022 – Apr 2023',
-      tech: 'Flutter, Figma',
-      link: 'https://hunch.in/',
-      images: [hunch],
-      footerText: 'Worked on Hunch\'s front-end to create engaging reading experiences and community features, promoting books and author conversations across devices.'
-    }
-  },
-  {
-    title: 'PlotX website',
-    image: plotx,
-    type: 'frontend',
-    data: {
-      title: 'PlotX website',
-      tagline: 'A responsive, data-rich portal for blockchain predictions.',
-      duration: 'Mar 2022 – Apr 2023',
-      tech: 'AngularJS, SCSS',
-      link: 'https://plotx.io/',
-      images: [plotx],
-      footerText: 'Led front-end development for PlotX\'s landing and app pages, optimizing speed and SEO while delivering real-time crypto prediction interfaces.'
     }
   }
 ];

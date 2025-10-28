@@ -66,6 +66,17 @@ const Portfolio = ({ isProduct = false }) => {
                 </div>
                 
                 <div className="project-thumb">
+                  {proj.data.link && (
+                    <a
+                      href={proj.data.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="view-live-button"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      View Live
+                    </a>
+                  )}
                   <img src={proj.image} alt={proj.title} />
                 </div>
               </div>
