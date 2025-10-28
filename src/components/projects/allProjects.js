@@ -312,6 +312,57 @@ export const frontendProjects = [
     }
   },
   {
+    title: 'Folklore WP Plugin',
+    image: folklore,
+    type: 'frontend',
+    data: {
+      title: 'Folklore WP Plugin',
+      tagline: 'People directory with fast search and accessible views.',
+      duration: '5 months',
+      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
+      link: 'https://rakshanda.my.canva.site/folklore',
+      images: [folklore2],
+      footerText: 'Custom directory plugin with toggleable views, isolated SCSS, and optimized queries; designed to support future Sheets integration.',
+      discovery: {
+        content: 'Legacy directory had slow loads, weak mobile UX, and brittle CSS; audits showed heavy query and style conflicts.',
+        findings: [
+          'Inefficient DB queries caused 8s+ loads',
+          'Mobile layouts broke under common viewports',
+          'No CSS methodology—style leakage everywhere',
+          'Departments couldn\'t manage entries easily'
+        ]
+      },
+      ideation: {
+        content: 'A WordPress plugin leveraged existing CMS while enabling modern frontend patterns.',
+        approach: [
+          'Namespaced PHP plugin architecture',
+          'BEM-based SCSS for isolation',
+          'Vanilla JS for lightweight interactivity',
+          'Lazy loading and code splitting'
+        ]
+      },
+      design: {
+        content: 'Responsive, accessible components with dual view toggle and smooth transitions.',
+        decisions: [
+          'CSS Grid layouts',
+          'Event delegation for efficient handlers',
+          'Intersection Observer for lazy loads',
+          'CSS transforms for view switching'
+        ]
+      },
+      reflection: {
+        learnings: 'Constraints nudged better fundamentals—vanilla JS and strict CSS isolation paid off.',
+        takeaways: [
+          'Use frameworks only when they add real value',
+          'Isolated styling prevents regressions',
+          'Progressive enhancement widens access',
+          'Frontend architecture drives perf too'
+        ],
+        future: 'Service workers for caching, virtual scrolling, and granular loading states for large datasets.'
+      }
+    }
+  },
+  {
     title: 'Claim Runner AI',
     image: claimrunner,
     type: 'frontend',
@@ -401,57 +452,6 @@ export const frontendProjects = [
           'Brand tokens keep things consistent'
         ],
         future: 'Member profiles, RSVP, UW calendar sync, and analytics for content insights.'
-      }
-    }
-  },
-  {
-    title: 'Folklore WP Plugin',
-    image: folklore,
-    type: 'frontend',
-    data: {
-      title: 'Folklore WP Plugin',
-      tagline: 'People directory with fast search and accessible views.',
-      duration: '5 months',
-      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
-      link: 'https://rakshanda.my.canva.site/folklore',
-      images: [folklore2],
-      footerText: 'Custom directory plugin with toggleable views, isolated SCSS, and optimized queries; designed to support future Sheets integration.',
-      discovery: {
-        content: 'Legacy directory had slow loads, weak mobile UX, and brittle CSS; audits showed heavy query and style conflicts.',
-        findings: [
-          'Inefficient DB queries caused 8s+ loads',
-          'Mobile layouts broke under common viewports',
-          'No CSS methodology—style leakage everywhere',
-          'Departments couldn\'t manage entries easily'
-        ]
-      },
-      ideation: {
-        content: 'A WordPress plugin leveraged existing CMS while enabling modern frontend patterns.',
-        approach: [
-          'Namespaced PHP plugin architecture',
-          'BEM-based SCSS for isolation',
-          'Vanilla JS for lightweight interactivity',
-          'Lazy loading and code splitting'
-        ]
-      },
-      design: {
-        content: 'Responsive, accessible components with dual view toggle and smooth transitions.',
-        decisions: [
-          'CSS Grid layouts',
-          'Event delegation for efficient handlers',
-          'Intersection Observer for lazy loads',
-          'CSS transforms for view switching'
-        ]
-      },
-      reflection: {
-        learnings: 'Constraints nudged better fundamentals—vanilla JS and strict CSS isolation paid off.',
-        takeaways: [
-          'Use frameworks only when they add real value',
-          'Isolated styling prevents regressions',
-          'Progressive enhancement widens access',
-          'Frontend architecture drives perf too'
-        ],
-        future: 'Service workers for caching, virtual scrolling, and granular loading states for large datasets.'
       }
     }
   }
