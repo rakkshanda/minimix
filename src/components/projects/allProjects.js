@@ -126,62 +126,6 @@ export const productProjects = [
     }
   },
   {
-    title: 'Folklore',
-    image: folklore,
-    type: 'product',
-    data: {
-      title: 'Folklore WP Plugin',
-      tagline: 'A modern plugin for faster, smarter directory access.',
-      duration: '5 months',
-      tech: 'Figma, Miro, Optimal workshop, PHP, SCSS, JS, WordPress Hooks',
-      link: 'https://rakshanda.my.canva.site/folklore',
-      images: [folklore2],
-      type: 'Product Design & Development',
-      agency: 'University of Washington',
-      objective: 'Create a faster, more accessible directory search experience for UW',
-      process: 'Conducted user research, designed toggleable views, developed custom WordPress plugin with isolated SCSS styling',
-      audience: 'UW faculty, staff, and students',
-      footerText: 'Custom-built WordPress plugin for UW directory search, featuring toggleable views, isolated SCSS styling, and future Google Sheets integration.',
-      discovery: {
-        content: 'UW\'s existing directory system was slow, outdated, and lacked flexibility. Through user testing with 40+ faculty and staff, we found that people needed quick lookups but also wanted different viewing options depending on context. Card testing revealed users preferred scannable views over dense tables for browsing.',
-        findings: [
-          'Average search took 8+ seconds due to bloated legacy systems',
-          'Users wanted both grid and list views for different use cases',
-          'Mobile experience was nearly unusable with tiny text and broken layouts',
-          'Department admins needed an easy way to update entries without developer help'
-        ]
-      },
-      ideation: {
-        content: 'We explored building a React SPA, a standalone app, or a WordPress plugin. The WordPress plugin won because it integrated seamlessly with UW\'s existing infrastructure while offering full design freedom through isolated styling. We wireframed toggleable views and tested sorting/filtering options.',
-        approach: [
-          'Built custom WordPress plugin using modern PHP practices',
-          'Designed isolated SCSS to avoid conflicts with UW\'s theme',
-          'Created dual views (grid/list) with smooth transitions',
-          'Planned Google Sheets integration for easy content management'
-        ]
-      },
-      design: {
-        content: 'The design followed UW brand guidelines while modernizing the interface with clean cards, better typography, and generous white space. We prioritized performance, implementing lazy loading and efficient data queries. The toggleable views gave users control over their browsing experience.',
-        decisions: [
-          'Purple and gold UW brand colors with modern, accessible contrast',
-          'Responsive grid that adapts from 4 columns to 1 based on screen size',
-          'Instant search filtering with debounced input for performance',
-          'One-click toggle between grid cards and sortable list view'
-        ]
-      },
-      reflection: {
-        learnings: 'This project deepened my understanding of WordPress development beyond basic themes. Balancing design ambition with technical constraints taught me to be creative within systems. User testing revealed that sometimes the simplest solution—a view toggle—can dramatically improve satisfaction.',
-        takeaways: [
-          'WordPress plugins offer surprising flexibility when built properly',
-          'Isolated styling prevents countless headaches in legacy systems',
-          'Performance optimization is a feature, not an afterthought',
-          'User control (like view toggles) increases perceived usability'
-        ],
-        future: 'I would add advanced filtering by department, location, and expertise. The Google Sheets integration would empower departments to maintain their own data. Analytics would help us understand search patterns and optimize accordingly.'
-      }
-    }
-  },
-  {
     title: 'Hugging Face landing page redesign',
     image: hf,
     type: 'product',
@@ -242,11 +186,11 @@ export const productProjects = [
 // Frontend Projects (3, 5, 6, 7) - shown at / (default)
 export const frontendProjects = [
   {
-    title: 'BatchQuery Chatbot',
+    title: 'Delivery Chatbot',
     image: batchquery,
     type: 'frontend',
     data: {
-      title: 'BatchQuery Chatbot',
+      title: 'Delivery Chatbot',
       tagline: 'AI chat app that answers one question across multiple images at once.',
       duration: 'Oct 2024 – Dec 2024',
       tech: ['React', 'Node.js', 'OpenAI API'],
@@ -256,11 +200,11 @@ export const frontendProjects = [
     }
   },
   {
-    title: 'Emerald Advisors Chrome Extension',
+    title: 'Financial news browser extension',
     image: eag,
     type: 'frontend',
     data: {
-      title: 'Emerald Advisors Chrome Extension',
+      title: 'Financial news browser extension',
       tagline: 'Real-time financial news overlay with AI sentiment and in-panel chatbot.',
       duration: 'May 2025 – Aug 2025',
       tech: ['React', 'Chrome Extension APIs', 'TypeScript', 'OpenAI API', 'Financial News APIs'],

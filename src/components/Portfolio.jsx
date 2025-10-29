@@ -31,7 +31,14 @@ const Portfolio = ({ isProduct = false }) => {
   }, []);
 
   // Choose the right project list based on route
-  const projectList = isProduct ? productProjects : frontendProjects;
+  // Product page shows custom order: frontendProjects (first 3) + productProjects + frontendProjects (rest)
+  const projectList = isProduct 
+    ? [
+        ...frontendProjects.slice(0, 3),  // Delivery, Emerald, Folklore
+        ...productProjects,                // Career Cupid, RevereXR, HuggingFace
+        ...frontendProjects.slice(3)       // ClaimRunner, Hunch, PlotX, AIMS
+      ]
+    : frontendProjects;
 
   return (
     <>

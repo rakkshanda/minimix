@@ -21,7 +21,14 @@ const ProjectDetail = ({ isProduct = false }) => {
     window.scrollTo(0, 0);
   }, [projectId]);
 
-  const projectList = isProduct ? productProjects : frontendProjects;
+  // Product page shows custom order: frontendProjects (first 3) + productProjects + frontendProjects (rest)
+  const projectList = isProduct 
+    ? [
+        ...frontendProjects.slice(0, 3),  // Delivery, Emerald, Folklore
+        ...productProjects,                // Career Cupid, RevereXR, HuggingFace
+        ...frontendProjects.slice(3)       // ClaimRunner, Hunch, PlotX, AIMS
+      ]
+    : frontendProjects;
   const project = projectList.find(p => 
     p.title.toLowerCase().replace(/\s+/g, '-') === projectId
   );
