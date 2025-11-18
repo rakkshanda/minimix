@@ -11,8 +11,7 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p className="about-intro">
-              My name is Rakshanda. I grew up in India and now live in Seattle. Having moved around the world since a young age, my work is heavily influenced by the mundane moments of life and diverse cultural experiences. As a passionate software developer and product designer, I love creating meaningful digital experiences that blend functionality with beautiful design.
-            </p>
+I enjoy building digital experiences that feel clear, inviting, and genuinely helpful. My work blends thoughtful design with practical engineering, always with a focus on making everyday interactions smoother and more meaningful.            </p>
 
             <p className="about-middle">
               Outside work, I like to explore new coffee shops around the city, experiment with different brewing methods, travel to new places, and spend time with friends and family.
