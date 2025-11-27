@@ -186,11 +186,11 @@ export const productProjects = [
 // Frontend Projects (3, 5, 6, 7) - shown at / (default)
 export const frontendProjects = [
   {
-    title: 'Delivery Chatbot',
+    title: 'Product Chatbot',
     image: batchquery,
     type: 'frontend',
     data: {
-      title: 'Delivery Chatbot',
+      title: 'Product Chatbot',
       tagline: 'AI chat app that answers one question across multiple images at once.',
       duration: 'Oct 2024 – Dec 2024',
       tech: ['React', 'Node.js', 'OpenAI API'],
