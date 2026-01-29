@@ -7,6 +7,7 @@ const ProjectDetail = ({ isProduct = false }) => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
+  const slugify = (title) => title.toLowerCase().replace(/\s+/g, '-');
 
   // Set body background to black for this page
   React.useEffect(() => {
@@ -21,16 +22,28 @@ const ProjectDetail = ({ isProduct = false }) => {
     window.scrollTo(0, 0);
   }, [projectId]);
 
+  const buildProjectList = () => {
+    if (!isProduct) return frontendProjects;
+
+    const combined = [
+      ...frontendProjects.slice(0, 3),
+      ...productProjects,
+      ...frontendProjects.slice(3)
+    ];
+
+    const seen = new Set();
+    return combined.filter((proj) => {
+      const slug = slugify(proj.title);
+      if (seen.has(slug)) return false;
+      seen.add(slug);
+      return true;
+    });
+  };
+
   // Product page shows custom order: frontendProjects (first 3) + productProjects + frontendProjects (rest)
-  const projectList = isProduct 
-    ? [
-        ...frontendProjects.slice(0, 3),  // Delivery, Emerald, Folklore
-        ...productProjects,                // Career Cupid, RevereXR, HuggingFace
-        ...frontendProjects.slice(3)       // ClaimRunner, Hunch, PlotX, AIMS
-      ]
-    : frontendProjects;
+  const projectList = buildProjectList();
   const project = projectList.find(p => 
-    p.title.toLowerCase().replace(/\s+/g, '-') === projectId
+    slugify(p.title) === projectId
   );
 
   const tabs = [
@@ -315,4 +328,3 @@ const ProjectDetail = ({ isProduct = false }) => {
 };
 
 export default ProjectDetail;
-

@@ -11,6 +11,26 @@ const Portfolio = ({ isProduct = false }) => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('portfolio');
 
+  const slugify = (title) => title.toLowerCase().replace(/\s+/g, '-');
+
+  const buildProjectList = () => {
+    if (!isProduct) return frontendProjects;
+
+    const combined = [
+      ...frontendProjects.slice(0, 3),  // Delivery, Emerald, Folklore
+      ...productProjects,               // Career Cupid, RevereXR, HuggingFace
+      ...frontendProjects.slice(3)      // ClaimRunner, Hunch, PlotX, AIMS
+    ];
+
+    const seen = new Set();
+    return combined.filter((proj) => {
+      const slug = slugify(proj.title);
+      if (seen.has(slug)) return false;
+      seen.add(slug);
+      return true;
+    });
+  };
+
   // Track scroll position to highlight active section
   useEffect(() => {
     const handleScroll = () => {
@@ -32,13 +52,7 @@ const Portfolio = ({ isProduct = false }) => {
 
   // Choose the right project list based on route
   // Product page shows custom order: frontendProjects (first 3) + productProjects + frontendProjects (rest)
-  const projectList = isProduct 
-    ? [
-        ...frontendProjects.slice(0, 3),  // Delivery, Emerald, Folklore
-        ...productProjects,                // Career Cupid, RevereXR, HuggingFace
-        ...frontendProjects.slice(3)       // ClaimRunner, Hunch, PlotX, AIMS
-      ]
-    : frontendProjects;
+  const projectList = buildProjectList();
 
   return (
     <>
@@ -55,7 +69,7 @@ const Portfolio = ({ isProduct = false }) => {
         
         <div className="image-sidebar">
           {projectList.map((proj, idx) => {
-            const projectSlug = proj.title.toLowerCase().replace(/\s+/g, '-');
+            const projectSlug = slugify(proj.title);
             const basePath = isProduct ? '/product' : '/portfolio';
             
             return (

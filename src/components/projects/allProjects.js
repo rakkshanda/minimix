@@ -10,12 +10,14 @@ import emerald from '../../assets/Emerald.png';
 import eag from '../../assets/eag.gif';
 import claimrunner from '../../assets/claimrunner.png';
 import batchquery from '../../assets/batchquery.png';
+import sp from '../../assets/sp.png';
+import cc from '../../assets/cc.gif';
 
 // Product Projects (1, 2, 3, 4) - shown at /product
 export const productProjects = [
   {
     title: 'Career Cupid',
-    image: cupid,
+    image: cc,
     type: 'product',
     data: {
       title: 'Career Cupid',
@@ -23,7 +25,7 @@ export const productProjects = [
       duration: '3 months',
       tech: 'Figma, Miro',
       link: 'https://rakshanda.my.canva.site/career-cupid',
-      images: [cupid],
+      images: [cc],
       type: 'UX Research Project',
       agency: 'Academic Project',
       objective: 'Help job seekers discover roles based on values and work styles',
@@ -180,25 +182,126 @@ export const productProjects = [
         future: 'I would A/B test the dual CTAs to measure actual conversion lift. Personalized onboarding based on user\'s stated experience level could further reduce friction. Adding interactive model demos directly on the landing page would showcase capability immediately.'
       }
     }
+  },
+  {
+    title: 'South Project',
+    image: sp,
+    type: 'product',
+    data: {
+      title: 'South Project',
+      tagline: 'AI-powered donation platform with personalized donor journeys.',
+      duration: '2024',
+      tech: 'Figma, Design Systems, LLM APIs',
+      link: 'https://southprojecttx.com',
+      images: [sp],
+      type: 'Product Design + UX',
+      agency: 'South Project TX',
+      objective: 'Create a clear, accessible donor experience that earns trust and drives more completed donations.',
+      process: 'Mapped end-to-end donor flows, designed responsive UI patterns, and paired with engineers to ship LLM-driven personalization.',
+      audience: 'Donors supporting the Young Moms Work & Wellness Bridge program',
+      footerText: 'Led the design of an AI-powered donation platform, defining user flows, interfaces, and interaction patterns to create a clear, accessible donor experience. Partnered with engineers to integrate LLM-driven personalization, improving donor engagement and supporting the enrollment of 100 mothers for the Young Moms Work & Wellness Bridge program.',
+      discovery: {
+        content: 'Donors were dropping off after selecting an amount because the path to completion felt unclear and generic. The program also needed to show tangible impact for new supporters joining via referrals.',
+        findings: [
+          'Confusing multi-step flow led to abandoned donations',
+          'Mobile donors needed a shorter, clearer path with fewer fields',
+          'Impact storytelling was buried, reducing confidence to give',
+          'Personalized prompts increased response rates in early tests'
+        ]
+      },
+      ideation: {
+        content: 'Focused on a guided, transparent flow that could adapt messaging per donor while staying accessible.',
+        approach: [
+          'Journey maps for first-time vs returning donors with clear entry and exit points',
+          'Impact-forward screens that surface who benefits before payment',
+          'LLM-personalized copy blocks to align appeals with donor intent',
+          'Accessibility sweeps for color contrast, focus states, and readable forms'
+        ]
+      },
+      design: {
+        content: 'Built a responsive, calming interface that keeps donors oriented, reassured, and motivated to finish.',
+        decisions: [
+          'Progress indicators and inline guidance to reduce uncertainty',
+          'Impact highlights and testimonials adjacent to the payment step',
+          'LLM-driven thank-you notes and follow-up suggestions seeded in the flow',
+          'Mobile-first layout with tap-friendly controls and clear error states'
+        ]
+      },
+      reflection: {
+        learnings: 'Pairing UX clarity with personalized messaging boosted engagement and helped enroll 100 mothers into the Young Moms Work & Wellness Bridge program.',
+        takeaways: [
+          'Transparent impact storytelling reduces friction as much as UI polish',
+          'Personalization should feel additive, not distracting from the core task',
+          'Accessibility checks early prevent rework near launch',
+          'Collaborating closely with engineering keeps AI features grounded'
+        ],
+        future: 'A/B test different AI-generated prompts, expand language support, and build a lightweight donor dashboard for recurring gifts.'
+      }
+    }
   }
 ];
 
 // Frontend Projects (3, 5, 6, 7) - shown at / (default)
 export const frontendProjects = [
-  {
+ {
+  title: 'Product Chatbot',
+  image: batchquery,
+  type: 'frontend + ai',
+  data: {
     title: 'Product Chatbot',
-    image: batchquery,
-    type: 'frontend',
-    data: {
-      title: 'Product Chatbot',
-      tagline: 'AI chat app that answers one question across multiple images at once.',
-      duration: 'Oct 2024 – Dec 2024',
-      tech: ['React', 'Node.js', 'OpenAI API'],
-      link: 'https://batch-query-ena2.vercel.app/',
-      images: [batchquery],
-      footerText: 'Built a unified pipeline to apply a single question to up to four images and render per-image answers. Reduced manual review time through batch evaluation and consistent prompts.'
+    tagline: 'Multi-image visual analysis chatbot for rapid defect checks and issue detection.',
+    duration: 'Oct 2024 – Dec 2024',
+    tech: ['React', 'Node.js', 'OpenAI API', 'Image Processing APIs'],
+          link: 'https://batch-query-ena2.vercel.app/',
+
+    images: [batchquery],
+    footerText:
+      'Built a unified pipeline that applies one question across up to four images and returns clear, per-image diagnostics. Cut review time by batching visual queries and generating consistent, actionable answers.',
+    discovery: {
+      content:
+        'Teams reviewing product photos often needed to spot defects or inconsistencies across multiple images. Doing this manually was slow and required repeating the same question for each file.',
+      findings: [
+        '4–6 separate checks needed per product set',
+        'Inconsistent judgments when done manually',
+        'High context switching while opening each image',
+        'No fast way to compare issues side-by-side'
+      ]
+    },
+    ideation: {
+      content:
+        'A single-chat workflow could reduce repetition by letting users ask once and receive aligned evaluations for every image.',
+      approach: [
+        'React UI supporting multiple image uploads',
+        'Unified request pipeline that maps one question to each image',
+        'Structured, LLM-generated responses for consistency',
+        'Batch evaluation to cut repeated prompts and time'
+      ]
+    },
+    design: {
+      content:
+        'The goal was clarity and speed—quick upload, one question box, and clean per-image answers.',
+      decisions: [
+        'Simple dark UI to keep focus on photo details',
+        'Side-by-side results for easy comparison',
+        'Clear error states for unsupported or unclear images',
+        'Loading states designed for batch processing'
+      ]
+    },
+    reflection: {
+      learnings:
+        'Working with multi-image prompts reinforced how helpful batch workflows are when users repeat the same task across assets.',
+      takeaways: [
+        'Consistent output schemas simplify visual QA',
+        'Batching saves significant time for repetitive tasks',
+        'LLMs need guardrails to avoid hallucinating details',
+        'Clear UX reduces confusion when reviewing multiple images'
+      ],
+      future:
+        'Add automatic defect suggestions, bounding-box highlights, and exportable reports for QA teams.'
     }
-  },
+  }
+},  
+
   {
     title: 'Financial news browser extension',
     image: eag,
@@ -208,7 +311,7 @@ export const frontendProjects = [
       tagline: 'Real-time financial news overlay with AI sentiment and in-panel chatbot.',
       duration: 'May 2025 – Aug 2025',
       tech: ['React', 'Chrome Extension APIs', 'TypeScript', 'OpenAI API', 'Financial News APIs'],
-      images: [emerald],
+      images: [eag],
       footerText:
         'Overlaid curated news on the firm’s stock dashboard with sentiment tags, date filters, and impact sorting (-50% research time). Added an in-panel ChatGPT assistant for TL;DRs, risk highlights, and cited sources to cut context switching.',
       discovery: {
@@ -306,6 +409,119 @@ export const frontendProjects = [
       }
     }
   },
+   {
+    title: 'Career Cupid',
+    image: cc,
+    type: 'product',
+    data: {
+      title: 'Career Cupid',
+      tagline: 'A research-driven platform connecting personalities to careers.',
+      duration: '3 months',
+      tech: 'Figma, Miro',
+      link: 'https://rakshanda.my.canva.site/career-cupid',
+      images: [cc],
+      type: 'UX Research Project',
+      agency: 'Academic Project',
+      objective: 'Help job seekers discover roles based on values and work styles',
+      process: 'Led user research through surveys and interviews, created personas, and designed interactive prototypes',
+      audience: 'College seniors exploring first jobs',
+      footerText: 'Developed as part of a UX group project, Career Cupid is a web-based tool that connects user personalities to career paths. Led user research through surveys and interviews, created personas, and designed interactive prototypes focused on clarity, engagement, and user retention.',
+      discovery: {
+        content: 'We began by interviewing 30+ college seniors about their career search anxieties. The research revealed that traditional job search tools focus heavily on skills matching but ignore personality fit and work-life balance preferences. Surveys showed 78% of respondents felt overwhelmed by generic job listings.',
+        findings: [
+          'Students wanted a more personalized, dating-app-style experience for career matching',
+          'Work culture and values alignment mattered more than salary for this demographic',
+          'Existing tools lacked transparency about day-to-day job realities',
+          'Users preferred quick, swipe-based interactions over lengthy forms'
+        ]
+      },
+      ideation: {
+        content: 'Drawing inspiration from dating apps, we brainstormed a matchmaking approach for careers. We sketched card-based interfaces and created multiple user flow variations, testing each with paper prototypes. The "swipe to match" concept resonated strongly with our target users.',
+        approach: [
+          'Created a card-based interface showing job roles with personality insights',
+          'Designed quick assessment quizzes to understand user values and preferences',
+          'Built a "match score" algorithm based on work style compatibility',
+          'Developed saved matches feature to revisit promising career paths'
+        ]
+      },
+      design: {
+        content: 'The visual design balanced playfulness with professionalism. We used warm, approachable colors and friendly micro-interactions while maintaining credibility through clean typography and structured information hierarchy. Each career card highlighted culture fit, typical work environments, and growth paths.',
+        decisions: [
+          'Vibrant gradient cards with clear career categorization by industry',
+          'Interactive personality quiz with immediate, visual feedback',
+          'Match percentage displayed prominently with detailed breakdown',
+          'Mobile-first design optimized for on-the-go exploration'
+        ]
+      },
+      reflection: {
+        learnings: 'This project taught me the power of gamification in making overwhelming processes feel approachable. By reframing career exploration as "matching" rather than "searching," we reduced user anxiety and increased engagement. The importance of research-driven personas became clear when our initial designs didn\'t resonate until we incorporated actual student feedback.',
+        takeaways: [
+          'Gamification can make serious decisions feel less daunting',
+          'Personality-first approaches resonate with Gen Z job seekers',
+          'Quick wins (matches) maintain user engagement better than lengthy processes',
+          'Transparent methodology builds trust in recommendation systems'
+        ],
+        future: 'I would add more depth to the "why" behind each match, possibly including day-in-the-life videos or testimonials from people in those roles. Integrating real job listings with our matching algorithm would bridge the gap between discovery and application.'
+      }
+    }
+  },
+    {
+    title: 'South Project',
+    image: sp,
+    type: 'frontend',
+    data: {
+      title: 'South Project',
+      tagline: 'AI-powered donation platform with personalized donor journeys.',
+      duration: '2024',
+      tech: ['Figma', 'Design Systems', 'LLM APIs'],
+      link: 'https://southprojecttx.com',
+      images: [sp],
+      footerText:
+        'Led the design of an AI-powered donation platform, defining user flows, interfaces, and interaction patterns to create a clear, accessible donor experience. Partnered with engineers to integrate LLM-driven personalization, improving donor engagement and supporting the enrollment of 100 mothers for the Young Moms Work & Wellness Bridge program.',
+      discovery: {
+        content:
+          'Donors were dropping off after selecting an amount because the path to completion felt unclear and generic. The program also needed to show tangible impact for new supporters joining via referrals.',
+        findings: [
+          'Confusing multi-step flow led to abandoned donations',
+          'Mobile donors needed a shorter, clearer path with fewer fields',
+          'Impact storytelling was buried, reducing confidence to give',
+          'Personalized prompts increased response rates in early tests'
+        ]
+      },
+      ideation: {
+        content:
+          'Focused on a guided, transparent flow that could adapt messaging per donor while staying accessible.',
+        approach: [
+          'Journey maps for first-time vs returning donors with clear entry and exit points',
+          'Impact-forward screens that surface who benefits before payment',
+          'LLM-personalized copy blocks to align appeals with donor intent',
+          'Accessibility sweeps for color contrast, focus states, and readable forms'
+        ]
+      },
+      design: {
+        content:
+          'Built a responsive, calming interface that keeps donors oriented, reassured, and motivated to finish.',
+        decisions: [
+          'Progress indicators and inline guidance to reduce uncertainty',
+          'Impact highlights and testimonials adjacent to the payment step',
+          'LLM-driven thank-you notes and follow-up suggestions seeded in the flow',
+          'Mobile-first layout with tap-friendly controls and clear error states'
+        ]
+      },
+      reflection: {
+        learnings:
+          'Pairing UX clarity with personalized messaging boosted engagement and helped enroll 100 mothers into the Young Moms Work & Wellness Bridge program.',
+        takeaways: [
+          'Transparent impact storytelling reduces friction as much as UI polish',
+          'Personalization should feel additive, not distracting from the core task',
+          'Accessibility checks early prevent rework near launch',
+          'Collaborating closely with engineering keeps AI features grounded'
+        ],
+        future:
+          'A/B test different AI-generated prompts, expand language support, and build a lightweight donor dashboard for recurring gifts.'
+      }
+    }
+  },
   {
     title: 'Claim Runner AI',
     image: claimrunner,
@@ -326,7 +542,7 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'Hunch',
-      tagline: 'Social platform for readers to discover and discuss ideas.',
+      tagline: ' Dating platform.',
       duration: 'Mar 2022 – Apr 2023',
       tech: ['Flutter', 'Figma'],
       link: 'https://hunch.in/',
@@ -398,5 +614,6 @@ export const frontendProjects = [
         future: 'Member profiles, RSVP, UW calendar sync, and analytics for content insights.'
       }
     }
-  }
+  },
+ 
 ];
