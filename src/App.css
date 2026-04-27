@@ -17,9 +17,34 @@ html, body {
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #fff;
+  background: #FBF8F5;
   color: #000;
 }
+
+/* ── Atmosphere blobs ── */
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  transform: translate(-50%, -50%);
+  transition:
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity   1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blob--violet  { width: 520px; height: 520px; background: #6B4EFF; top: -10%; left: -10%; }
+.blob--peach   { width: 480px; height: 480px; background: #FFD9C9; top:  30%; left:  60%; }
+.blob--lavender{ width: 560px; height: 560px; background: #B5A8FF; top:  80%; left:  30%; }
 
 .container {
   max-width: 1200px;

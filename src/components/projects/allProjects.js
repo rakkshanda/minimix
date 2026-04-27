@@ -98,7 +98,7 @@ export const productProjects = [
         ]
       },
       ideation: {
-        content: 'We explored various XR approaches—from 360° videos to fully interactive VR environments. The winning concept combined real audio recordings with stylized 3D environments that users could explore at their own pace. We prototyped spatial audio experiences to create emotional resonance and presence.',
+        content: 'We explored various XR approaches--from 360° videos to fully interactive VR environments. The winning concept combined real audio recordings with stylized 3D environments that users could explore at their own pace. We prototyped spatial audio experiences to create emotional resonance and presence.',
         approach: [
           'Created 3D reconstructions of historical Seattle neighborhoods',
           'Integrated authentic audio recordings from community elders',
@@ -116,7 +116,7 @@ export const productProjects = [
         ]
       },
       reflection: {
-        learnings: 'This hackathon taught me how technology can serve social good and preserve cultural heritage. Working under tight time constraints forced us to prioritize the most impactful features—the authentic voices of community elders became our north star. I learned that immersive tech is most powerful when it creates empathy, not just engagement.',
+        learnings: 'This hackathon taught me how technology can serve social good and preserve cultural heritage. Working under tight time constraints forced us to prioritize the most impactful features--the authentic voices of community elders became our north star. I learned that immersive tech is most powerful when it creates empathy, not just engagement.',
         takeaways: [
           'VR excels at creating emotional presence and historical empathy',
           'Audio recordings carry authenticity that visuals alone cannot match',
@@ -172,7 +172,7 @@ export const productProjects = [
         ]
       },
       reflection: {
-        learnings: 'This sprint taught me the power of data-informed design. The heatmaps and analytics validated our assumptions but also revealed surprises. Working within tight constraints forced ruthless prioritization—we focused on the highest-impact changes rather than perfection. The dual-CTA approach proved that one size doesn\'t fit all.',
+        learnings: 'This sprint taught me the power of data-informed design. The heatmaps and analytics validated our assumptions but also revealed surprises. Working within tight constraints forced ruthless prioritization--we focused on the highest-impact changes rather than perfection. The dual-CTA approach proved that one size doesn\'t fit all.',
         takeaways: [
           'Different user segments need different entry points and journeys',
           'Analytics reveal what users do; interviews reveal why they do it',
@@ -241,67 +241,210 @@ export const productProjects = [
   }
 ];
 
-// Frontend Projects (3, 5, 6, 7) - shown at / (default)
+// Frontend Projects - shown at / (default)
+// Order: Folklore, AIMS, South Project, PlotX, Hunch, Financial news, Claim Runner, Career Cupid, Product Chatbot
 export const frontendProjects = [
- {
-  title: 'Product Chatbot',
-  image: batchquery,
-  type: 'frontend + ai',
-  data: {
-    title: 'Product Chatbot',
-    tagline: 'Multi-image visual analysis chatbot for rapid defect checks and issue detection.',
-    duration: 'Oct 2024 – Dec 2024',
-    tech: ['React', 'Node.js', 'OpenAI API', 'Image Processing APIs'],
-          link: 'https://batch-query-ena2.vercel.app/',
-
-    images: [batchquery],
-    footerText:
-      'Built a unified pipeline that applies one question across up to four images and returns clear, per-image diagnostics. Cut review time by batching visual queries and generating consistent, actionable answers.',
-    discovery: {
-      content:
-        'Teams reviewing product photos often needed to spot defects or inconsistencies across multiple images. Doing this manually was slow and required repeating the same question for each file.',
-      findings: [
-        '4–6 separate checks needed per product set',
-        'Inconsistent judgments when done manually',
-        'High context switching while opening each image',
-        'No fast way to compare issues side-by-side'
-      ]
-    },
-    ideation: {
-      content:
-        'A single-chat workflow could reduce repetition by letting users ask once and receive aligned evaluations for every image.',
-      approach: [
-        'React UI supporting multiple image uploads',
-        'Unified request pipeline that maps one question to each image',
-        'Structured, LLM-generated responses for consistency',
-        'Batch evaluation to cut repeated prompts and time'
-      ]
-    },
-    design: {
-      content:
-        'The goal was clarity and speed—quick upload, one question box, and clean per-image answers.',
-      decisions: [
-        'Simple dark UI to keep focus on photo details',
-        'Side-by-side results for easy comparison',
-        'Clear error states for unsupported or unclear images',
-        'Loading states designed for batch processing'
-      ]
-    },
-    reflection: {
-      learnings:
-        'Working with multi-image prompts reinforced how helpful batch workflows are when users repeat the same task across assets.',
-      takeaways: [
-        'Consistent output schemas simplify visual QA',
-        'Batching saves significant time for repetitive tasks',
-        'LLMs need guardrails to avoid hallucinating details',
-        'Clear UX reduces confusion when reviewing multiple images'
-      ],
-      future:
-        'Add automatic defect suggestions, bounding-box highlights, and exportable reports for QA teams.'
+  {
+    title: 'Folklore WP Plugin',
+    image: folklore,
+    type: 'frontend',
+    data: {
+      title: 'Folklore WP Plugin',
+      tagline: 'Accessible WordPress directory plugin -- BEM SCSS, keyboard navigation, and query optimization.',
+      duration: '5 months',
+      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
+      link: 'https://rakshanda.my.canva.site/folklore',
+      images: [folklore2],
+      footerText: 'Built a custom WordPress plugin with namespaced PHP, BEM-scoped SCSS, and vanilla JS. Designed for WCAG compliance with keyboard-navigable views, proper focus management, and optimized database queries that cut load times from 8s+ to under 1s. Architected for non-technical editor handoff and future Google Sheets integration.',
+      discovery: {
+        content: 'Legacy directory had slow loads, weak mobile UX, and brittle CSS; accessibility and performance audits revealed deep query inefficiency and style conflicts.',
+        findings: [
+          'Inefficient DB queries caused 8s+ loads',
+          'Mobile layouts broke under common viewports',
+          'No CSS methodology--style leakage and specificity conflicts everywhere',
+          'Keyboard navigation and focus states were missing throughout'
+        ]
+      },
+      ideation: {
+        content: 'A WordPress plugin leveraged the existing CMS while enabling modern, accessible frontend patterns without adding framework overhead.',
+        approach: [
+          'Namespaced PHP plugin architecture',
+          'BEM-based SCSS for complete style isolation',
+          'Vanilla JS with ARIA attributes for accessible interactions',
+          'Lazy loading and Intersection Observer for performance'
+        ]
+      },
+      design: {
+        content: 'Responsive, WCAG-compliant components with a dual view toggle, visible focus states, and smooth transitions.',
+        decisions: [
+          'CSS Grid layouts for flexible, accessible structure',
+          'Keyboard-navigable view switching with proper focus management',
+          'WCAG AA color contrast across all states',
+          'CSS transforms for view switching without layout shift'
+        ]
+      },
+      reflection: {
+        learnings: 'Constraints nudged better fundamentals--vanilla JS, strict CSS isolation, and progressive enhancement paid dividends in both accessibility and performance.',
+        takeaways: [
+          'Use frameworks only when they add real value',
+          'Isolated BEM styling prevents regressions across WordPress themes',
+          'Progressive enhancement widens access and reduces dependency risk',
+          'Accessibility and performance are two sides of the same coin'
+        ],
+        future: 'Service workers for caching, virtual scrolling for large datasets, and granular loading states to improve perceived performance.'
+      }
     }
-  }
-},  
-
+  },
+  {
+    title: 'AIMS Website (UW iSchool)',
+    image: aims,
+    type: 'frontend',
+    data: {
+      title: 'AIMS Website (UW iSchool)',
+      tagline: 'Accessible WordPress site on UW infrastructure for the iSchool student association.',
+      duration: 'Jan 2025 - Present',
+      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress', 'ACF'],
+      link: 'https://aims.ischool.uw.edu/',
+      images: [aims],
+      footerText: 'Designed and developed a maintainable WordPress theme with dynamic events (ACF), sponsor highlights, and resource pages -- built to WCAG standards and UW brand guidelines so student officers can update content without developer support.',
+      discovery: {
+        content: 'AIMS needed a site officers could update without developer help while staying on UW hosting and meeting university accessibility requirements.',
+        findings: [
+          'Non-technical editors needed a frictionless, self-serve CMS',
+          'Site had to meet UW accessibility and brand standards',
+          'Mobile traffic was the majority of visits',
+          'Zero budget required working within existing UW infrastructure'
+        ]
+      },
+      ideation: {
+        content: 'Structured the CMS for self-serve content while keeping brand and accessibility consistent through SCSS tokens and semantic markup.',
+        approach: [
+          'Custom theme built on underscores (_s) base',
+          'ACF for non-technical event and sponsor management',
+          'SCSS design tokens for UW brand consistency',
+          'Semantic HTML and ARIA landmarks for accessibility'
+        ]
+      },
+      design: {
+        content: 'Bold, scannable layouts with clear event CTAs, a sponsor grid, and accessible interactive states throughout.',
+        decisions: [
+          'Rotating event hero with proper alt text and reduced-motion support',
+          'Card-based event layouts with keyboard-accessible controls',
+          'Sponsor grid with visible focus and hover states',
+          'Mobile-first interactions with touch-friendly tap targets'
+        ]
+      },
+      reflection: {
+        learnings: 'Design for handoff -- clear CMS structure and documented SCSS tokens let future officers maintain quality without engineering help.',
+        takeaways: [
+          'Self-serve CMS removes dev bottlenecks for student orgs',
+          'Performance and accessibility budgets guide every decision',
+          'Thorough documentation reduces onboarding friction',
+          'Brand tokens keep visual consistency scalable'
+        ],
+        future: 'Member profiles, RSVP flows, UW calendar sync, and analytics to surface which content officers update most.'
+      }
+    }
+  },
+  {
+    title: 'South Project',
+    image: sp,
+    type: 'frontend',
+    data: {
+      title: 'South Project',
+      tagline: 'Accessible, responsive donation platform supporting 100+ mothers in a workforce program.',
+      duration: '2024',
+      tech: ['Figma', 'Design Systems', 'HTML/CSS', 'LLM APIs'],
+      link: 'https://southprojecttx.com',
+      images: [sp],
+      footerText:
+        'Led front-end design and implementation for a nonprofit donation platform -- defining accessible user flows, responsive UI patterns, and interaction states. Applied WCAG-compliant color contrast, focus states, and readable form controls throughout. Partnered with engineers to integrate LLM-driven personalization, supporting the enrollment of 100 mothers in the Young Moms Work & Wellness Bridge program.',
+      discovery: {
+        content:
+          'Donors were dropping off after selecting an amount because the path to completion felt unclear and the UI lacked accessible guidance for mobile users.',
+        findings: [
+          'Confusing multi-step flow led to abandoned donations',
+          'Mobile donors needed a shorter, clearer path with fewer fields',
+          'Impact storytelling was buried, reducing confidence to give',
+          'Missing focus states and contrast issues created barriers for some users'
+        ]
+      },
+      ideation: {
+        content:
+          'Focused on a guided, transparent flow that met accessibility standards while adapting messaging per donor.',
+        approach: [
+          'Journey maps for first-time vs returning donors with clear entry and exit points',
+          'Impact-forward screens that surface who benefits before payment',
+          'LLM-personalized copy blocks to align appeals with donor intent',
+          'Accessibility sweeps for WCAG color contrast, focus states, and readable forms'
+        ]
+      },
+      design: {
+        content:
+          'Built a responsive, accessible interface that keeps donors oriented, reassured, and motivated to complete their gift.',
+        decisions: [
+          'Progress indicators and inline guidance to reduce uncertainty',
+          'Impact highlights and testimonials adjacent to the payment step',
+          'Mobile-first layout with tap-friendly controls and clear error states',
+          'WCAG AA contrast and visible focus rings throughout all interactive elements'
+        ]
+      },
+      reflection: {
+        learnings:
+          'Pairing accessible, clear UX with personalized messaging boosted engagement and helped enroll 100 mothers into the Young Moms Work & Wellness Bridge program.',
+        takeaways: [
+          'Accessible design and conversion-friendly design are not in tension',
+          'Transparent impact storytelling reduces friction as much as UI polish',
+          'Accessibility checks early prevent costly rework near launch',
+          'Collaborating closely with engineering keeps AI features grounded in real constraints'
+        ],
+        future:
+          'A/B test different AI-generated prompts, expand language support, and build a lightweight donor dashboard for recurring gifts.'
+      }
+    }
+  },
+  {
+    title: 'Claim Runner AI',
+    image: claimrunner,
+    type: 'frontend',
+    data: {
+      title: 'Claim Runner AI',
+      tagline: 'AI-assisted claims intake with accessible React front end.',
+      duration: '2024',
+      tech: ['React', 'LLM APIs', 'Cloud Services'],
+      link: 'https://www.claimrunner.ai',
+      images: [claimrunner],
+      footerText: 'Built the React front end for an AI-powered claims intake tool -- designed accessible form flows and structured routing UI to streamline review cycles and reduce manual handling.'
+    }
+  },
+  {
+    title: 'PlotX',
+    image: plotx,
+    type: 'frontend',
+    data: {
+      title: 'PlotX',
+      tagline: 'Performant, responsive portal for crypto prediction markets.',
+      duration: 'Mar 2022 - Apr 2023',
+      tech: ['AngularJS', 'SCSS'],
+      link: 'https://plotx.io/',
+      images: [plotx],
+      footerText: 'Shipped landing and app pages using AngularJS and a structured SCSS architecture, improving performance, cross-browser compatibility, and SEO. Implemented real-time market views with accessible data display patterns and consistent component styles.'
+    }
+  },
+  {
+    title: 'Hunch',
+    image: hunch,
+    type: 'frontend',
+    data: {
+      title: 'Hunch',
+      tagline: 'Cross-platform dating app with accessible UI components and smooth reading interactions.',
+      duration: 'Mar 2022 - Apr 2023',
+      tech: ['Flutter', 'Figma'],
+      link: 'https://hunch.in/',
+      images: [hunch],
+      footerText: 'Built and shipped front-end features in Flutter including accessible reading cards, community interaction flows, and notification patterns -- optimized for usability and consistency across Android and iOS.'
+    }
+  },
   {
     title: 'Financial news browser extension',
     image: eag,
@@ -309,11 +452,11 @@ export const frontendProjects = [
     data: {
       title: 'Financial news browser extension',
       tagline: 'Real-time financial news overlay with AI sentiment and in-panel chatbot.',
-      duration: 'May 2025 – Aug 2025',
+      duration: 'May 2025 - Aug 2025',
       tech: ['React', 'Chrome Extension APIs', 'TypeScript', 'OpenAI API', 'Financial News APIs'],
       images: [eag],
       footerText:
-        'Overlaid curated news on the firm’s stock dashboard with sentiment tags, date filters, and impact sorting (-50% research time). Added an in-panel ChatGPT assistant for TL;DRs, risk highlights, and cited sources to cut context switching.',
+        'Overlaid curated news on the firm\'s stock dashboard with sentiment tags, date filters, and impact sorting (-50% research time). Added an in-panel ChatGPT assistant for TL;DRs, risk highlights, and cited sources to cut context switching.',
       discovery: {
         content:
           'Analysts lost hours daily juggling tabs and filtering irrelevant articles; research time audits showed the process consumed a large share of the workday.',
@@ -359,57 +502,6 @@ export const frontendProjects = [
     }
   },
   {
-    title: 'Folklore WP Plugin',
-    image: folklore,
-    type: 'frontend',
-    data: {
-      title: 'Folklore WP Plugin',
-      tagline: 'People directory with fast search and accessible views.',
-      duration: '5 months',
-      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
-      link: 'https://rakshanda.my.canva.site/folklore',
-      images: [folklore2],
-      footerText: 'Custom directory plugin with toggleable views, isolated SCSS, and optimized queries; designed to support future Sheets integration.',
-      discovery: {
-        content: 'Legacy directory had slow loads, weak mobile UX, and brittle CSS; audits showed heavy query and style conflicts.',
-        findings: [
-          'Inefficient DB queries caused 8s+ loads',
-          'Mobile layouts broke under common viewports',
-          'No CSS methodology—style leakage everywhere',
-          'Departments couldn\'t manage entries easily'
-        ]
-      },
-      ideation: {
-        content: 'A WordPress plugin leveraged existing CMS while enabling modern frontend patterns.',
-        approach: [
-          'Namespaced PHP plugin architecture',
-          'BEM-based SCSS for isolation',
-          'Vanilla JS for lightweight interactivity',
-          'Lazy loading and code splitting'
-        ]
-      },
-      design: {
-        content: 'Responsive, accessible components with dual view toggle and smooth transitions.',
-        decisions: [
-          'CSS Grid layouts',
-          'Event delegation for efficient handlers',
-          'Intersection Observer for lazy loads',
-          'CSS transforms for view switching'
-        ]
-      },
-      reflection: {
-        learnings: 'Constraints nudged better fundamentals—vanilla JS and strict CSS isolation paid off.',
-        takeaways: [
-          'Use frameworks only when they add real value',
-          'Isolated styling prevents regressions',
-          'Progressive enhancement widens access',
-          'Frontend architecture drives perf too'
-        ],
-        future: 'Service workers for caching, virtual scrolling, and granular loading states for large datasets.'
-      }
-    }
-  },
-   {
     title: 'Career Cupid',
     image: cc,
     type: 'product',
@@ -465,155 +557,61 @@ export const frontendProjects = [
       }
     }
   },
-    {
-    title: 'South Project',
-    image: sp,
-    type: 'frontend',
+  {
+    title: 'Product Chatbot',
+    image: batchquery,
+    type: 'frontend + ai',
     data: {
-      title: 'South Project',
-      tagline: 'AI-powered donation platform with personalized donor journeys.',
-      duration: '2024',
-      tech: ['Figma', 'Design Systems', 'LLM APIs'],
-      link: 'https://southprojecttx.com',
-      images: [sp],
+      title: 'Product Chatbot',
+      tagline: 'Multi-image visual analysis chatbot for rapid defect checks and issue detection.',
+      duration: 'Oct 2024 - Dec 2024',
+      tech: ['React', 'Node.js', 'OpenAI API', 'Image Processing APIs'],
+      link: 'https://batch-query-ena2.vercel.app/',
+      images: [batchquery],
       footerText:
-        'Led the design of an AI-powered donation platform, defining user flows, interfaces, and interaction patterns to create a clear, accessible donor experience. Partnered with engineers to integrate LLM-driven personalization, improving donor engagement and supporting the enrollment of 100 mothers for the Young Moms Work & Wellness Bridge program.',
+        'Built a unified pipeline that applies one question across up to four images and returns clear, per-image diagnostics. Cut review time by batching visual queries and generating consistent, actionable answers.',
       discovery: {
         content:
-          'Donors were dropping off after selecting an amount because the path to completion felt unclear and generic. The program also needed to show tangible impact for new supporters joining via referrals.',
+          'Teams reviewing product photos often needed to spot defects or inconsistencies across multiple images. Doing this manually was slow and required repeating the same question for each file.',
         findings: [
-          'Confusing multi-step flow led to abandoned donations',
-          'Mobile donors needed a shorter, clearer path with fewer fields',
-          'Impact storytelling was buried, reducing confidence to give',
-          'Personalized prompts increased response rates in early tests'
+          '4-6 separate checks needed per product set',
+          'Inconsistent judgments when done manually',
+          'High context switching while opening each image',
+          'No fast way to compare issues side-by-side'
         ]
       },
       ideation: {
         content:
-          'Focused on a guided, transparent flow that could adapt messaging per donor while staying accessible.',
+          'A single-chat workflow could reduce repetition by letting users ask once and receive aligned evaluations for every image.',
         approach: [
-          'Journey maps for first-time vs returning donors with clear entry and exit points',
-          'Impact-forward screens that surface who benefits before payment',
-          'LLM-personalized copy blocks to align appeals with donor intent',
-          'Accessibility sweeps for color contrast, focus states, and readable forms'
+          'React UI supporting multiple image uploads',
+          'Unified request pipeline that maps one question to each image',
+          'Structured, LLM-generated responses for consistency',
+          'Batch evaluation to cut repeated prompts and time'
         ]
       },
       design: {
         content:
-          'Built a responsive, calming interface that keeps donors oriented, reassured, and motivated to finish.',
+          'The goal was clarity and speed--quick upload, one question box, and clean per-image answers.',
         decisions: [
-          'Progress indicators and inline guidance to reduce uncertainty',
-          'Impact highlights and testimonials adjacent to the payment step',
-          'LLM-driven thank-you notes and follow-up suggestions seeded in the flow',
-          'Mobile-first layout with tap-friendly controls and clear error states'
+          'Simple dark UI to keep focus on photo details',
+          'Side-by-side results for easy comparison',
+          'Clear error states for unsupported or unclear images',
+          'Loading states designed for batch processing'
         ]
       },
       reflection: {
         learnings:
-          'Pairing UX clarity with personalized messaging boosted engagement and helped enroll 100 mothers into the Young Moms Work & Wellness Bridge program.',
+          'Working with multi-image prompts reinforced how helpful batch workflows are when users repeat the same task across assets.',
         takeaways: [
-          'Transparent impact storytelling reduces friction as much as UI polish',
-          'Personalization should feel additive, not distracting from the core task',
-          'Accessibility checks early prevent rework near launch',
-          'Collaborating closely with engineering keeps AI features grounded'
+          'Consistent output schemas simplify visual QA',
+          'Batching saves significant time for repetitive tasks',
+          'LLMs need guardrails to avoid hallucinating details',
+          'Clear UX reduces confusion when reviewing multiple images'
         ],
         future:
-          'A/B test different AI-generated prompts, expand language support, and build a lightweight donor dashboard for recurring gifts.'
+          'Add automatic defect suggestions, bounding-box highlights, and exportable reports for QA teams.'
       }
     }
   },
-  {
-    title: 'Claim Runner AI',
-    image: claimrunner,
-    type: 'frontend',
-    data: {
-      title: 'Claim Runner AI',
-      tagline: 'AI-assisted claims intake and triage.',
-      duration: '2024',
-      tech: ['React', 'LLM APIs', 'Cloud Services'],
-      link: 'https://www.claimrunner.ai',
-      images: [claimrunner],
-      footerText: 'Automated claim parsing and routing to streamline review cycles and reduce manual handling.'
-    }
-  },
-  {
-    title: 'Hunch',
-    image: hunch,
-    type: 'frontend',
-    data: {
-      title: 'Hunch',
-      tagline: ' Dating platform.',
-      duration: 'Mar 2022 – Apr 2023',
-      tech: ['Flutter', 'Figma'],
-      link: 'https://hunch.in/',
-      images: [hunch],
-      footerText: 'Built front-end features for engaging reading and community interactions across devices.'
-    }
-  },
-  {
-    title: 'PlotX',
-    image: plotx,
-    type: 'frontend',
-    data: {
-      title: 'PlotX',
-      tagline: 'Responsive portal for crypto prediction markets.',
-      duration: 'Mar 2022 – Apr 2023',
-      tech: ['AngularJS', 'SCSS'],
-      link: 'https://plotx.io/',
-      images: [plotx],
-      footerText: 'Shipped landing and app pages with real-time market views, improving performance and SEO.'
-    }
-  },
-  {
-    title: 'AIMS Website (UW iSchool)',
-    image: aims,
-    type: 'frontend',
-    data: {
-      title: 'AIMS Website (UW iSchool)',
-      tagline: 'Student-run site for events, sponsors, and resources.',
-      duration: 'Jan 2025 – Present',
-      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks'],
-      link: 'https://aims.ischool.uw.edu/',
-      images: [aims],
-      footerText: 'Designed and developed a maintainable WordPress site with dynamic events, sponsor highlights, and resource pages.',
-      discovery: {
-        content: 'AIMS needed a site officers could update without developer help while staying on UW hosting.',
-        findings: [
-          'Non-technical editors needed frictionless updates',
-          'Sponsor visibility mattered for funding',
-          'Mobile traffic was the majority',
-          'Zero budget required using UW infrastructure'
-        ]
-      },
-      ideation: {
-        content: 'Structured the CMS to make content self-serve and brand-consistent.',
-        approach: [
-          'Custom theme with underscores base',
-          'ACF for event management',
-          'SCSS variables for brand control',
-          'Vanilla JS for light interactivity'
-        ]
-      },
-      design: {
-        content: 'Bold, scannable layouts with clear event CTAs and a sponsor grid.',
-        decisions: [
-          'Rotating event hero',
-          'Card-based event layouts',
-          'Sponsor grid with hover states',
-          'Mobile-first interactions'
-        ]
-      },
-      reflection: {
-        learnings: 'Design for handoff—clear structure lets future officers maintain quality.',
-        takeaways: [
-          'Self-serve CMS > dev bottlenecks',
-          'Performance budgets guide decisions',
-          'Documentation reduces thrash',
-          'Brand tokens keep things consistent'
-        ],
-        future: 'Member profiles, RSVP, UW calendar sync, and analytics for content insights.'
-      }
-    }
-  },
- 
 ];

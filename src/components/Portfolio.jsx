@@ -1,11 +1,34 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import Navbar from './Navbar';
 import '../App.css';
 import './Portfolio.css';
 import './About.css';
 import { frontendProjects, productProjects } from './projects/allProjects';
 import profileImage from '../assets/image.png';
+
+const EASE = [0.22, 1, 0.36, 1];
+
+function AnimatedWords({ text, delay, className, style }) {
+  const reduced = useReducedMotion();
+  const words = text.split(' ');
+  return (
+    <div className={`hero-line${className ? ' ' + className : ''}`}>
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          initial={reduced ? { opacity: 0 } : { opacity: 0, y: '70%' }}
+          animate={reduced ? { opacity: 1 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: EASE, delay: delay + i * 0.07 }}
+          style={{ display: 'inline-block', marginRight: '0.28em', ...style }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </div>
+  );
+}
 
 const Portfolio = ({ isProduct = false }) => {
   const navigate = useNavigate();
@@ -17,9 +40,9 @@ const Portfolio = ({ isProduct = false }) => {
     if (!isProduct) return frontendProjects;
 
     const combined = [
-      ...frontendProjects.slice(0, 3),  // Delivery, Emerald, Folklore
+      ...frontendProjects.slice(0, 3),  // Folklore, AIMS, South Project
       ...productProjects,               // Career Cupid, RevereXR, HuggingFace
-      ...frontendProjects.slice(3)      // ClaimRunner, Hunch, PlotX, AIMS
+      ...frontendProjects.slice(3)      // PlotX, Hunch, Financial news, Claim Runner, Career Cupid, Product Chatbot
     ];
 
     const seen = new Set();
@@ -59,12 +82,22 @@ const Portfolio = ({ isProduct = false }) => {
       <Navbar activeSection={activeSection} />
       <div className="portfolio-layout">
         <div className="portfolio-header">
-          <h1 className="portfolio-name">
-           {/* Rakshanda is a {isProduct ? 'program manager' : 'software developer'}. */}
+        
+
+          <h1 className="hero-heading">
+            <AnimatedWords text="Front-end developer," delay={0.5} />
+            <AnimatedWords text="crafting accessible," delay={0.9} className="hero-line--accent" />
+            <AnimatedWords text="web experiences." delay={1.3} />
           </h1>
-          <p className="portfolio-bio">
-          I'm passionate about building products that connect people, simplify workflows, and make technology feel effortless
-          </p>
+
+          <motion.p
+            className="hero-lede"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE, delay: 1.8 }}
+          >
+            I build interfaces people can use, with WordPress, React, and a commitment to accessible, standards-based code.
+          </motion.p>
         </div>
         
         <div className="image-sidebar">

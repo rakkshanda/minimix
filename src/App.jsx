@@ -4,9 +4,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Portfolio from './components/Portfolio';
 import About from './components/About';
 import ProjectDetail from './components/ProjectDetail';
+import Cursor from './components/Cursor';
 
 function App() {
   return (
+    <>
+    <Cursor />
+    <div className="atmosphere" aria-hidden="true">
+      <div className="blob blob--violet" />
+      <div className="blob blob--peach" />
+      <div className="blob blob--lavender" />
+    </div>
     <Router>
       <Routes>
         <Route path="/" element={<Portfolio isProduct={false} />} />
@@ -17,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
+    </>
   );
 }
 
