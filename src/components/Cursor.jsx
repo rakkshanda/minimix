@@ -23,6 +23,7 @@ export default function Cursor() {
     if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const osDark  = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const lerpPos   = reduced ? 1 : 0.18;
     const lerpSize  = reduced ? 1 : 0.15;
     const lerpAlpha = reduced ? 1 : 0.15;
@@ -80,7 +81,8 @@ export default function Cursor() {
         ring.style.width     = `${c.size}px`;
         ring.style.height    = `${c.size}px`;
         ring.style.opacity   = c.vis.toFixed(3);
-        ring.style.backgroundColor = `rgba(17,17,17,${c.alpha.toFixed(3)})`;
+        const isDark = osDark || document.documentElement.classList.contains('page-dark');
+        ring.style.backgroundColor = `rgba(${isDark ? '255,255,255' : '17,17,17'},${c.alpha.toFixed(3)})`;
       }
 
       rafId.current = requestAnimationFrame(tick);

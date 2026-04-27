@@ -33,6 +33,15 @@
   will-change: transform, width, height;
 }
 
+@media (prefers-color-scheme: dark) {
+  .cursor-dot  { background-color: #fff; }
+  .cursor-ring { border-color: #fff; }
+}
+
+/* Dark-background pages (e.g. project detail) */
+.page-dark .cursor-dot  { background-color: #fff; }
+.page-dark .cursor-ring { border-color: #fff; }
+
 /* Never show on touch / coarse-pointer devices */
 @media (hover: none), (pointer: coarse) {
   .cursor-dot,

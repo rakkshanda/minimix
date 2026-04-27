@@ -12,8 +12,10 @@ const ProjectDetail = ({ isProduct = false }) => {
   // Set body background to black for this page
   React.useEffect(() => {
     document.body.style.backgroundColor = '#000';
+    document.documentElement.classList.add('page-dark');
     return () => {
       document.body.style.backgroundColor = '';
+      document.documentElement.classList.remove('page-dark');
     };
   }, []);
 
