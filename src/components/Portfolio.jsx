@@ -63,7 +63,7 @@ const Portfolio = ({ isProduct = false }) => {
            {/* Rakshanda is a {isProduct ? 'program manager' : 'software developer'}. */}
           </h1>
           <p className="portfolio-bio">
-          I'm passionate about building products that connect people, simplify workflows, and make technology feel effortless.
+          I'm passionate about building products that connect people, simplify workflows, and make technology feel effortless
           </p>
         </div>
         
