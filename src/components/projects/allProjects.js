@@ -250,7 +250,7 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'Folklore WP Plugin',
-      tagline: 'Accessible WordPress directory plugin -- BEM SCSS, keyboard navigation, and query optimization.',
+      tagline: 'Accessible WordPress directory plugin',
       duration: '5 months',
       tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
       link: 'https://rakshanda.my.canva.site/folklore',
@@ -269,7 +269,6 @@ export const frontendProjects = [
         content: 'A WordPress plugin leveraged the existing CMS while enabling modern, accessible frontend patterns without adding framework overhead.',
         approach: [
           'Namespaced PHP plugin architecture',
-          'BEM-based SCSS for complete style isolation',
           'Vanilla JS with ARIA attributes for accessible interactions',
           'Lazy loading and Intersection Observer for performance'
         ]
@@ -287,7 +286,6 @@ export const frontendProjects = [
         learnings: 'Constraints nudged better fundamentals--vanilla JS, strict CSS isolation, and progressive enhancement paid dividends in both accessibility and performance.',
         takeaways: [
           'Use frameworks only when they add real value',
-          'Isolated BEM styling prevents regressions across WordPress themes',
           'Progressive enhancement widens access and reduces dependency risk',
           'Accessibility and performance are two sides of the same coin'
         ],
