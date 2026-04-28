@@ -242,64 +242,29 @@ export const productProjects = [
 ];
 
 // Frontend Projects - shown at / (default)
-// Order: Folklore, AIMS, South Project, PlotX, Hunch, Financial news, Claim Runner, Career Cupid, Product Chatbot
+// Order: Claim Runner, AIMS, South Project, Folklore, Hugging Face, PlotX, Hunch, MarketPulse, Career Cupid, VisionDefect AI
 export const frontendProjects = [
   {
-    title: 'Folklore WP Plugin',
-    image: folklore,
+    title: 'Claim Runner AI',
+    image: claimrunner,
     type: 'frontend',
     data: {
-      title: 'Folklore WP Plugin',
-      tagline: 'Accessible WordPress directory plugin',
-      duration: '5 months',
-      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
-      link: 'https://rakshanda.my.canva.site/folklore',
-      images: [folklore2],
-      footerText: 'Built a custom WordPress plugin with namespaced PHP, BEM-scoped SCSS, and vanilla JS. Designed for WCAG compliance with keyboard-navigable views, proper focus management, and optimized database queries that cut load times from 8s+ to under 1s. Architected for non-technical editor handoff and future Google Sheets integration.',
-      discovery: {
-        content: 'Legacy directory had slow loads, weak mobile UX, and brittle CSS; accessibility and performance audits revealed deep query inefficiency and style conflicts.',
-        findings: [
-          'Inefficient DB queries caused 8s+ loads',
-          'Mobile layouts broke under common viewports',
-          'No CSS methodology--style leakage and specificity conflicts everywhere',
-          'Keyboard navigation and focus states were missing throughout'
-        ]
-      },
-      ideation: {
-        content: 'A WordPress plugin leveraged the existing CMS while enabling modern, accessible frontend patterns without adding framework overhead.',
-        approach: [
-          'Namespaced PHP plugin architecture',
-          'Vanilla JS with ARIA attributes for accessible interactions',
-          'Lazy loading and Intersection Observer for performance'
-        ]
-      },
-      design: {
-        content: 'Responsive, WCAG-compliant components with a dual view toggle, visible focus states, and smooth transitions.',
-        decisions: [
-          'CSS Grid layouts for flexible, accessible structure',
-          'Keyboard-navigable view switching with proper focus management',
-          'WCAG AA color contrast across all states',
-          'CSS transforms for view switching without layout shift'
-        ]
-      },
-      reflection: {
-        learnings: 'Constraints nudged better fundamentals--vanilla JS, strict CSS isolation, and progressive enhancement paid dividends in both accessibility and performance.',
-        takeaways: [
-          'Use frameworks only when they add real value',
-          'Progressive enhancement widens access and reduces dependency risk',
-          'Accessibility and performance are two sides of the same coin'
-        ],
-        future: 'Service workers for caching, virtual scrolling for large datasets, and granular loading states to improve perceived performance.'
-      }
+      title: 'Claim Runner AI',
+      tagline: 'AI assistant that guides users through small claims filing with step-by-step document and form support.',
+      duration: '2024',
+      tech: ['React', 'LLM APIs', 'Cloud Services'],
+      link: 'https://www.claimrunner.ai',
+      images: [claimrunner],
+      footerText: 'Built the React front end for an AI-powered claims intake tool -- designed accessible form flows and structured routing UI to streamline review cycles and reduce manual handling.'
     }
   },
   {
-    title: 'AIMS Website (UW iSchool)',
+    title: 'AIMS UW',
     image: aims,
     type: 'frontend',
     data: {
-      title: 'AIMS Website (UW iSchool)',
-      tagline: 'Accessible WordPress site on UW infrastructure for the iSchool student association.',
+      title: 'AIMS UW',
+      tagline: 'RSO website for UW iSchool featuring event workflows, program discovery, and streamlined student engagement.',
       duration: 'Jan 2025 - Present',
       tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress', 'ACF'],
       link: 'https://aims.ischool.uw.edu/',
@@ -350,7 +315,7 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'South Project',
-      tagline: 'Accessible, responsive donation platform supporting 100+ mothers in a workforce program.',
+      tagline: 'Community-driven platform helping young mothers stay connected, find events, and access essential support programs.',
       duration: '2024',
       tech: ['Figma', 'Design Systems', 'HTML/CSS', 'LLM APIs'],
       link: 'https://southprojecttx.com',
@@ -402,17 +367,108 @@ export const frontendProjects = [
     }
   },
   {
-    title: 'Claim Runner AI',
-    image: claimrunner,
+    title: 'Folklore Directory Plugin',
+    image: folklore,
     type: 'frontend',
     data: {
-      title: 'Claim Runner AI',
-      tagline: 'AI-assisted claims intake with accessible React front end.',
-      duration: '2024',
-      tech: ['React', 'LLM APIs', 'Cloud Services'],
-      link: 'https://www.claimrunner.ai',
-      images: [claimrunner],
-      footerText: 'Built the React front end for an AI-powered claims intake tool -- designed accessible form flows and structured routing UI to streamline review cycles and reduce manual handling.'
+      title: 'Folklore Directory Plugin',
+      tagline: 'WordPress directory plugin for structured discovery with flexible grid and list-based browsing.',
+      duration: '5 months',
+      tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
+      link: 'https://www.washington.edu/docs/plugins/uw-directory-plugin/directory-example/',
+      images: [folklore2],
+      footerText: 'Built a custom WordPress plugin with namespaced PHP, BEM-scoped SCSS, and vanilla JS. Designed for WCAG compliance with keyboard-navigable views, proper focus management, and optimized database queries that cut load times from 8s+ to under 1s. Architected for non-technical editor handoff and future Google Sheets integration.',
+      discovery: {
+        content: 'Legacy directory had slow loads, weak mobile UX, and brittle CSS; accessibility and performance audits revealed deep query inefficiency and style conflicts.',
+        findings: [
+          'Inefficient DB queries caused 8s+ loads',
+          'Mobile layouts broke under common viewports',
+          'No CSS methodology--style leakage and specificity conflicts everywhere',
+          'Keyboard navigation and focus states were missing throughout'
+        ]
+      },
+      ideation: {
+        content: 'A WordPress plugin leveraged the existing CMS while enabling modern, accessible frontend patterns without adding framework overhead.',
+        approach: [
+          'Namespaced PHP plugin architecture',
+          'Vanilla JS with ARIA attributes for accessible interactions',
+          'Lazy loading and Intersection Observer for performance'
+        ]
+      },
+      design: {
+        content: 'Responsive, WCAG-compliant components with a dual view toggle, visible focus states, and smooth transitions.',
+        decisions: [
+          'CSS Grid layouts for flexible, accessible structure',
+          'Keyboard-navigable view switching with proper focus management',
+          'WCAG AA color contrast across all states',
+          'CSS transforms for view switching without layout shift'
+        ]
+      },
+      reflection: {
+        learnings: 'Constraints nudged better fundamentals--vanilla JS, strict CSS isolation, and progressive enhancement paid dividends in both accessibility and performance.',
+        takeaways: [
+          'Use frameworks only when they add real value',
+          'Progressive enhancement widens access and reduces dependency risk',
+          'Accessibility and performance are two sides of the same coin'
+        ],
+        future: 'Service workers for caching, virtual scrolling for large datasets, and granular loading states to improve perceived performance.'
+      }
+    }
+  },
+  {
+    title: 'Hugging Face landing page redesign',
+    image: hf,
+    type: 'frontend',
+    data: {
+      title: 'HuggingFace landing page redesign',
+      tagline: 'Data-driven landing page overhaul that boosts retention and paid conversions.',
+      duration: '1 week',
+      tech: 'Figma',
+      link: 'https://rakshanda.my.canva.site/hugging-face-redesign',
+      images: [hf],
+      type: 'Product Design Sprint',
+      agency: 'Design Sprint Challenge (Finalist)',
+      objective: 'Boost retention and paid conversions through improved information architecture',
+      process: 'Reorganised information architecture, designed dual CTAs and a guided onboarding flow',
+      audience: 'AI/ML developers and researchers',
+      footerText: 'Three-day design sprint finalist: reorganised information architecture, dual CTAs and a guided onboarding flow projected to cut bounce rate by 22%.',
+      discovery: {
+        content: 'Analysis of HuggingFace\'s analytics revealed a 34% bounce rate on the landing page. Heatmaps showed users got lost in dense technical jargon. User interviews revealed two distinct personas: experienced ML engineers wanting quick access, and newcomers needing guided onboarding. The existing single-path design failed both.',
+        findings: [
+          'Two distinct user groups with completely different needs and expectations',
+          'Overwhelming amount of technical content causing decision paralysis',
+          'Unclear value proposition for non-technical stakeholders and decision-makers',
+          'No clear path from "interested" to "using the platform" for new users'
+        ]
+      },
+      ideation: {
+        content: 'We ran a 3-day design sprint, sketching 20+ variations of hero sections and navigation flows. The breakthrough came from creating dual CTAs addressing both personas: "Start Building" for developers and "Explore Models" for newcomers. We mapped separate journeys for each user type.',
+        approach: [
+          'Dual hero CTAs creating separate paths for different user types',
+          'Simplified information architecture with progressive disclosure',
+          'Designed guided onboarding flow for ML newcomers',
+          'Added social proof and use cases above the fold'
+        ]
+      },
+      design: {
+        content: 'The redesign balanced technical credibility with approachability. We used HuggingFace\'s playful yellow branding more boldly while organizing information into scannable sections. Interactive code snippets let developers see value immediately. Clear use case cards helped newcomers understand applications.',
+        decisions: [
+          'Bold, confident hero with dual CTAs and rotating code examples',
+          'Card-based layout showcasing popular models and use cases',
+          'Sticky navigation with context-aware menu items',
+          'Reduced cognitive load through better whitespace and visual hierarchy'
+        ]
+      },
+      reflection: {
+        learnings: 'This sprint taught me the power of data-informed design. The heatmaps and analytics validated our assumptions but also revealed surprises. Working within tight constraints forced ruthless prioritization--we focused on the highest-impact changes rather than perfection. The dual-CTA approach proved that one size doesn\'t fit all.',
+        takeaways: [
+          'Different user segments need different entry points and journeys',
+          'Analytics reveal what users do; interviews reveal why they do it',
+          'Progressive disclosure prevents overwhelming technical audiences',
+          'Social proof and use cases build trust faster than feature lists'
+        ],
+        future: 'I would A/B test the dual CTAs to measure actual conversion lift. Personalized onboarding based on user\'s stated experience level could further reduce friction. Adding interactive model demos directly on the landing page would showcase capability immediately.'
+      }
     }
   },
   {
@@ -421,7 +477,7 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'PlotX',
-      tagline: 'Performant, responsive portal for crypto prediction markets.',
+      tagline: 'Real-time crypto prediction market platform built for fast, responsive trading experiences.',
       duration: 'Mar 2022 - Apr 2023',
       tech: ['AngularJS', 'SCSS'],
       link: 'https://plotx.io/',
@@ -435,7 +491,7 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'Hunch',
-      tagline: 'Cross-platform dating app with accessible UI components and smooth reading interactions.',
+      tagline: 'Social networking app focused on lightweight interactions and fluid content discovery.',
       duration: 'Mar 2022 - Apr 2023',
       tech: ['Flutter', 'Figma'],
       link: 'https://hunch.in/',
@@ -444,12 +500,12 @@ export const frontendProjects = [
     }
   },
   {
-    title: 'Financial news browser extension',
+    title: 'MarketPulse',
     image: eag,
     type: 'frontend',
     data: {
-      title: 'Financial news browser extension',
-      tagline: 'Real-time financial news overlay with AI sentiment and in-panel chatbot.',
+      title: 'MarketPulse',
+      tagline: 'Financial news browser for stocks and ETFs with real-time updates and AI-driven market sentiment insights.',
       duration: 'May 2025 - Aug 2025',
       tech: ['React', 'Chrome Extension APIs', 'TypeScript', 'OpenAI API', 'Financial News APIs'],
       images: [eag],
@@ -505,7 +561,7 @@ export const frontendProjects = [
     type: 'product',
     data: {
       title: 'Career Cupid',
-      tagline: 'A research-driven platform connecting personalities to careers.',
+      tagline: 'Swipe-based career discovery platform mapping users to roles through interactive design exploration.',
       duration: '3 months',
       tech: 'Figma, Miro',
       link: 'https://rakshanda.my.canva.site/career-cupid',
@@ -556,12 +612,12 @@ export const frontendProjects = [
     }
   },
   {
-    title: 'Product Chatbot',
+    title: 'VisionDefect AI',
     image: batchquery,
     type: 'frontend + ai',
     data: {
-      title: 'Product Chatbot',
-      tagline: 'Multi-image visual analysis chatbot for rapid defect checks and issue detection.',
+      title: 'VisionDefect AI',
+      tagline: 'Multimodal image analysis tool that identifies product types and detects visual defects across multiple uploads.',
       duration: 'Oct 2024 - Dec 2024',
       tech: ['React', 'Node.js', 'OpenAI API', 'Image Processing APIs'],
       link: 'https://batch-query-ena2.vercel.app/',

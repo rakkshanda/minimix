@@ -25,14 +25,14 @@
 }
 
 .about-text p {
-  font-size: 18px;
+  font-size: 23px;
   line-height: 1.8;
-  color: #2b2b2b;
+  color: #000;
   margin: 0;
 }
 
 .about-intro {
-  font-size: 20px;
+  font-size: 23px;
 }
 
 .about-image {
@@ -90,12 +90,12 @@
   }
 
   .about-text p {
-    font-size: 16px;
+    font-size: 23px;
     line-height: 1.7;
   }
 
   .about-intro {
-    font-size: 18px;
+    font-size: 23px;
   }
 
   .about-image img {
@@ -125,12 +125,12 @@
   }
 
   .about-text p {
-    font-size: 15px;
+    font-size: 23px;
     line-height: 1.6;
   }
 
   .about-intro {
-    font-size: 16px;
+    font-size: 23px;
   }
 
   .about-image img {
@@ -146,4 +146,3 @@
     font-size: 13px;
   }
 }
-

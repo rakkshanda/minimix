@@ -1,5 +1,11 @@
 /* App.css or index.css */
 
+:root {
+  --type-display: 'Instrument Serif', Georgia, serif;
+  --type-body:    'General Sans', 'Inter', sans-serif;
+  --type-mono:    'JetBrains Mono', 'Courier New', monospace;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -16,7 +22,7 @@ html, body {
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--type-body);
   background: #FBF8F5;
   color: #000;
 }
@@ -28,6 +34,11 @@ body {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+}
+
+.page-dark .atmosphere {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .blob {

@@ -74,10 +74,10 @@ export default function Cursor() {
         const targetVis = c.isProject ? 0 : 1;
         c.vis += (targetVis - c.vis) * lerpVis;
 
-        dot.style.transform  = `translate(${c.mx - DOT / 2}px,${c.my - DOT / 2}px)`;
+        dot.style.transform  = `translate3d(${c.mx - DOT / 2}px,${c.my - DOT / 2}px,0)`;
         dot.style.opacity    = c.vis.toFixed(3);
 
-        ring.style.transform = `translate(${c.rx - c.size / 2}px,${c.ry - c.size / 2}px)`;
+        ring.style.transform = `translate3d(${c.rx - c.size / 2}px,${c.ry - c.size / 2}px,0)`;
         ring.style.width     = `${c.size}px`;
         ring.style.height    = `${c.size}px`;
         ring.style.opacity   = c.vis.toFixed(3);

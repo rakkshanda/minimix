@@ -87,7 +87,7 @@ const Portfolio = ({ isProduct = false }) => {
           <h1 className="hero-heading">
             <AnimatedWords text="Front-end developer," delay={0.5} />
             <AnimatedWords text="crafting accessible," delay={0.9} className="hero-line--accent" />
-            <AnimatedWords text="web experiences." delay={1.3} />
+            <AnimatedWords text="thoughtful experiences." delay={1.3} />
           </h1>
 
           <motion.p

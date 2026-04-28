@@ -215,7 +215,9 @@ const ProjectDetail = ({ isProduct = false }) => {
                 {project.data.images && project.data.images.length > 0 && (
                   <div className="project-images">
                     {project.data.images.map((img, index) => (
-                      <img key={index} src={img} alt={`${project.data.title} screenshot ${index + 1}`} />
+                      <div key={index} className="project-image-frame">
+                        <img src={img} alt={`${project.data.title} screenshot ${index + 1}`} />
+                      </div>
                     ))}
                   </div>
                 )}
