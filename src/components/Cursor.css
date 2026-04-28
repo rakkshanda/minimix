@@ -17,7 +17,6 @@
   pointer-events: none;
   z-index: 99999;
   will-change: transform;
-  /* Force GPU layer + subpixel antialiasing */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
@@ -30,7 +29,6 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  /* box-shadow renders with GPU AA — much smoother than border */
   box-shadow: 0 0 0 1.5px #111;
   background-color: transparent;
   pointer-events: none;
@@ -41,14 +39,6 @@
   transform: translateZ(0);
 }
 
-@media (prefers-color-scheme: dark) {
-  .cursor-dot  { background-color: #fff; }
-  .cursor-ring { box-shadow: 0 0 0 1.5px #fff; }
-}
-
-/* Dark-background pages (e.g. project detail) */
-.page-dark .cursor-dot  { background-color: #fff; }
-.page-dark .cursor-ring { box-shadow: 0 0 0 1.5px #fff; }
 
 /* Never show on touch / coarse-pointer devices */
 @media (hover: none), (pointer: coarse) {
