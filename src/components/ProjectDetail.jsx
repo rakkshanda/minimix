@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProjectDetail.css';
 import { frontendProjects, productProjects } from './projects/allProjects';
+import { navigateWithTransition } from '../utils/viewTransition';
 
 const ProjectDetail = ({ isProduct = false }) => {
   const { projectId } = useParams();
@@ -97,7 +98,7 @@ const ProjectDetail = ({ isProduct = false }) => {
           <p style={{ color: '#999' }}>Project not found</p>
           <button 
             className="back-button" 
-            onClick={() => navigate(-1)}
+            onClick={() => navigateWithTransition(navigate, -1)}
             style={{ marginTop: '20px', display: 'inline-block' }}
           >
             ← Go Back
@@ -110,7 +111,7 @@ const ProjectDetail = ({ isProduct = false }) => {
   return (
     <>
       <div className="project-detail-container">
-        <button className="back-button-outside" onClick={() => navigate(-1)}>
+        <button className="back-button-outside" onClick={() => navigateWithTransition(navigate, -1)}>
           ← HOME
         </button>
         

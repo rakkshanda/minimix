@@ -38,7 +38,10 @@ const Navbar = ({ activeSection }) => {
   };
 
   const handleAboutClick = (e) => {
-    const isPortfolioPage = location.pathname === '/portfolio' || location.pathname === '/' || location.pathname === '/product';
+    const isPortfolioPage =
+      location.pathname === '/' ||
+      location.pathname.startsWith('/portfolio') ||
+      location.pathname.startsWith('/product');
     
     if (isPortfolioPage) {
       e.preventDefault();
@@ -58,7 +61,10 @@ const Navbar = ({ activeSection }) => {
   };
 
   const handlePortfolioClick = (e) => {
-    const isPortfolioPage = location.pathname === '/portfolio' || location.pathname === '/' || location.pathname === '/product';
+    const isPortfolioPage =
+      location.pathname === '/' ||
+      location.pathname.startsWith('/portfolio') ||
+      location.pathname.startsWith('/product');
     
     if (isPortfolioPage) {
       e.preventDefault();
@@ -83,7 +89,7 @@ const Navbar = ({ activeSection }) => {
               <div className="portfolio-parent" >
               <Link 
                 to="/portfolio" 
-                className={`portfolio-link ${(location.pathname === '/portfolio' || location.pathname === '/' || location.pathname === '/product') && activeSection === 'portfolio' ? 'active' : ''}`}
+                className={`portfolio-link ${(location.pathname === '/' || location.pathname.startsWith('/portfolio') || location.pathname.startsWith('/product')) && activeSection === 'portfolio' ? 'active' : ''}`}
                 onClick={handlePortfolioClick}
               >
                 Portfolio

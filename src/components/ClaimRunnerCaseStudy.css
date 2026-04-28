@@ -1,0 +1,526 @@
+.claimrunner-page {
+  background: #f7f2ea;
+  color: #111;
+}
+
+.claimrunner-page .navbar {
+  display: none;
+}
+
+.claimrunner-page .atmosphere {
+  opacity: 0.22;
+}
+
+.claimrunner-case-study {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 156px 32px 100px;
+  color: #111;
+}
+
+.claimrunner-home-button,
+.claimrunner-top-button,
+.claimrunner-tab-button {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.claimrunner-home-button,
+.claimrunner-top-button {
+  position: fixed;
+  top: 32px;
+  z-index: 1002;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.claimrunner-home-button {
+  left: 40px;
+}
+
+.claimrunner-top-button {
+  right: 40px;
+}
+
+.claimrunner-home-button:hover,
+.claimrunner-top-button:hover {
+  background: #111;
+  color: #fff;
+}
+
+.claimrunner-tabs-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  padding: 22px 180px 0;
+  pointer-events: none;
+}
+
+.claimrunner-tabs-shell {
+  pointer-events: auto;
+  max-width: calc(100vw - 360px);
+  padding: 8px;
+  border-radius: 12px;
+  background: #2d2d2d;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+.claimrunner-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.claimrunner-tab-button {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: transparent;
+  color: #b8b8b8;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.claimrunner-tab-button:hover {
+  background: #3d3d3d;
+  color: #fff;
+}
+
+.claimrunner-tab-button.active {
+  background: #777777;
+  color: #fff;
+}
+
+.claimrunner-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.claimrunner-hero-copy,
+.claimrunner-hero-visual,
+.claimrunner-proof-card,
+.claimrunner-signal-card,
+.claimrunner-timeline-item,
+.claimrunner-module-card,
+.claimrunner-jtbd,
+.claimrunner-next-panel,
+.claimrunner-quote-panel,
+.claimrunner-prototype-frame {
+  position: relative;
+  z-index: 1;
+  border-radius: 28px;
+}
+
+.claimrunner-eyebrow,
+.claimrunner-kicker {
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #2f63d3;
+}
+
+.claimrunner-hero h1,
+.claimrunner-story-section h2 {
+  margin: 0;
+  font-family: var(--type-display);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.claimrunner-hero h1 {
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  max-width: 10ch;
+}
+
+.claimrunner-lede,
+.claimrunner-section-intro p,
+.claimrunner-signal-card p,
+.claimrunner-quote-panel p,
+.claimrunner-jtbd p,
+.claimrunner-timeline-item p,
+.claimrunner-next-panel p,
+.claimrunner-module-card p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #2b2b2b;
+}
+
+.claimrunner-lede {
+  max-width: 42rem;
+  margin: 28px 0 0;
+}
+
+.claimrunner-hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.claimrunner-primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.claimrunner-primary-link:hover {
+  background: #2f63d3;
+  transform: translateY(-2px);
+}
+
+.claimrunner-team {
+  max-width: 40rem;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.claimrunner-hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.claimrunner-screen {
+  overflow: hidden;
+  padding: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #efe8de 100%);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 36px 90px rgba(65, 49, 22, 0.12);
+}
+
+.claimrunner-screen img,
+.claimrunner-prototype-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+}
+
+.claimrunner-thesis-card {
+  padding: 22px 24px;
+  background: #111;
+  color: #f6f1e9;
+}
+
+.claimrunner-thesis-card span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #89a9ff;
+}
+
+.claimrunner-thesis-card p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.claimrunner-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 72px;
+}
+
+.claimrunner-proof-card {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.claimrunner-proof-card strong {
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--type-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.claimrunner-proof-card span {
+  display: block;
+  max-width: 22ch;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4b4b4b;
+}
+
+.claimrunner-story-section {
+  margin-bottom: 88px;
+}
+
+.claimrunner-story-section--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+  gap: 24px;
+  align-items: start;
+}
+
+.claimrunner-story-section--panel,
+.claimrunner-story-section--prototype {
+  padding: 36px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.claimrunner-story-section h2 {
+  font-size: clamp(2.7rem, 5vw, 4.6rem);
+  max-width: 14ch;
+  margin-bottom: 18px;
+}
+
+.claimrunner-section-intro p {
+  max-width: 48rem;
+  margin: 0;
+}
+
+.claimrunner-quote-panel {
+  padding: 26px 28px;
+  background: linear-gradient(160deg, #2f63d3 0%, #6f90ff 100%);
+  color: #fff;
+}
+
+.claimrunner-quote-panel p {
+  margin: 0;
+  font-family: var(--type-display);
+  font-size: 32px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.claimrunner-signal-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 88px;
+}
+
+.claimrunner-signal-card {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.claimrunner-signal-card ul,
+.claimrunner-next-panel ul {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.claimrunner-signal-card li,
+.claimrunner-next-panel li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 14px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #242424;
+}
+
+.claimrunner-signal-card li::before,
+.claimrunner-next-panel li::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #2f63d3;
+}
+
+.claimrunner-signal-card--dark {
+  background: #111;
+}
+
+.claimrunner-signal-card--dark h3,
+.claimrunner-signal-card--dark p {
+  color: #f4ede3;
+}
+
+.claimrunner-signal-card--dark .claimrunner-kicker {
+  color: #89a9ff;
+}
+
+.claimrunner-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.claimrunner-timeline-item,
+.claimrunner-module-card,
+.claimrunner-jtbd,
+.claimrunner-next-panel,
+.claimrunner-prototype-frame {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.claimrunner-timeline-item span,
+.claimrunner-jtbd h3,
+.claimrunner-next-panel h3 {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.claimrunner-timeline-item p,
+.claimrunner-jtbd p,
+.claimrunner-next-panel p {
+  margin: 0;
+}
+
+.claimrunner-jtbd p {
+  font-family: var(--type-display);
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+.claimrunner-module-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.claimrunner-module-card span {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #2f63d3;
+}
+
+.claimrunner-module-card p {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.claimrunner-prototype-frame {
+  margin-top: 28px;
+  padding: 16px;
+  box-shadow: 0 32px 80px rgba(65, 49, 22, 0.1);
+}
+
+.claimrunner-next-note {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+@media (max-width: 1100px) {
+  .claimrunner-hero,
+  .claimrunner-story-section--split,
+  .claimrunner-signal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .claimrunner-proof-grid,
+  .claimrunner-module-grid,
+  .claimrunner-timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .claimrunner-case-study {
+    padding: 170px 20px 72px;
+  }
+
+  .claimrunner-tabs-header {
+    padding: 18px 20px 0;
+    justify-content: stretch;
+  }
+
+  .claimrunner-tabs-shell {
+    max-width: 100%;
+  }
+
+  .claimrunner-home-button,
+  .claimrunner-top-button {
+    top: 112px;
+    padding: 7px 11px;
+    font-size: 12px;
+  }
+
+  .claimrunner-home-button {
+    left: 20px;
+  }
+
+  .claimrunner-top-button {
+    right: 20px;
+  }
+
+  .claimrunner-story-section--panel,
+  .claimrunner-story-section--prototype {
+    padding: 24px;
+  }
+
+  .claimrunner-proof-grid,
+  .claimrunner-module-grid,
+  .claimrunner-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .claimrunner-quote-panel p,
+  .claimrunner-jtbd p {
+    font-size: 24px;
+  }
+
+  .claimrunner-lede,
+  .claimrunner-section-intro p,
+  .claimrunner-signal-card p,
+  .claimrunner-quote-panel p,
+  .claimrunner-jtbd p,
+  .claimrunner-timeline-item p,
+  .claimrunner-next-panel p,
+  .claimrunner-module-card p {
+    line-height: 1.55;
+  }
+}

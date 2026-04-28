@@ -27,6 +27,25 @@ body {
   color: #000;
 }
 
+@supports (view-transition-name: none) {
+  .nav-links,
+  .project-detail-header-content,
+  .claimrunner-tabs-shell {
+    view-transition-name: portfolio-nav-shell;
+  }
+
+  ::view-transition-group(portfolio-nav-shell) {
+    animation-duration: 420ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  ::view-transition-old(portfolio-nav-shell),
+  ::view-transition-new(portfolio-nav-shell) {
+    animation-duration: 420ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
 /* ── Atmosphere blobs ── */
 .atmosphere {
   position: fixed;

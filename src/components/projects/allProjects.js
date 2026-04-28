@@ -11,6 +11,7 @@ import eag from '../../assets/eag.gif';
 import claimrunner from '../../assets/claimrunner.png';
 import batchquery from '../../assets/batchquery.png';
 import sp from '../../assets/sp.png';
+import spGif from '../../assets/gifs/sp.gif';
 import cc from '../../assets/cc.gif';
 
 // Product Projects (1, 2, 3, 4) - shown at /product
@@ -312,6 +313,7 @@ export const frontendProjects = [
   {
     title: 'South Project',
     image: sp,
+    hoverImage: spGif,
     type: 'frontend',
     data: {
       title: 'South Project',

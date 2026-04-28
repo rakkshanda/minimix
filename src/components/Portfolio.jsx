@@ -7,6 +7,7 @@ import './Portfolio.css';
 import './About.css';
 import { frontendProjects, productProjects } from './projects/allProjects';
 import profileImage from '../assets/image.png';
+import { navigateWithTransition } from '../utils/viewTransition';
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -33,8 +34,14 @@ function AnimatedWords({ text, delay, className, style }) {
 const Portfolio = ({ isProduct = false }) => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('portfolio');
+  const [hoveredIdx, setHoveredIdx] = useState(null);
 
   const slugify = (title) => title.toLowerCase().replace(/\s+/g, '-');
+  const getProjectPath = (project) => {
+    if (project.title === 'Claim Runner AI') return '/claimrunner';
+    if (project.title === 'AIMS UW') return '/aims';
+    return `/project/${slugify(project.title)}`;
+  };
 
   const buildProjectList = () => {
     if (!isProduct) return frontendProjects;
@@ -102,14 +109,12 @@ const Portfolio = ({ isProduct = false }) => {
         
         <div className="image-sidebar">
           {projectList.map((proj, idx) => {
-            const projectSlug = slugify(proj.title);
-            const basePath = isProduct ? '/product' : '/portfolio';
-            
+            const projectPath = getProjectPath(proj);
             return (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="project-item"
-                onClick={() => navigate(`${basePath}/${projectSlug}`)}
+                onClick={() => navigateWithTransition(navigate, projectPath)}
               >
                 <div className="project-header">
                   <div className="project-info">
@@ -118,8 +123,12 @@ const Portfolio = ({ isProduct = false }) => {
                   </div>
                   <p className="project-tagline">{proj.data.tagline}</p>
                 </div>
-                
-                <div className="project-thumb">
+
+                <div
+                  className="project-thumb"
+                  onMouseEnter={() => setHoveredIdx(idx)}
+                  onMouseLeave={() => setHoveredIdx(null)}
+                >
                   {proj.data.link && (
                     <a
                       href={proj.data.link}
@@ -131,7 +140,10 @@ const Portfolio = ({ isProduct = false }) => {
                       View Live
                     </a>
                   )}
-                  <img src={proj.image} alt={proj.title} />
+                  <img
+                    src={hoveredIdx === idx && proj.hoverImage ? proj.hoverImage : proj.image}
+                    alt={proj.title}
+                  />
                 </div>
               </div>
             );
