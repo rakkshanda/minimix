@@ -243,7 +243,7 @@ export const productProjects = [
 ];
 
 // Frontend Projects - shown at / (default)
-// Order: Claim Runner, AIMS, South Project, Folklore, Hugging Face, PlotX, Hunch, MarketPulse, Career Cupid, VisionDefect AI
+// Order: Claim Runner, AIMS, South Project, Folklore, Career Cupid, MarketPulse, Hugging Face, PlotX, Hunch, VisionDefect AI
 export const frontendProjects = [
   {
     title: 'Claim Runner AI',
@@ -418,6 +418,118 @@ export const frontendProjects = [
     }
   },
   {
+    title: 'Career Cupid',
+    image: cc,
+    type: 'product',
+    data: {
+      title: 'Career Cupid',
+      tagline: 'Swipe-based career discovery platform mapping users to roles through interactive design exploration.',
+      duration: '3 months',
+      tech: 'Figma, Miro',
+      link: 'https://rakshanda.my.canva.site/career-cupid',
+      images: [cc],
+      type: 'UX Research Project',
+      agency: 'Academic Project',
+      objective: 'Help job seekers discover roles based on values and work styles',
+      process: 'Led user research through surveys and interviews, created personas, and designed interactive prototypes',
+      audience: 'College seniors exploring first jobs',
+      footerText: 'Developed as part of a UX group project, Career Cupid is a web-based tool that connects user personalities to career paths. Led user research through surveys and interviews, created personas, and designed interactive prototypes focused on clarity, engagement, and user retention.',
+      discovery: {
+        content: 'We began by interviewing 30+ college seniors about their career search anxieties. The research revealed that traditional job search tools focus heavily on skills matching but ignore personality fit and work-life balance preferences. Surveys showed 78% of respondents felt overwhelmed by generic job listings.',
+        findings: [
+          'Students wanted a more personalized, dating-app-style experience for career matching',
+          'Work culture and values alignment mattered more than salary for this demographic',
+          'Existing tools lacked transparency about day-to-day job realities',
+          'Users preferred quick, swipe-based interactions over lengthy forms'
+        ]
+      },
+      ideation: {
+        content: 'Drawing inspiration from dating apps, we brainstormed a matchmaking approach for careers. We sketched card-based interfaces and created multiple user flow variations, testing each with paper prototypes. The "swipe to match" concept resonated strongly with our target users.',
+        approach: [
+          'Created a card-based interface showing job roles with personality insights',
+          'Designed quick assessment quizzes to understand user values and preferences',
+          'Built a "match score" algorithm based on work style compatibility',
+          'Developed saved matches feature to revisit promising career paths'
+        ]
+      },
+      design: {
+        content: 'The visual design balanced playfulness with professionalism. We used warm, approachable colors and friendly micro-interactions while maintaining credibility through clean typography and structured information hierarchy. Each career card highlighted culture fit, typical work environments, and growth paths.',
+        decisions: [
+          'Vibrant gradient cards with clear career categorization by industry',
+          'Interactive personality quiz with immediate, visual feedback',
+          'Match percentage displayed prominently with detailed breakdown',
+          'Mobile-first design optimized for on-the-go exploration'
+        ]
+      },
+      reflection: {
+        learnings: 'This project taught me the power of gamification in making overwhelming processes feel approachable. By reframing career exploration as "matching" rather than "searching," we reduced user anxiety and increased engagement. The importance of research-driven personas became clear when our initial designs didn\'t resonate until we incorporated actual student feedback.',
+        takeaways: [
+          'Gamification can make serious decisions feel less daunting',
+          'Personality-first approaches resonate with Gen Z job seekers',
+          'Quick wins (matches) maintain user engagement better than lengthy processes',
+          'Transparent methodology builds trust in recommendation systems'
+        ],
+        future: 'I would add more depth to the "why" behind each match, possibly including day-in-the-life videos or testimonials from people in those roles. Integrating real job listings with our matching algorithm would bridge the gap between discovery and application.'
+      }
+    }
+  },
+  {
+    title: 'MarketPulse',
+    image: eag,
+    type: 'frontend',
+    data: {
+      title: 'MarketPulse',
+      tagline: 'Financial news browser for stocks and ETFs with real-time updates and AI-driven market sentiment insights.',
+      duration: 'May 2025 - Aug 2025',
+      tech: ['React', 'Chrome Extension APIs', 'TypeScript', 'OpenAI API', 'Financial News APIs'],
+      images: [eag],
+      footerText:
+        'Overlaid curated news on the firm\'s stock dashboard with sentiment tags, date filters, and impact sorting (-50% research time). Added an in-panel ChatGPT assistant for TL;DRs, risk highlights, and cited sources to cut context switching.',
+      discovery: {
+        content:
+          'Analysts lost hours daily juggling tabs and filtering irrelevant articles; research time audits showed the process consumed a large share of the workday.',
+        findings: [
+          '15+ tab switches per research session on average',
+          'Manual filtering caused missed critical updates',
+          'No unified sentiment or impact view per ticker',
+          'Copy-pasting across tools was error-prone'
+        ]
+      },
+      ideation: {
+        content:
+          'A sidebar extension preserved analyst flow while enriching context with AI and live feeds.',
+        approach: [
+          'React-based sidebar using Chrome Extension APIs',
+          'Aggregated real-time news from multiple providers',
+          'AI sentiment labeling (bullish/bearish/neutral)',
+          'Contextual in-panel Q&A and summaries'
+        ]
+      },
+      design: {
+        content:
+          'Dense but scannable UI with clear prioritization for speed under market pressure.',
+        decisions: [
+          'Compact sidebar that never obscures the trading UI',
+          'Color-coded sentiment badges for instant parse',
+          'Date range + impact sort to triage fast',
+          'Contextual chat with citations and TL;DRs'
+        ]
+      },
+      reflection: {
+        learnings:
+          'Building for power users demands latency discipline and information density over flourish.',
+        takeaways: [
+          'Context-aware overlays beat app switching',
+          'AI should amplify expert workflows',
+          'Real-time data needs graceful fallbacks',
+          'Small latency wins add up for pros'
+        ],
+        future:
+          'Add custom alerts per ticker/keyword and historical search; integrate internal research notes for a complete analyst workspace.'
+      }
+    }
+  },
+  {
     title: 'Hugging Face landing page redesign',
     image: hf,
     type: 'frontend',
@@ -499,118 +611,6 @@ export const frontendProjects = [
       link: 'https://hunch.in/',
       images: [hunch],
       footerText: 'Built and shipped front-end features in Flutter including accessible reading cards, community interaction flows, and notification patterns -- optimized for usability and consistency across Android and iOS.'
-    }
-  },
-  {
-    title: 'MarketPulse',
-    image: eag,
-    type: 'frontend',
-    data: {
-      title: 'MarketPulse',
-      tagline: 'Financial news browser for stocks and ETFs with real-time updates and AI-driven market sentiment insights.',
-      duration: 'May 2025 - Aug 2025',
-      tech: ['React', 'Chrome Extension APIs', 'TypeScript', 'OpenAI API', 'Financial News APIs'],
-      images: [eag],
-      footerText:
-        'Overlaid curated news on the firm\'s stock dashboard with sentiment tags, date filters, and impact sorting (-50% research time). Added an in-panel ChatGPT assistant for TL;DRs, risk highlights, and cited sources to cut context switching.',
-      discovery: {
-        content:
-          'Analysts lost hours daily juggling tabs and filtering irrelevant articles; research time audits showed the process consumed a large share of the workday.',
-        findings: [
-          '15+ tab switches per research session on average',
-          'Manual filtering caused missed critical updates',
-          'No unified sentiment or impact view per ticker',
-          'Copy-pasting across tools was error-prone'
-        ]
-      },
-      ideation: {
-        content:
-          'A sidebar extension preserved analyst flow while enriching context with AI and live feeds.',
-        approach: [
-          'React-based sidebar using Chrome Extension APIs',
-          'Aggregated real-time news from multiple providers',
-          'AI sentiment labeling (bullish/bearish/neutral)',
-          'Contextual in-panel Q&A and summaries'
-        ]
-      },
-      design: {
-        content:
-          'Dense but scannable UI with clear prioritization for speed under market pressure.',
-        decisions: [
-          'Compact sidebar that never obscures the trading UI',
-          'Color-coded sentiment badges for instant parse',
-          'Date range + impact sort to triage fast',
-          'Contextual chat with citations and TL;DRs'
-        ]
-      },
-      reflection: {
-        learnings:
-          'Building for power users demands latency discipline and information density over flourish.',
-        takeaways: [
-          'Context-aware overlays beat app switching',
-          'AI should amplify expert workflows',
-          'Real-time data needs graceful fallbacks',
-          'Small latency wins add up for pros'
-        ],
-        future:
-          'Add custom alerts per ticker/keyword and historical search; integrate internal research notes for a complete analyst workspace.'
-      }
-    }
-  },
-  {
-    title: 'Career Cupid',
-    image: cc,
-    type: 'product',
-    data: {
-      title: 'Career Cupid',
-      tagline: 'Swipe-based career discovery platform mapping users to roles through interactive design exploration.',
-      duration: '3 months',
-      tech: 'Figma, Miro',
-      link: 'https://rakshanda.my.canva.site/career-cupid',
-      images: [cc],
-      type: 'UX Research Project',
-      agency: 'Academic Project',
-      objective: 'Help job seekers discover roles based on values and work styles',
-      process: 'Led user research through surveys and interviews, created personas, and designed interactive prototypes',
-      audience: 'College seniors exploring first jobs',
-      footerText: 'Developed as part of a UX group project, Career Cupid is a web-based tool that connects user personalities to career paths. Led user research through surveys and interviews, created personas, and designed interactive prototypes focused on clarity, engagement, and user retention.',
-      discovery: {
-        content: 'We began by interviewing 30+ college seniors about their career search anxieties. The research revealed that traditional job search tools focus heavily on skills matching but ignore personality fit and work-life balance preferences. Surveys showed 78% of respondents felt overwhelmed by generic job listings.',
-        findings: [
-          'Students wanted a more personalized, dating-app-style experience for career matching',
-          'Work culture and values alignment mattered more than salary for this demographic',
-          'Existing tools lacked transparency about day-to-day job realities',
-          'Users preferred quick, swipe-based interactions over lengthy forms'
-        ]
-      },
-      ideation: {
-        content: 'Drawing inspiration from dating apps, we brainstormed a matchmaking approach for careers. We sketched card-based interfaces and created multiple user flow variations, testing each with paper prototypes. The "swipe to match" concept resonated strongly with our target users.',
-        approach: [
-          'Created a card-based interface showing job roles with personality insights',
-          'Designed quick assessment quizzes to understand user values and preferences',
-          'Built a "match score" algorithm based on work style compatibility',
-          'Developed saved matches feature to revisit promising career paths'
-        ]
-      },
-      design: {
-        content: 'The visual design balanced playfulness with professionalism. We used warm, approachable colors and friendly micro-interactions while maintaining credibility through clean typography and structured information hierarchy. Each career card highlighted culture fit, typical work environments, and growth paths.',
-        decisions: [
-          'Vibrant gradient cards with clear career categorization by industry',
-          'Interactive personality quiz with immediate, visual feedback',
-          'Match percentage displayed prominently with detailed breakdown',
-          'Mobile-first design optimized for on-the-go exploration'
-        ]
-      },
-      reflection: {
-        learnings: 'This project taught me the power of gamification in making overwhelming processes feel approachable. By reframing career exploration as "matching" rather than "searching," we reduced user anxiety and increased engagement. The importance of research-driven personas became clear when our initial designs didn\'t resonate until we incorporated actual student feedback.',
-        takeaways: [
-          'Gamification can make serious decisions feel less daunting',
-          'Personality-first approaches resonate with Gen Z job seekers',
-          'Quick wins (matches) maintain user engagement better than lengthy processes',
-          'Transparent methodology builds trust in recommendation systems'
-        ],
-        future: 'I would add more depth to the "why" behind each match, possibly including day-in-the-life videos or testimonials from people in those roles. Integrating real job listings with our matching algorithm would bridge the gap between discovery and application.'
-      }
     }
   },
   {

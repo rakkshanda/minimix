@@ -6,6 +6,14 @@ import About from './components/About';
 import ProjectDetail from './components/ProjectDetail';
 import ClaimRunnerCaseStudy from './components/ClaimRunnerCaseStudy';
 import AIMSCaseStudy from './components/AIMSCaseStudy';
+import FolkloreCaseStudy from './components/FolkloreCaseStudy';
+import SouthProjectCaseStudy from './components/SouthProjectCaseStudy';
+import CareerCupidCaseStudy from './components/CareerCupidCaseStudy';
+import MarketPulseCaseStudy from './components/MarketPulseCaseStudy';
+import HuggingFaceCaseStudy from './components/HuggingFaceCaseStudy';
+import PlotXCaseStudy from './components/PlotXCaseStudy';
+import HunchCaseStudy from './components/HunchCaseStudy';
+import VisionDefectCaseStudy from './components/VisionDefectCaseStudy';
 import GenericCaseStudy from './components/GenericCaseStudy';
 import Cursor from './components/Cursor';
 
@@ -24,6 +32,14 @@ function App() {
         <Route path="/portfolio" element={<Portfolio isProduct={false} />} />
         <Route path="/claimrunner" element={<ClaimRunnerCaseStudy />} />
         <Route path="/aims" element={<AIMSCaseStudy />} />
+        <Route path="/folklore" element={<FolkloreCaseStudy />} />
+        <Route path="/south-project" element={<SouthProjectCaseStudy />} />
+        <Route path="/career-cupid" element={<CareerCupidCaseStudy />} />
+        <Route path="/marketpulse" element={<MarketPulseCaseStudy />} />
+        <Route path="/huggingface" element={<HuggingFaceCaseStudy />} />
+        <Route path="/plotx" element={<PlotXCaseStudy />} />
+        <Route path="/hunch" element={<HunchCaseStudy />} />
+        <Route path="/visiondefect" element={<VisionDefectCaseStudy />} />
         <Route path="/project/:slug" element={<GenericCaseStudy />} />
         <Route path="/portfolio/:projectId" element={<ProjectDetail isProduct={false} />} />
         <Route path="/product" element={<Portfolio isProduct={true} />} />

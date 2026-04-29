@@ -1,0 +1,457 @@
+/* IEngageCaseStudy.css — custom styles for iEngage × Hugging Face case study */
+/* Reuses cs-* tokens from CaseStudyTemplate.css; ien-* prefix for new patterns */
+
+/* ── Snapshot strip override (standalone, no hero image above it) ── */
+.ien-snapshot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(17, 17, 17, 0.08);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* ── Competition badge ── */
+.ien-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(201, 79, 124, 0.1);
+  border: 1px solid rgba(201, 79, 124, 0.25);
+  color: var(--cs-accent, #c94f7c);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Shared body text ── */
+.ien-body-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+}
+
+/* ── Process flow ── */
+.ien-process-flow {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 36px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  gap: 0;
+}
+
+.ien-phase-card {
+  flex: 1 1 0;
+  min-width: 160px;
+  padding: 24px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ien-phase-num {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--cs-accent, #c94f7c);
+}
+
+.ien-phase-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+.ien-phase-output {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.ien-phase-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  align-self: center;
+  color: rgba(17, 17, 17, 0.28);
+  flex-shrink: 0;
+}
+
+/* ── Image placeholder ── */
+.ien-img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 36px 0;
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px dashed rgba(17, 17, 17, 0.12);
+  border-radius: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 15px;
+  aspect-ratio: 16 / 7;
+}
+
+.ien-placeholder-sub {
+  font-size: 12px;
+  color: #bbb;
+}
+
+/* ── Shared card block (white card with border, reusable) ── */
+.ien-card-block {
+  margin-bottom: 36px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 20px;
+}
+
+/* ── Persona cards grid ── */
+.ien-personas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.ien-persona-card {
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-top: 3px solid var(--cs-accent, #c94f7c);
+  border-radius: 0 0 20px 20px;
+}
+
+.ien-persona-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 18px;
+}
+
+.ien-persona-dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 14px;
+  align-items: baseline;
+}
+
+.ien-persona-dl dt {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cs-accent, #c94f7c);
+  white-space: nowrap;
+}
+
+.ien-persona-dl dd {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #444;
+}
+
+/* ── Interview cards grid ── */
+.ien-interviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.ien-interview-card {
+  padding: 28px 24px;
+  background: #111;
+  border-radius: 20px;
+  color: #f4ede3;
+}
+
+.ien-interview-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ien-interview-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(244, 160, 190, 0.18);
+  color: #f4a0be;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ien-interview-header strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ien-interview-company {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.48);
+  margin-top: 2px;
+}
+
+.ien-interview-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ien-interview-points li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ien-point-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f4a0be;
+}
+
+.ien-point-body {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ── Table block ── */
+.ien-table-block {
+  margin-bottom: 36px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 20px;
+}
+
+.ien-table-scroll {
+  margin-top: 18px;
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  /* scroll affordance on focus for keyboard users */
+}
+
+.ien-table-scroll:focus-visible {
+  outline: 2px solid var(--cs-accent, #c94f7c);
+  outline-offset: 2px;
+}
+
+.ien-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 480px;
+}
+
+.ien-table thead tr {
+  background: #111;
+}
+
+.ien-table thead th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.ien-table tbody tr {
+  border-top: 1px solid rgba(17, 17, 17, 0.07);
+  transition: background 0.15s ease;
+}
+
+.ien-table tbody tr:hover {
+  background: rgba(201, 79, 124, 0.03);
+}
+
+.ien-table tbody th,
+.ien-table tbody td {
+  padding: 13px 16px;
+  text-align: left;
+  line-height: 1.55;
+  color: #333;
+  vertical-align: top;
+}
+
+.ien-table tbody th {
+  font-weight: 600;
+  color: #111;
+  border-right: 1px solid rgba(17, 17, 17, 0.07);
+}
+
+/* ── Figma embed placeholder ── */
+.ien-figma-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 72px 40px;
+  background: rgba(17, 17, 17, 0.03);
+  border: 2px dashed rgba(17, 17, 17, 0.12);
+  border-radius: 14px;
+  text-align: center;
+  color: rgba(201, 79, 124, 0.5);
+  aspect-ratio: 16 / 7;
+}
+
+.ien-figma-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+
+.ien-figma-sub {
+  font-size: 13px;
+  color: #aaa;
+  max-width: 40ch;
+  line-height: 1.55;
+}
+
+/* ── Test methods grid ── */
+.ien-test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.ien-test-card {
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ien-test-card strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+}
+
+.ien-test-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #555;
+}
+
+/* ── Summary grid ── */
+.ien-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.ien-summary-card {
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ien-summary-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #333;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .ien-personas-grid,
+  .ien-interviews-grid,
+  .ien-test-grid,
+  .ien-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ien-process-flow {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ien-phase-card {
+    min-width: 0;
+  }
+
+  .ien-phase-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+    align-self: flex-start;
+    margin-left: 24px;
+  }
+
+  .ien-personas-grid,
+  .ien-interviews-grid,
+  .ien-test-grid,
+  .ien-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ien-snapshot {
+    grid-template-columns: 1fr;
+  }
+
+  .ien-img-placeholder {
+    aspect-ratio: unset;
+    padding: 40px 20px;
+    min-height: 160px;
+  }
+
+  .ien-figma-placeholder {
+    aspect-ratio: unset;
+    padding: 40px 20px;
+    min-height: 160px;
+  }
+
+  .ien-table {
+    min-width: 360px;
+  }
+}
