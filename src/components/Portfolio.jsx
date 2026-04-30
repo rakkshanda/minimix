@@ -40,11 +40,12 @@ const Portfolio = ({ isProduct = false }) => {
   const getProjectPath = (project) => {
     if (project.title === 'Claim Runner AI') return '/claimrunner';
     if (project.title === 'AIMS UW') return '/aims';
-    if (project.title === 'Folklore Directory Plugin') return '/folklore';
+    if (project.title === 'Folklore') return '/folklore';
     if (project.title === 'South Project') return '/south-project';
     if (project.title === 'Career Cupid') return '/career-cupid';
     if (project.title === 'MarketPulse') return '/marketpulse';
     if (project.title === 'Hugging Face landing page redesign') return '/huggingface';
+    if (project.title === 'iEngage × Hugging Face') return '/iengage';
     if (project.title === 'PlotX') return '/plotx';
     if (project.title === 'Hunch') return '/hunch';
     if (project.title === 'VisionDefect AI') return '/visiondefect';
@@ -68,6 +69,15 @@ const Portfolio = ({ isProduct = false }) => {
       return true;
     });
   };
+
+  // Restore scroll position when returning from a case study
+  useEffect(() => {
+    const saved = sessionStorage.getItem('portfolioScrollY');
+    if (saved) {
+      window.scrollTo(0, parseInt(saved, 10));
+      sessionStorage.removeItem('portfolioScrollY');
+    }
+  }, []);
 
   // Track scroll position to highlight active section
   useEffect(() => {
@@ -122,7 +132,10 @@ const Portfolio = ({ isProduct = false }) => {
               <div
                 key={idx}
                 className="project-item"
-                onClick={() => navigateWithTransition(navigate, projectPath)}
+                onClick={() => {
+                  sessionStorage.setItem('portfolioScrollY', window.scrollY.toString());
+                  navigateWithTransition(navigate, projectPath);
+                }}
               >
                 <div className="project-header">
                   <div className="project-info">

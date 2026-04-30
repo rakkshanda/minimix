@@ -14,6 +14,7 @@ import HuggingFaceCaseStudy from './components/HuggingFaceCaseStudy';
 import PlotXCaseStudy from './components/PlotXCaseStudy';
 import HunchCaseStudy from './components/HunchCaseStudy';
 import VisionDefectCaseStudy from './components/VisionDefectCaseStudy';
+import IEngageCaseStudy from './components/IEngageCaseStudy';
 import GenericCaseStudy from './components/GenericCaseStudy';
 import Cursor from './components/Cursor';
 
@@ -40,6 +41,7 @@ function App() {
         <Route path="/plotx" element={<PlotXCaseStudy />} />
         <Route path="/hunch" element={<HunchCaseStudy />} />
         <Route path="/visiondefect" element={<VisionDefectCaseStudy />} />
+        <Route path="/iengage" element={<IEngageCaseStudy />} />
         <Route path="/project/:slug" element={<GenericCaseStudy />} />
         <Route path="/portfolio/:projectId" element={<ProjectDetail isProduct={false} />} />
         <Route path="/product" element={<Portfolio isProduct={true} />} />

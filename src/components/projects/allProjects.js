@@ -369,11 +369,11 @@ export const frontendProjects = [
     }
   },
   {
-    title: 'Folklore Directory Plugin',
+    title: 'Folklore',
     image: folklore,
     type: 'frontend',
     data: {
-      title: 'Folklore Directory Plugin',
+      title: 'Folklore',
       tagline: 'WordPress directory plugin for structured discovery with flexible grid and list-based browsing.',
       duration: '5 months',
       tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
@@ -583,6 +583,19 @@ export const frontendProjects = [
         ],
         future: 'I would A/B test the dual CTAs to measure actual conversion lift. Personalized onboarding based on user\'s stated experience level could further reduce friction. Adding interactive model demos directly on the landing page would showcase capability immediately.'
       }
+    }
+  },
+  {
+    title: 'iEngage × Hugging Face',
+    image: hf,
+    type: 'product',
+    data: {
+      title: 'iEngage × Hugging Face',
+      tagline: 'Design Thinking sprint to segment HuggingFace\'s homepage for three distinct user personas.',
+      duration: 'Sprint format',
+      tech: ['Figma', 'Zoom', 'UserTesting'],
+      images: [hf],
+      footerText: 'Applied a condensed Design Thinking framework (Empathize, Define, Ideate, Design, Test) to redesign the HuggingFace landing page around three segmented user paths, grounded in three user interviews, traffic analytics, and a four-company competitive scan.',
     }
   },
   {

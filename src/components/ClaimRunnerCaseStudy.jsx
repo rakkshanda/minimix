@@ -200,7 +200,7 @@ const ClaimRunnerCaseStudy = () => {
                 { label: 'Role', value: 'Full-Stack Developer & Designer' },
                 { label: 'Sprint', value: 'iStartup Lab — 4 weeks' },
                 { label: 'Type', value: 'Product / UX Research' },
-                { label: 'Methods', value: 'Survey, Reddit web-crawler, manual coding' },
+                { label: 'Tech Stack', value: 'React, Python, AWS' },
                 { label: 'Team', value: 'Cole DuBois, Nathan Lee, Khoa Luong, Rakshanda Bhure, Samridh Bhattacharjee, Anjali Abhilash' },
                 { label: 'Live site', value: 'claimrunner.ai', link: 'https://www.claimrunner.ai' },
               ].map((item) => (

@@ -104,6 +104,11 @@
   color: #fff;
 }
 
+.folklore-tab-button:focus-visible {
+  outline: 2px solid #9a8a7a;
+  outline-offset: 2px;
+}
+
 .folklore-eyebrow,
 .folklore-kicker {
   margin: 0 0 14px;
@@ -132,8 +137,8 @@
 }
 
 .folklore-hero h1 {
-  font-size: clamp(3rem, 5.4vw, 5.4rem);
-  max-width: 12ch;
+  font-size: clamp(2.6rem, 4.8vw, 4.8rem);
+  max-width: 14ch;
 }
 
 .folklore-lede,
@@ -219,20 +224,6 @@
 
 .folklore-screen--alt {
   background: linear-gradient(180deg, #fff 0%, #ece3d8 100%);
-}
-
-.folklore-illustration {
-  padding: 22px 24px;
-  border: 1px dashed rgba(154, 52, 18, 0.35);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.folklore-illustration span {
-  display: block;
-  font-size: 15px;
-  line-height: 1.65;
-  color: #7c2d12;
 }
 
 .folklore-section {
@@ -336,11 +327,518 @@
   letter-spacing: 0.08em;
 }
 
+/* ── Snapshot strip under hero image ── */
+.folklore-screen--connected {
+  border-radius: 20px 20px 0 0 !important;
+  border-bottom: none !important;
+}
+
+.folklore-snapshot-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(17, 17, 17, 0.08);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+
+.folklore-snapshot-cell {
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ── Outcomes block ── */
+.folklore-outcomes-block {
+  margin-top: 28px;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 18px;
+}
+
+.folklore-outcomes-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.folklore-outcomes-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #252525;
+}
+
+.folklore-outcomes-list li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9a3412;
+}
+
+/* ── PRD grid ── */
+.folklore-prd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.folklore-prd-group {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 18px;
+}
+
+.folklore-prd-group h3 {
+  margin: 0 0 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9a3412;
+}
+
+/* ── Low-fi gallery ── */
+.folklore-lowfi-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* ── Image placeholder ── */
+.folklore-img-placeholder {
+  width: 100%;
+  border: 1px dashed rgba(154, 52, 18, 0.3);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.folklore-placeholder-label {
+  font-size: 13px;
+  color: #9a3412;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.55;
+}
+
+/* ── Tables ── */
+.folklore-table-scroll {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.folklore-timeline-table,
+.folklore-task-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.folklore-timeline-table th,
+.folklore-task-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a3412;
+  background: rgba(244, 239, 232, 0.9);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.folklore-timeline-table td,
+.folklore-task-table td {
+  padding: 12px 16px;
+  color: #252525;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+  line-height: 1.55;
+  vertical-align: top;
+}
+
+.folklore-timeline-table tr:last-child td,
+.folklore-task-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Phase tags ── */
+.folklore-phase-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.phase-planning  { background: #e8f0fe; color: #1a56db; }
+.phase-research  { background: #fdf3e7; color: #b45309; }
+.phase-design    { background: #fce7f3; color: #9d174d; }
+.phase-dev       { background: #d1fae5; color: #065f46; }
+.phase-testing   { background: #ede9fe; color: #5b21b6; }
+.phase-final     { background: #f3f4f6; color: #374151; }
+
+/* ── Research stats ── */
+.folklore-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.folklore-stat-card {
+  padding: 24px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.folklore-stat-number {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 700;
+  color: #9a3412;
+  line-height: 1;
+  font-family: var(--type-display);
+  letter-spacing: -0.02em;
+}
+
+.folklore-stat-label {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #444;
+  margin: 0;
+}
+
+/* ── Quotes ── */
+.folklore-quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.folklore-quote {
+  margin: 0;
+  padding: 20px 22px;
+  background: rgba(154, 52, 18, 0.05);
+  border-left: 3px solid #9a3412;
+  border-radius: 0 12px 12px 0;
+}
+
+.folklore-quote p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #2f2f2f;
+  font-style: italic;
+}
+
+/* ── Persona poster ── */
+.folklore-persona-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.folklore-persona-board {
+  margin-bottom: 0;
+}
+
+.folklore-persona-poster {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 24px;
+  padding: 26px;
+  border-radius: 22px;
+  background: #e9e1ca;
+  border: 1px solid rgba(61, 44, 102, 0.16);
+  box-shadow: 0 24px 60px rgba(54, 40, 91, 0.1);
+}
+
+.folklore-persona-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.folklore-persona-portrait-frame {
+  overflow: hidden;
+  border-radius: 0;
+  background: #d9d0be;
+}
+
+.folklore-persona-poster-img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1 / 1.06;
+  object-fit: cover;
+}
+
+.folklore-persona-identity {
+  margin-top: -2px;
+  padding: 10px 22px 18px;
+  background: #fff;
+  border-radius: 0 0 34px 34px;
+}
+
+.folklore-persona-identity h3 {
+  margin: 0;
+  color: #51358b;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.folklore-persona-pronouns {
+  margin: 2px 0 8px;
+  color: #51358b;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.folklore-persona-quote {
+  margin: 0;
+  color: #3b3270;
+  font-size: 11px;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+.folklore-persona-facts {
+  margin: 6px 0 0;
+  padding: 18px 18px 8px;
+}
+
+.folklore-persona-fact-row {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.folklore-persona-fact-row dt,
+.folklore-persona-fact-row dd {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #51358b;
+}
+
+.folklore-persona-fact-row dt {
+  font-weight: 700;
+}
+
+.folklore-persona-main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.folklore-persona-biography-panel {
+  overflow: hidden;
+  border-radius: 22px 0 0 22px;
+  background: #fff;
+}
+
+.folklore-persona-biography-panel h3 {
+  margin: 0;
+  padding: 8px 16px;
+  background: #51358b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.folklore-persona-biography-panel p {
+  margin: 0;
+  padding: 10px 12px 12px;
+  font-size: 12px;
+  line-height: 1.42;
+  color: #3e3e3e;
+}
+
+.folklore-persona-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 146px;
+  gap: 22px;
+}
+
+.folklore-persona-content-main {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.folklore-persona-traits {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.folklore-persona-traits > span {
+  color: #373737;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.folklore-persona-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.folklore-persona-tag {
+  padding: 2px 10px;
+  border-radius: 4px;
+  background: #51358b;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.folklore-persona-section-block h4,
+.folklore-persona-considerations h4 {
+  margin: 0 0 18px;
+  color: #51358b;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.folklore-persona-section-block h4::after {
+  content: "";
+  display: block;
+  width: min(100%, 315px);
+  height: 5px;
+  margin-top: 10px;
+  background: #51358b;
+}
+
+.folklore-persona-list {
+  margin: 0;
+  padding-left: 30px;
+}
+
+.folklore-persona-list li {
+  margin-bottom: 8px;
+  color: #2f2f2f;
+  font-size: 15px;
+  line-height: 1.32;
+}
+
+.folklore-persona-considerations {
+  align-self: start;
+  padding: 18px 14px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.folklore-persona-considerations h4 {
+  margin-bottom: 14px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.folklore-persona-considerations p {
+  margin: 0 0 28px;
+  color: #47367f;
+  font-size: 11px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.folklore-persona-considerations p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Reflection heading ── */
+.folklore-reflection-heading {
+  margin: 0 0 16px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ── Next case study nav ── */
+.folklore-next-case {
+  padding: 48px 0 0;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  margin-top: 40px;
+}
+
+.folklore-next-button {
+  margin-top: 12px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--type-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #111;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s ease, transform 0.2s ease;
+  line-height: 1.1;
+}
+
+.folklore-next-button:hover {
+  color: #9a3412;
+  transform: translateX(6px);
+}
+
+.folklore-next-button:focus-visible {
+  outline: 2px solid #9a3412;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 @media (max-width: 1100px) {
   .folklore-hero,
   .folklore-testing-grid,
   .folklore-persona-grid,
-  .folklore-card-grid {
+  .folklore-card-grid,
+  .folklore-lowfi-gallery,
+  .folklore-prd-grid,
+  .folklore-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .folklore-quote-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .folklore-persona-poster {
+    grid-template-columns: 1fr;
+  }
+
+  .folklore-persona-content {
     grid-template-columns: 1fr;
   }
 }
@@ -382,7 +880,41 @@
   .folklore-goals-panel,
   .folklore-build-panel,
   .folklore-feature-list,
-  .folklore-illustration {
+  .folklore-prd-group {
     padding: 20px;
+  }
+
+  .folklore-snapshot-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .folklore-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .folklore-persona-poster {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .folklore-persona-identity {
+    padding: 12px 16px 16px;
+  }
+
+  .folklore-persona-facts {
+    padding: 6px 4px 0;
+  }
+
+  .folklore-persona-section-block h4,
+  .folklore-persona-considerations h4 {
+    font-size: 18px;
+  }
+
+  .folklore-persona-list li {
+    font-size: 14px;
+  }
+
+  .folklore-persona-biography-panel {
+    border-radius: 18px;
   }
 }
