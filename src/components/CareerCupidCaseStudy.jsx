@@ -91,9 +91,6 @@ const config = {
       { title: 'Match score breakdown', body: 'Tapping a saved match revealed a breakdown: which values aligned, which didn\'t, and why the score was what it was. Transparency was a deliberate design choice to build trust.' },
       { title: 'Saved matches dashboard', body: 'A lightweight comparison view showing all saved roles side by side on the dimensions that mattered most to the user. Helped students have more informed conversations with advisors.' },
     ],
-    images: [
-      { src: cc, alt: 'Career Cupid swipe-based career matching interface with match score and values breakdown' },
-    ],
   },
   reflection: {
     heading: 'Reframing the problem is the most important design move.',

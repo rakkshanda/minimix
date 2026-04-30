@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b57ef360.css",
-    "main.js": "/static/js/main.a2a132cd.js",
+    "main.css": "/static/css/main.c7986ab8.css",
+    "main.js": "/static/js/main.0be65984.js",
     "static/js/453.af72e82d.chunk.js": "/static/js/453.af72e82d.chunk.js",
     "static/media/sp.gif": "/static/media/sp.ee287d0c67d35881dff5.gif",
     "static/media/aims.png": "/static/media/aims.b4e3cea4769a1eb7eb6a.png",
@@ -23,16 +23,18 @@
     "static/media/6.png": "/static/media/6.6d7671fff16463859a9b.png",
     "static/media/sp.png": "/static/media/sp.fa1fc2fab4809de09800.png",
     "static/media/batchquery.png": "/static/media/batchquery.a7c185cba6bc42c8d240.png",
-    "static/media/persona 3.png": "/static/media/persona 3.1a1cf926b9edb8040fec.png",
-    "static/media/persona1.png": "/static/media/persona1.d19c9e21fe2394ecd4df.png",
-    "static/media/persona2.png": "/static/media/persona2.4d92eb58c078e87cc419.png",
+    "static/media/persona 3.png": "/static/media/persona 3.bf58f0d28b90a3ba487d.png",
+    "static/media/persona2.png": "/static/media/persona2.81847bcffe513c5c1252.png",
+    "static/media/persona1.png": "/static/media/persona1.864f107afedf1af3a10a.png",
+    "static/media/lofi2.png": "/static/media/lofi2.70d10f30e0babe854a81.png",
+    "static/media/lofi1.png": "/static/media/lofi1.deecc4ce11c785a48dbe.png",
     "index.html": "/index.html",
-    "main.b57ef360.css.map": "/static/css/main.b57ef360.css.map",
-    "main.a2a132cd.js.map": "/static/js/main.a2a132cd.js.map",
+    "main.c7986ab8.css.map": "/static/css/main.c7986ab8.css.map",
+    "main.0be65984.js.map": "/static/js/main.0be65984.js.map",
     "453.af72e82d.chunk.js.map": "/static/js/453.af72e82d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b57ef360.css",
-    "static/js/main.a2a132cd.js"
+    "static/css/main.c7986ab8.css",
+    "static/js/main.0be65984.js"
   ]
 }

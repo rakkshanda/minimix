@@ -1,6 +1,5 @@
 import CaseStudyTemplate from './CaseStudyTemplate';
 import eag from '../assets/eag.gif';
-import emerald from '../assets/Emerald.png';
 
 const SpeedIcon = () => (
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -87,10 +86,6 @@ const config = {
       { title: 'Date and impact filters', body: 'Dropdown filters for time range and estimated market impact let analysts triage breaking news vs. background reading instantly.' },
       { title: 'In-panel ChatGPT assistant', body: 'A collapsible chat panel powered by OpenAI lets analysts ask follow-up questions about any article. Responses include TL;DRs, risk highlights, and inline citations - all without leaving the dashboard.' },
     ],
-    images: [
-      { src: eag, alt: 'MarketPulse sidebar with sentiment-tagged financial news' },
-      { src: emerald, alt: 'Emerald Advisors dashboard with extension overlay' },
-    ],
   },
   reflection: {
     heading: 'The right tool is the one analysts already have open.',
@@ -112,7 +107,7 @@ const config = {
       'Source credibility scoring based on historical accuracy',
     ],
   },
-  nextCase: { path: '/huggingface', label: 'HuggingFace Redesign' },
+  nextCase: { path: '/iengage', label: 'iEngage × Hugging Face' },
 };
 
 export default function MarketPulseCaseStudy() {

@@ -25,7 +25,7 @@ const painPoints = [
 const qualThemes = [
   { theme: '"Don\'t know where to start"', detail: 'Entry-point confusion before any paperwork is touched' },
   { theme: 'Steps and requirements feel unclear', detail: 'Users can\'t tell what\'s required vs. optional' },
-  { theme: 'Paperwork is overwhelming', detail: 'Volume and legalese — not the difficulty of the dispute itself' },
+  { theme: 'Paperwork is overwhelming', detail: 'Volume and legalese, not the difficulty of the dispute itself' },
   { theme: 'Fear of making mistakes', detail: 'Procedural errors voiding their case is the dominant anxiety' },
   { theme: 'Strong desire for step-by-step guidance', detail: 'Explicit asks, not inferred needs' },
 ];
@@ -33,7 +33,7 @@ const qualThemes = [
 const sentimentBreakdown = [
   { label: 'Mostly negative', detail: 'Process confusion, frustration, "gave up and ate the loss"', weight: 72 },
   { label: 'Neutral', detail: 'Procedural questions without strong affect', weight: 20 },
-  { label: 'Positive', detail: 'Almost always retrospective — "now that I\'ve done it once, it\'s fine"', weight: 8 },
+  { label: 'Positive', detail: 'Almost always retrospective, "now that I\'ve done it once, it\'s fine"', weight: 8 },
 ];
 
 const competitors = [
@@ -44,29 +44,29 @@ const competitors = [
 
 const productSurfaces = [
   { pain: '"Don\'t know where to start"', surface: 'Eligibility checker' },
-  { pain: '"Steps and requirements unclear"', surface: 'AI ClaimBuilder — guided chat' },
+  { pain: '"Steps and requirements unclear"', surface: 'AI ClaimBuilder, guided chat' },
   { pain: '"Paperwork is overwhelming"', surface: 'Automated case building + form filing' },
   { pain: '"Fear of making mistakes"', surface: 'Evidence analyzer + validation gates' },
   { pain: '"What happens at the hearing?"', surface: 'Trial preparation module' },
 ];
 
 const workedWell = [
-  { title: 'Constraint-driven research design.', body: 'The interview pivot wasn\'t a downgrade — it produced two independent validation streams, which is methodologically stronger than a single cohort. Triangulation beats depth when you\'re at the "is this real?" stage.' },
-  { title: 'Coding Reddit by hand was worth the time.', body: 'Automated sentiment APIs would have missed the nuance — the difference between "this is hard" and "this is hard and I gave up" is the entire product opportunity.' },
+  { title: 'Constraint-driven research design.', body: 'The interview pivot wasn\'t a downgrade. It produced two independent validation streams, which is methodologically stronger than a single cohort. Triangulation beats depth when you\'re at the "is this real?" stage.' },
+  { title: 'Coding Reddit by hand was worth the time.', body: 'Automated sentiment APIs would have missed the nuance. The difference between "this is hard" and "this is hard and I gave up" is the entire product opportunity.' },
   { title: 'The data did the talking in team alignment.', body: 'A 6-person founding team will have 6 product opinions. A shared, auditable dataset turned product debates into "what does the data show?" conversations.' },
 ];
 
 const wouldChange = [
   { title: 'n=6 is too small for the survey.', body: 'The Reddit corpus carried more weight, and I should have been clearer about that asymmetry with the team. Next iteration: target n=30+ on the survey.' },
-  { title: 'Stratify the Reddit sample.', body: 'I pulled the most recent 50 threads. A stratified sample across years and dispute types would catch edge cases — landlord-tenant vs. consumer disputes have different pain profiles.' },
+  { title: 'Stratify the Reddit sample.', body: 'I pulled the most recent 50 threads. A stratified sample across years and dispute types would catch edge cases. Landlord-tenant vs. consumer disputes have different pain profiles.' },
   { title: 'Sentiment coding needs a second coder.', body: 'All 50 threads were coded by me alone. Inter-rater reliability would make the sentiment claims defensible to a skeptical investor.' },
 ];
 
 const nextSteps = [
   '10 pilot users recruited through Legal Aid partnerships (the original interview channel, now used for active product testing)',
-  'Customer interviews — finally happening, now with a working prototype to react to instead of an abstract concept',
-  'Backend architecture plan — moving from prototype to scalable infrastructure',
-  'Evidence upload — implement and test the analyzer pipeline end-to-end',
+  'Customer interviews, finally happening now with a working prototype to react to instead of an abstract concept',
+  'Backend architecture plan, moving from prototype to scalable infrastructure',
+  'Evidence upload, implement and test the analyzer pipeline end-to-end',
   'Iterate and test product based on pilot feedback',
 ];
 
@@ -172,7 +172,7 @@ const ClaimRunnerCaseStudy = () => {
             <h1>Closing the justice gap in small claims, one guided step at a time.</h1>
             <p className="claimrunner-lede">
               ClaimRunner AI is an end-to-end platform that helps self-represented litigants navigate
-              small claims court — eligibility checking, case building, evidence analysis, form filing,
+              small claims court, including eligibility checking, case building, evidence analysis, form filing,
               and trial prep. I led the customer discovery work during our iStartup Lab Sprint.
             </p>
             <div className="claimrunner-hero-actions">
@@ -198,7 +198,7 @@ const ClaimRunnerCaseStudy = () => {
             <div className="claimrunner-snapshot-strip">
               {[
                 { label: 'Role', value: 'Full-Stack Developer & Designer' },
-                { label: 'Sprint', value: 'iStartup Lab — 4 weeks' },
+                { label: 'Sprint', value: 'iStartup Lab, 4 weeks' },
                 { label: 'Type', value: 'Product / UX Research' },
                 { label: 'Tech Stack', value: 'React, Python, AWS' },
                 { label: 'Team', value: 'Cole DuBois, Nathan Lee, Khoa Luong, Rakshanda Bhure, Samridh Bhattacharjee, Anjali Abhilash' },
@@ -234,8 +234,8 @@ const ClaimRunnerCaseStudy = () => {
             <p className="claimrunner-kicker">TL;DR</p>
             <p className="claimrunner-tldr-body">
               When our planned user interviews collapsed against a 4-week timeline, I designed a
-              two-track research approach — a structured survey plus a Reddit web-crawler with manual
-              coding — that produced more independent signal than interviews alone would have. The data
+              two-track research approach, a structured survey plus a Reddit web-crawler with manual
+              coding, that produced more independent signal than interviews alone would have. The data
               reframed our product thesis: users weren't asking for legal expertise, they were asking
               for a process they could follow without making mistakes. That insight now anchors our
               positioning.
@@ -250,7 +250,7 @@ const ClaimRunnerCaseStudy = () => {
             <h2>The problem behind the problem.</h2>
             <p>
               Small claims court is supposed to be the accessible tier of the justice system. In practice,
-              most filers represent themselves — and most of them describe the experience as confusing,
+              most filers represent themselves, and most of them describe the experience as confusing,
               intimidating, and procedurally opaque. That was our hypothesis going in. But a hypothesis
               isn't a product. We needed evidence about what exactly users were stuck on, in their own
               words, fast enough to inform the prototype.
@@ -258,7 +258,7 @@ const ClaimRunnerCaseStudy = () => {
           </Reveal>
 
           <Reveal className="claimrunner-pivot-block" delay={0.06}>
-            <p className="claimrunner-kicker">Research methods — and the pivot that saved them</p>
+            <p className="claimrunner-kicker">Research methods, and the pivot that saved them</p>
             <div className="claimrunner-pivot-cards">
               <div className="claimrunner-pivot-card claimrunner-pivot-card--original">
                 <span className="claimrunner-pivot-label">Original plan</span>
@@ -269,12 +269,12 @@ const ClaimRunnerCaseStudy = () => {
                 <span className="claimrunner-pivot-label">What actually happened</span>
                 <p>Legal Aid scheduling cycles run longer than our sprint. Cold-recruiting people in active legal disputes is ethically and logistically heavy.</p>
                 <div className="claimrunner-pivot-note">
-                  <strong>The pivot — two parallel tracks:</strong>
+                  <strong>The pivot, two parallel tracks:</strong>
                   <ul>
-                    <li><strong>Structured survey (n=6)</strong> — mixed quantitative ranking of pain points with open-ended qualitative prompts</li>
-                    <li><strong>Web-crawler analysis of r/Seattle</strong> — ~50 comments manually coded for theme and sentiment</li>
+                    <li><strong>Structured survey (n=6)</strong>, mixed quantitative ranking of pain points with open-ended qualitative prompts</li>
+                    <li><strong>Web-crawler analysis of r/Seattle</strong>, ~50 comments manually coded for theme and sentiment</li>
                   </ul>
-                  <p className="claimrunner-pivot-insight">The pivot was a feature, not a bug. Two independent sources produced convergent findings — a stronger validation signal than interviews alone. Anonymous Reddit posters can't mirror what a researcher wants to hear.</p>
+                  <p className="claimrunner-pivot-insight">The pivot was a feature, not a bug. Two independent sources produced convergent findings, a stronger validation signal than interviews alone. Anonymous Reddit posters can't mirror what a researcher wants to hear.</p>
                 </div>
               </div>
             </div>
@@ -282,7 +282,7 @@ const ClaimRunnerCaseStudy = () => {
 
           <div className="claimrunner-data-layout">
             <Reveal className="claimrunner-pain-block" delay={0.06}>
-              <p className="claimrunner-kicker">Quantitative findings — survey</p>
+              <p className="claimrunner-kicker">Quantitative findings, survey</p>
               <div className="claimrunner-pain-table">
                 <div className="claimrunner-pain-head">
                   <span>Pain point</span>
@@ -298,7 +298,7 @@ const ClaimRunnerCaseStudy = () => {
             </Reveal>
 
             <Reveal className="claimrunner-themes-block" delay={0.08}>
-              <p className="claimrunner-kicker">Qualitative themes — cross-source</p>
+              <p className="claimrunner-kicker">Qualitative themes, cross-source</p>
               <p className="claimrunner-themes-sub">Same five themes surfaced in both the survey and Reddit corpus.</p>
               <ul className="claimrunner-themes-list">
                 {qualThemes.map((t) => (
@@ -312,7 +312,7 @@ const ClaimRunnerCaseStudy = () => {
           </div>
 
           <Reveal className="claimrunner-sentiment-block" delay={0.08}>
-            <p className="claimrunner-kicker">Reddit sentiment breakdown — 50 coded threads</p>
+            <p className="claimrunner-kicker">Reddit sentiment breakdown, 50 coded threads</p>
             <div className="claimrunner-sentiment-bars">
               {sentimentBreakdown.map((s) => (
                 <div key={s.label} className="claimrunner-sentiment-row">
@@ -338,14 +338,14 @@ const ClaimRunnerCaseStudy = () => {
               I read the court website three times and still wasn't sure if I was filing in the right
               division. I gave up and just absorbed the $400.
             </p>
-            <span>— Coded Reddit thread, r/Seattle</span>
+            <span>Coded Reddit thread, r/Seattle</span>
           </Reveal>
 
 
           <Reveal className="claimrunner-reframe-card" delay={0.06}>
             <p className="claimrunner-kicker">The reframing insight</p>
             <p>
-              The single most important finding wasn't in any one data point — it was the gestalt.
+              The single most important finding wasn't in any one data point. It was the gestalt.
               Users weren't asking for legal advice. They were asking for a process they could trust.
               Lawyers translate legal complexity into legal answers. Our users wanted the complexity
               sequenced into actions.
@@ -368,7 +368,7 @@ const ClaimRunnerCaseStudy = () => {
         <section id="ideation" className="claimrunner-story-section">
           <Reveal className="claimrunner-section-intro">
             <p className="claimrunner-kicker">02 / Ideation</p>
-            <h2>Defining who we're building for — and what already exists.</h2>
+            <h2>Defining who we're building for, and what already exists.</h2>
           </Reveal>
 
           <Reveal className="claimrunner-icp-block" delay={0.06}>
@@ -376,15 +376,15 @@ const ClaimRunnerCaseStudy = () => {
             <div className="claimrunner-icp-grid">
               <div className="claimrunner-icp-card">
                 <span>Who</span>
-                <p>Self-represented individuals — no legal counsel, by choice or cost</p>
+                <p>Self-represented individuals, with no legal counsel by choice or cost</p>
               </div>
               <div className="claimrunner-icp-card">
                 <span>Behaviour</span>
-                <p>Digitally comfortable — online forms, chat interfaces, no technical anxiety</p>
+                <p>Digitally comfortable, using online forms, chat interfaces, and no technical anxiety</p>
               </div>
               <div className="claimrunner-icp-card">
                 <span>Awareness</span>
-                <p>Already knows small claims is the right venue — not educating on the what, only the how</p>
+                <p>Already knows small claims is the right venue, so this is not about the what, only the how</p>
               </div>
             </div>
           </Reveal>
@@ -430,7 +430,7 @@ const ClaimRunnerCaseStudy = () => {
               ))}
               <div className="claimrunner-comp-row claimrunner-comp-row--wedge">
                 <span>ClaimRunner AI</span>
-                <span>—</span>
+                <span>N/A</span>
                 <span>Assembles, files, and manages the case as a stateful workflow</span>
               </div>
             </div>
@@ -468,7 +468,7 @@ const ClaimRunnerCaseStudy = () => {
             <p className="claimrunner-kicker">How we validated demand</p>
             <div className="claimrunner-validation-cards">
               {[
-                { num: '01', title: 'Live landing page', body: 'claimrunner.ai with mailing list signup — low-friction utility that doubles as lead capture' },
+                { num: '01', title: 'Live landing page', body: 'claimrunner.ai with mailing list signup, a low-friction utility that doubles as lead capture' },
                 { num: '02', title: 'Eligibility checker', body: 'Single-purpose entry point built and deployed during the sprint' },
                 { num: '03', title: 'Updated CaseBuilder MVP', body: 'Evidence analyzer integrated and pressure-tested against sprint findings' },
               ].map((v) => (
@@ -490,7 +490,7 @@ const ClaimRunnerCaseStudy = () => {
               </div>
               <div className="claimrunner-signal-stat">
                 <strong>2×</strong>
-                <span>independent research streams produced convergent findings — triangulation beats a single cohort</span>
+                <span>independent research streams produced convergent findings, and triangulation beats a single cohort</span>
               </div>
               <div className="claimrunner-signal-stat claimrunner-signal-stat--quote">
                 <p>
@@ -532,9 +532,9 @@ const ClaimRunnerCaseStudy = () => {
             <p className="claimrunner-kicker">04 / Reflection</p>
             <h2>Methodological flexibility under sprint pressure is the muscle worth training.</h2>
             <p>
-              The most valuable research artifact wasn't the survey results — it was the decision to run
-              two methods in parallel after the first one broke. And the reframing — from "legal
-              information" to "guided execution" — was the kind of insight that only shows up when you
+              The most valuable research artifact wasn't the survey results. It was the decision to run
+              two methods in parallel after the first one broke. And the reframing, from "legal
+              information" to "guided execution," was the kind of insight that only shows up when you
               let the data contradict your starting hypothesis.
             </p>
           </Reveal>

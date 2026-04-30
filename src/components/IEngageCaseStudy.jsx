@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import './IEngageCaseStudy.css';
+import hf from '../assets/HF.png';
+import designThinkingImg from '../assets/huggingface/design thinking.png';
+import personasImg from '../assets/huggingface/personas.png';
 import { navigateWithTransition } from '../utils/viewTransition';
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -31,14 +34,6 @@ function Reveal({ children, delay = 0, className = '' }) {
     </motion.div>
   );
 }
-
-const PROCESS_PHASES = [
-  { label: 'Empathize', output: 'Defined key personas · validated user pain points through peer testing' },
-  { label: 'Define',    output: 'Problem statement · user + business goals · mapped user journeys' },
-  { label: 'Ideate',    output: 'Competitive analysis · persona-based messaging · page structure outline' },
-  { label: 'Design',    output: 'Wireframes · aligned visual flow · iteration based on user feedback' },
-  { label: 'Test',      output: 'Moderated user testing via Zoom · unmoderated testing via UserTesting' },
-];
 
 const PERSONAS = [
   {
@@ -283,12 +278,15 @@ export default function IEngageCaseStudy() {
         </Reveal>
 
         <Reveal className="cs-hero-visual" delay={0.1}>
-          <div className="ien-snapshot">
+          <div className="cs-screen">
+            <img src={hf} alt="Hugging Face landing page redesign preview" />
+          </div>
+          <div className="cs-snapshot-strip">
             {[
               { label: 'Role',        value: 'UX Researcher & Designer' },
               { label: 'Team',        value: 'Kristina Arike, Rakshanda Bhure, Jason Saldaña' },
               { label: 'Type',        value: 'iEngage × Hugging Face Case Competition' },
-              { label: 'Format',      value: 'Design Thinking sprint — end to end' },
+              { label: 'Format',      value: 'Design Thinking sprint, end to end' },
               { label: 'Tools',       value: 'Figma, Zoom, UserTesting, competitive analysis' },
               { label: 'Deliverable', value: 'Figma prototype + competition deck' },
             ].map((item) => (
@@ -336,34 +334,9 @@ export default function IEngageCaseStudy() {
           <p>Five phases, each with clear outputs - no step was skipped, even in a sprint format.</p>
         </Reveal>
 
-        <Reveal
-          className="ien-process-flow"
-          delay={0.06}
-          role="img"
-          aria-label="Five-phase Design Thinking process: Empathize, Define, Ideate, Design, Test"
-        >
-          {PROCESS_PHASES.map((phase, i) => (
-            <React.Fragment key={phase.label}>
-              <div className="ien-phase-card">
-                <span className="ien-phase-num">{String(i + 1).padStart(2, '0')}</span>
-                <strong className="ien-phase-label">{phase.label}</strong>
-                <p className="ien-phase-output">{phase.output}</p>
-              </div>
-              {i < PROCESS_PHASES.length - 1 && (
-                <div className="ien-phase-arrow" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </div>
-              )}
-            </React.Fragment>
-          ))}
+        <Reveal className="ien-asset-frame" delay={0.08}>
+          <img src={designThinkingImg} alt="Five-phase Design Thinking process diagram" className="ien-asset-image" />
         </Reveal>
-
-        <div className="ien-img-placeholder" role="img" aria-label="Five-phase Design Thinking diagram - placeholder for visual asset">
-          <span>Design Thinking diagram</span>
-          <span className="ien-placeholder-sub">Visual asset coming soon</span>
-        </div>
       </section>
 
       {/* ── 03 / EMPATHIZE ── */}
@@ -429,10 +402,9 @@ export default function IEngageCaseStudy() {
           </ul>
         </Reveal>
 
-        <div className="ien-img-placeholder" role="img" aria-label="Persona and interview synthesis illustration - placeholder for visual asset">
-          <span>Persona / interview illustration</span>
-          <span className="ien-placeholder-sub">Visual asset coming soon</span>
-        </div>
+        <Reveal className="ien-asset-frame" delay={0.12}>
+          <img src={personasImg} alt="Persona synthesis board for Hugging Face redesign" className="ien-asset-image" />
+        </Reveal>
       </section>
 
       {/* ── 04 / DEFINE ── */}
@@ -455,12 +427,6 @@ export default function IEngageCaseStudy() {
           </p>
         </Reveal>
 
-        <Reveal className="ien-card-block" delay={0.08}>
-          <p className="cs-kicker">User journey mapping</p>
-          <p className="ien-body-text">
-            Mapping the individual developer journey provided crucial insight into the broader consumer experience, revealing where individual needs align with, diverge from, or directly inform the requirements of enterprise teams. This helped us better understand key user personas and begin exploring targeted solutions tailored to their specific needs and behaviors.
-          </p>
-        </Reveal>
       </section>
 
       {/* ── 05 / IDEATE ── */}
@@ -581,27 +547,6 @@ export default function IEngageCaseStudy() {
           <p>High-fidelity Figma prototype of the redesigned landing page structured around persona-specific entry points.</p>
         </Reveal>
 
-        {/* Figma embed placeholder */}
-        <Reveal className="ien-table-block" delay={0.06}>
-          <p className="cs-kicker">Prototype</p>
-          <div className="ien-figma-placeholder" role="img" aria-label="Figma prototype - link coming soon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" fill="currentColor" opacity=".4"/>
-              <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" fill="currentColor" opacity=".6"/>
-              <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" fill="currentColor"/>
-              <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 0 1-7 0z" fill="currentColor" opacity=".6"/>
-              <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" fill="currentColor" opacity=".4"/>
-            </svg>
-            <span className="ien-figma-title">Figma prototype - link coming soon</span>
-            <span className="ien-figma-sub">High-fidelity prototype of the redesigned landing page with persona-specific paths</span>
-          </div>
-        </Reveal>
-
-        <div className="ien-img-placeholder" role="img" aria-label="Figma prototype screenshot - placeholder for visual asset">
-          <span>Prototype screenshot</span>
-          <span className="ien-placeholder-sub">Visual asset coming soon</span>
-        </div>
-
         {/* Tech stack */}
         <Reveal className="ien-card-block" delay={0.08}>
           <p className="cs-kicker">Tech stack</p>
@@ -718,10 +663,6 @@ export default function IEngageCaseStudy() {
           ))}
         </Reveal>
 
-        <div className="ien-img-placeholder" role="img" aria-label="Outcome and impact illustration - placeholder for visual asset">
-          <span>Outcome / impact illustration</span>
-          <span className="ien-placeholder-sub">Visual asset coming soon</span>
-        </div>
       </section>
 
       {/* ── Next case study ── */}

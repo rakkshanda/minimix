@@ -36,26 +36,26 @@ const researchMethods = [
 const findings = [
   { title: 'A confidence problem, not a skills problem.', body: 'Officers knew Google Docs, Canva, Notion. Not HTML, image dimensions, or what a "featured image" was. The CMS spoke developer.' },
   { title: 'Mobile was the majority case.', body: '62% of GA sessions were on mobile, but the legacy nav broke under 480px and event cards overflowed the viewport.' },
-  { title: 'UW infrastructure was a hard constraint.', body: 'Hosted on UW\'s WordPress multisite — no plugin freedom, no custom server config, no budget for paid services.' },
+  { title: 'UW infrastructure was a hard constraint.', body: 'Hosted on UW\'s WordPress multisite, with no plugin freedom, no custom server config, and no budget for paid services.' },
   { title: 'Accessibility wasn\'t optional.', body: 'The iSchool\'s accessibility liaison had flagged the legacy site twice. Fixing it was a precondition, not a stretch goal.' },
 ];
 
 const personas = [
   { name: 'Maya', role: 'VP of Events', need: 'Publish 2–4 events per week, has never used WordPress, lives in her phone.' },
-  { name: 'Jordan', role: 'Prospective Student', need: 'Visiting on mobile during an info session — wants to know "is this org for me?" in under 30 seconds.' },
+  { name: 'Jordan', role: 'Prospective Student', need: 'Visiting on mobile during an info session and wants to know "is this org for me?" in under 30 seconds.' },
   { name: 'Dr. Patel', role: 'Faculty Advisor', need: 'Checks quarterly to verify the org is active and brand-compliant.' },
 ];
 
 const concepts = [
-  { name: 'A — Squarespace migration', pros: 'Familiar editing UX', cons: 'UW won\'t host externally; brand kit limitations', chosen: false },
-  { name: 'B — Off-the-shelf WP theme + page builder', pros: 'Fast to ship', cons: 'Bloated, accessibility debt, hard to enforce brand', chosen: false },
-  { name: 'C — Custom _s theme + ACF Pro', pros: 'Full control of accessibility, performance, brand; structured editing UX', cons: 'Higher build cost upfront', chosen: true },
+  { name: 'A, Squarespace migration', pros: 'Familiar editing UX', cons: 'UW won\'t host externally; brand kit limitations', chosen: false },
+  { name: 'B, Off-the-shelf WP theme + page builder', pros: 'Fast to ship', cons: 'Bloated, accessibility debt, hard to enforce brand', chosen: false },
+  { name: 'C, Custom _s theme + ACF Pro', pros: 'Full control of accessibility, performance, brand; structured editing UX', cons: 'Higher build cost upfront', chosen: true },
 ];
 
 const designPrinciples = [
   { number: '01', title: 'Officer-first', body: 'If an officer can\'t publish in under 5 minutes on a phone, redesign the form.' },
   { number: '02', title: 'Mobile canonical', body: 'Design mobile first, scale up. 62% of users never see the desktop view.' },
-  { number: '03', title: 'Accessibility by default', body: 'Every component ships WCAG 2.2 AA. Not a feature — a baseline.' },
+  { number: '03', title: 'Accessibility by default', body: 'Every component ships WCAG 2.2 AA. Not a feature, a baseline.' },
   { number: '04', title: 'Brand via tokens', body: 'Make it impossible to use an off-brand color. Consistency from code, not policing.' },
 ];
 
@@ -70,9 +70,9 @@ const a11yChecks = [
 const techStack = [
   { name: '_s (underscores)', reason: 'Clean slate, no opinions, easy to make accessible.' },
   { name: 'ACF Pro', reason: 'The content modeling layer. Worth every penny of the license.' },
-  { name: 'SCSS 7-1 architecture', reason: 'Tokens, mixins, base, components — single source of truth.' },
+  { name: 'SCSS 7-1 architecture', reason: 'Tokens, mixins, base, components, with a single source of truth.' },
   { name: 'Vanilla JS', reason: 'No jQuery, no React. ~12KB of JS total. Keeps handoff simple.' },
-  { name: 'sass + terser only', reason: 'No heavy build pipeline — understandable for any future student dev.' },
+  { name: 'sass + terser only', reason: 'No heavy build pipeline, understandable for any future student dev.' },
 ];
 
 const handoffDocs = [
@@ -90,7 +90,7 @@ const workedWell = [
 
 const wouldChange = [
   { title: 'Ship analytics earlier.', body: 'GA4 went in at week 6 instead of day 1. I have less baseline data than I\'d like.' },
-  { title: 'Simplify the ACF schema sooner.', body: 'Separate "short" and "long" description fields — officers ignored the long one. Consolidated in v1.1.' },
+  { title: 'Simplify the ACF schema sooner.', body: 'Separate "short" and "long" description fields. Officers ignored the long one. Consolidated in v1.1.' },
   { title: 'Account for image weight.', body: 'Officers uploaded 4MB phone photos. Auto-resize/compress shipped in v1.2; should have been v1.0.' },
 ];
 
@@ -258,7 +258,7 @@ const AIMSCaseStudy = () => {
           <Reveal>
             <p className="aims-kicker">TL;DR</p>
             <p className="aims-tldr-body">
-              AIMS was running on a WordPress site that only one officer could update — and she was graduating.
+              AIMS was running on a WordPress site that only one officer could update, and she was graduating.
               I rebuilt it as a custom theme on the _s base with ACF Pro content models designed around how
               non-technical officers think, not how WordPress works. SCSS design tokens enforce UW brand without
               policing. Every component ships WCAG 2.2 AA. The handoff was the design: officers now run the site
@@ -296,7 +296,7 @@ const AIMSCaseStudy = () => {
                 I'd rather just not post the event than figure out how to add it.
                 By the time I figure out the photo sizing, the event is over.
               </p>
-              <span>— Events Lead, AIMS</span>
+              <span>Events Lead, AIMS</span>
             </Reveal>
           </div>
 
@@ -373,7 +373,7 @@ const AIMSCaseStudy = () => {
 
           <Reveal className="aims-ia-block" delay={0.08}>
             <p className="aims-kicker">Information architecture</p>
-            <p>Sketched on paper, validated with three officers via card-sort over Zoom. One surprise: "Resources" moved from a footer link to top-nav — officers said prospective students kept asking for it on the legacy site.</p>
+            <p>Sketched on paper, validated with three officers via card-sort over Zoom. One surprise: "Resources" moved from a footer link to top-nav because officers said prospective students kept asking for it on the legacy site.</p>
             <div className="aims-ia-diagram">
               <div className="aims-ia-node aims-ia-root">Home</div>
               <div className="aims-ia-connector" />
@@ -412,9 +412,9 @@ const AIMSCaseStudy = () => {
           </div>
 
           <Reveal className="aims-tokens-block" delay={0.08}>
-            <p className="aims-kicker">Design system — SCSS tokens</p>
+            <p className="aims-kicker">Design system, SCSS tokens</p>
             <p>One file. No hard-coded colors anywhere in the codebase. When UW updated its accent palette in March, the change was a single-file edit.</p>
-            <pre className="aims-code-block">{`// _tokens.scss — single source of truth
+            <pre className="aims-code-block">{`// _tokens.scss, single source of truth
 $uw-purple:        #4b2e83;
 $uw-gold:          #b7a57a;
 $uw-metallic-gold: #85754d;
@@ -490,7 +490,7 @@ $breakpoints: (
             <p className="aims-kicker">05 / Reflection</p>
             <h2>The most important design artifact wasn't a screen.</h2>
             <p>
-              It was the ACF schema — the thing officers see every Tuesday night when they sit down to
+              It was the ACF schema, the thing officers see every Tuesday night when they sit down to
               publish. Designing for the people who maintain the product, not just the people who use it,
               is a discipline worth keeping.
             </p>

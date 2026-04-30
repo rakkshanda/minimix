@@ -610,10 +610,9 @@ const FolkloreCaseStudy = () => {
       <section id="development" className="folklore-section" role="tabpanel" aria-labelledby="tab-development" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">07 / Development</p>
-          <h2>Built inside a real content system, not a perfect sandbox.</h2>
           <p>
-            Stack: PHP and jQuery on a WordPress CMS testing site. The plugin was deployed
-            so stakeholders could interact with a live build, not a static prototype.
+            Stack-PHP and jQuery on a WordPress CMS testing site. The plugin was deployed
+            so stakeholders could interact with a live testing build.
           </p>
         </Reveal>
 

@@ -44,7 +44,7 @@ const Portfolio = ({ isProduct = false }) => {
     if (project.title === 'South Project') return '/south-project';
     if (project.title === 'Career Cupid') return '/career-cupid';
     if (project.title === 'MarketPulse') return '/marketpulse';
-    if (project.title === 'Hugging Face landing page redesign') return '/huggingface';
+    if (project.title === 'Hugging Face landing page redesign') return '/iengage';
     if (project.title === 'iEngage × Hugging Face') return '/iengage';
     if (project.title === 'PlotX') return '/plotx';
     if (project.title === 'Hunch') return '/hunch';

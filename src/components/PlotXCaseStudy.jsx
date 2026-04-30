@@ -1,6 +1,5 @@
 import CaseStudyTemplate from './CaseStudyTemplate';
 import plotx from '../assets/plotx.png';
-import plotx1 from '../assets/plotx1.png';
 
 const UsersIcon = () => (
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -92,10 +91,6 @@ const config = {
       { title: 'Synchronized countdown timer', body: 'A client-side interval drives the visual countdown for smoothness. A server heartbeat corrects drift every 5 seconds, keeping all 100K+ clients within one second of each other.' },
       { title: 'Gamified leaderboard', body: 'Top 3 positions visible at all times with animated rank changes. User\'s own rank always pinned at the bottom of the visible list. Updates triggered on each round resolution.' },
       { title: 'Landing and marketing pages', body: 'Shipped landing and app pages using AngularJS and a structured SCSS architecture, improving performance, cross-browser compatibility, and SEO alongside the quiz feature work.' },
-    ],
-    images: [
-      { src: plotx,  alt: 'PlotX platform homepage' },
-      { src: plotx1, alt: 'PlotX quiz round interface with countdown timer' },
     ],
   },
   reflection: {
