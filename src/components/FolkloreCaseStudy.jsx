@@ -26,7 +26,7 @@ const FOLKLORE_TABS = [
 ];
 
 const snapshotItems = [
-  { label: 'Role',     value: 'UX Researcher & Front-End Developer' },
+  { label: 'Role',     value: 'Front-End Developer' },
   { label: 'Client',   value: 'University of Washington' },
   { label: 'Type',     value: 'WordPress plugin' },
   { label: 'Duration', value: '6 months' },
