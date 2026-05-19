@@ -457,7 +457,7 @@ const ClaimRunnerCaseStudy = () => {
         <section id="validation" className="claimrunner-story-section">
           <Reveal className="claimrunner-section-intro">
             <p className="claimrunner-kicker">03 / Validation & Traction</p>
-            <h2>The sprint ended with momentum, not just slides.</h2>
+            <h2>The sprint ended with momentum</h2>
             <p>
               Beyond the qualitative work, we ran a parallel validation track to test demand before
               committing to the full product build.

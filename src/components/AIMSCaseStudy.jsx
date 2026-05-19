@@ -271,7 +271,7 @@ const AIMSCaseStudy = () => {
         <section id="discovery" className="aims-story-section">
           <Reveal className="aims-section-intro">
             <p className="aims-kicker">01 / Discovery</p>
-            <h2>The ask was "make it look better." The real problem was survivability.</h2>
+            <h2> The real problem was survivability.</h2>
             <p>
               When the AIMS president emailed in January, the ask was "the website looks dated." That was
               the symptom. The actual problem surfaced in the first 20 minutes: only one officer in the
@@ -313,7 +313,7 @@ const AIMSCaseStudy = () => {
             </div>
           </Reveal>
 
-          <Reveal className="aims-personas-block" delay={0.08}>
+          {/* <Reveal className="aims-personas-block" delay={0.08}>
             <p className="aims-kicker">Personas (condensed)</p>
             <div className="aims-personas-grid">
               {personas.map((p) => (
@@ -326,7 +326,7 @@ const AIMSCaseStudy = () => {
                 </div>
               ))}
             </div>
-          </Reveal>
+          </Reveal> */}
         </section>
 
         {/* IDEATION */}
