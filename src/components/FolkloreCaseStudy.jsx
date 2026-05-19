@@ -237,7 +237,7 @@ const testingQuotes = [
 ];
 
 const reflectionWorked = [
-  'The PRD up front saved weeks of back-and-forth later. Every design and dev decision had a document to point at.',
+  // 'The PRD up front saved weeks of back-and-forth later. Every design and dev decision had a document to point at.',
   'Letting the survey data drive the feature set, not the other way around. The grid-vs-list toggle, filter categories, and contact-link emphasis all came from real numbers.',
   'Building on the UW CMS testing site early helped stakeholders give better feedback on a real plugin than they would have on a Figma file.',
 ];
