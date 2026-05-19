@@ -17,7 +17,7 @@ const outcomes = [
 ];
 
 const snapshot = [
-  { label: 'Role', value: 'Lead UX Designer & Frontend Developer (solo)' },
+  { label: 'Role', value: 'Frontend Developer ' },
   { label: 'Client', value: 'Association of Information Management Students, UW iSchool' },
   { label: 'Type', value: 'RSO website redesign + custom WordPress theme' },
   { label: 'Duration', value: 'Jan 2025 – Present' },
