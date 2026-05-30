@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import '../App.css';
 import './Portfolio.css';
 import './About.css';
-import { frontendProjects, productProjects } from './projects/allProjects';
+import { getOrderedPortfolioProjects } from './projects/allProjects';
 import profileImage from '../assets/image.png';
 import { navigateWithTransition } from '../utils/viewTransition';
 
@@ -31,7 +31,7 @@ function AnimatedWords({ text, delay, className, style }) {
   );
 }
 
-const Portfolio = ({ isProduct = false }) => {
+const Portfolio = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('portfolio');
   const [hoveredIdx, setHoveredIdx] = useState(null);
@@ -50,24 +50,6 @@ const Portfolio = ({ isProduct = false }) => {
     if (project.title === 'Hunch') return '/hunch';
     if (project.title === 'VisionDefect AI') return '/visiondefect';
     return `/project/${slugify(project.title)}`;
-  };
-
-  const buildProjectList = () => {
-    if (!isProduct) return frontendProjects;
-
-    const combined = [
-      ...frontendProjects.slice(0, 3),  // Folklore, AIMS, South Project
-      ...productProjects,               // Career Cupid, RevereXR, HuggingFace
-      ...frontendProjects.slice(3)      // PlotX, Hunch, Financial news, Claim Runner, Career Cupid, Product Chatbot
-    ];
-
-    const seen = new Set();
-    return combined.filter((proj) => {
-      const slug = slugify(proj.title);
-      if (seen.has(slug)) return false;
-      seen.add(slug);
-      return true;
-    });
   };
 
   // Restore scroll position when returning from a case study
@@ -98,9 +80,7 @@ const Portfolio = ({ isProduct = false }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Choose the right project list based on route
-  // Product page shows custom order: frontendProjects (first 3) + productProjects + frontendProjects (rest)
-  const projectList = buildProjectList();
+  const projectList = getOrderedPortfolioProjects();
 
   return (
     <>

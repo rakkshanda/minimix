@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProjectDetail.css';
-import { frontendProjects, productProjects } from './projects/allProjects';
+import { getOrderedPortfolioProjects } from './projects/allProjects';
 import { navigateWithTransition } from '../utils/viewTransition';
 
-const ProjectDetail = ({ isProduct = false }) => {
+const ProjectDetail = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
@@ -25,37 +25,18 @@ const ProjectDetail = ({ isProduct = false }) => {
     window.scrollTo(0, 0);
   }, [projectId]);
 
-  const buildProjectList = () => {
-    if (!isProduct) return frontendProjects;
-
-    const combined = [
-      ...frontendProjects.slice(0, 3),
-      ...productProjects,
-      ...frontendProjects.slice(3)
-    ];
-
-    const seen = new Set();
-    return combined.filter((proj) => {
-      const slug = slugify(proj.title);
-      if (seen.has(slug)) return false;
-      seen.add(slug);
-      return true;
-    });
-  };
-
-  // Product page shows custom order: frontendProjects (first 3) + productProjects + frontendProjects (rest)
-  const projectList = buildProjectList();
+  const projectList = getOrderedPortfolioProjects();
   const project = projectList.find(p => 
     slugify(p.title) === projectId
   );
 
-  const tabs = [
+  const tabs = useMemo(() => ([
     { id: 'overview', label: project?.data.title.toUpperCase() || 'OVERVIEW' },
     { id: 'discovery', label: 'Discovery' },
     { id: 'ideation', label: 'Ideation' },
     { id: 'design', label: 'Design' },
     { id: 'reflection', label: 'Reflection' }
-  ];
+  ]), [project]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);

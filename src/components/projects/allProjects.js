@@ -573,3 +573,27 @@ export const frontendProjects = [
     }
   },
 ];
+
+export const portfolioProjectOrder = [
+  'South Project',
+  'Folklore',
+  'AIMS UW',
+  'MarketPulse',
+  'PlotX',
+  'Hunch',
+  'Career Cupid',
+  'Hugging Face landing page redesign',
+  'Claim Runner AI',
+  'VisionDefect AI',
+];
+
+export function getOrderedPortfolioProjects() {
+  const uniqueProjects = [...frontendProjects, ...productProjects].filter((project, index, allProjects) => (
+    allProjects.findIndex((candidate) => candidate.title === project.title) === index
+  ));
+
+  const projectsByTitle = new Map(uniqueProjects.map((project) => [project.title, project]));
+  return portfolioProjectOrder
+    .map((title) => projectsByTitle.get(title))
+    .filter(Boolean);
+}
