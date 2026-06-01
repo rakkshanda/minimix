@@ -16,7 +16,7 @@ const projects = [
 
   { title: 'RevereXR', image: revere },
     { title: 'Folklore', image: folkloreImg },
-    { title: 'Hugging Face landing page redesign', image: hf },
+    { title: 'HunggingFace', image: hf },
 ];
 
 const duplicatedProjects = [...projects, ...projects, ...projects];

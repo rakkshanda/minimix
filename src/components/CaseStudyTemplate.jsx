@@ -363,11 +363,11 @@ const CaseStudyTemplate = ({ config = {} }) => {
         </div>
       </section>
 
-      {/* NEXT CASE STUDY */}
+      {/* Next */}
       {nextCase && (
-        <nav className="cs-next-case" aria-label="Next case study">
+        <nav className="cs-next-case" aria-label="Next">
           <Reveal>
-            <p className="cs-kicker">Next case study</p>
+            <p className="cs-kicker">Next</p>
             <button
               type="button"
               className="cs-next-button"

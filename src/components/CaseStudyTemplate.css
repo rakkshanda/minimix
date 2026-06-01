@@ -185,7 +185,7 @@
 .cs-hero-visual {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 0;
 }
 
 .cs-screen {
@@ -762,7 +762,7 @@
   background: #f4a0be;
 }
 
-/* ── Next case study nav ── */
+/* ── Next nav ── */
 .cs-next-case {
   padding: 48px 0 0;
   border-top: 1px solid rgba(17, 17, 17, 0.1);

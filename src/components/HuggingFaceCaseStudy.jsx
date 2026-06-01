@@ -31,12 +31,12 @@ const DataIcon = () => (
 
 const config = {
   bodyClass: 'huggingface-page',
-  accent: '#c94f7c',
+  accent: '#e85d00',
   eyebrow: 'HuggingFace Redesign / Case Study',
   title: 'One landing page. Two completely different users. Both leaving.',
   lede: 'A 3-day design sprint that restructured HuggingFace\'s landing page for two personas with conflicting needs - projected to cut bounce rate by 22%.',
   liveLink: 'https://rakshanda.my.canva.site/hugging-face-redesign',
-  liveLinkText: 'View project',
+  liveLinkText: 'View',
   heroImage: hf,
   heroImageAlt: 'HuggingFace redesigned landing page with dual CTA structure',
   snapshot: [

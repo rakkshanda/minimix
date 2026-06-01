@@ -168,7 +168,7 @@
 .aims-hero-visual {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0;
 }
 
 .aims-screen {
@@ -1028,4 +1028,37 @@
   .aims-hmw-body {
     font-size: 1.4rem;
   }
+}
+
+.aims-next-case {
+  padding: 48px 0 0;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  margin-top: 40px;
+}
+
+.aims-next-button {
+  margin-top: 12px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--type-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #111;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s ease, transform 0.2s ease;
+  line-height: 1.1;
+}
+
+.aims-next-button:hover {
+  color: #4b2e83;
+  transform: translateX(6px);
+}
+
+.aims-next-button:focus-visible {
+  outline: 2px solid #4b2e83;
+  outline-offset: 4px;
+  border-radius: 4px;
 }

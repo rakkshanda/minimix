@@ -43,8 +43,8 @@ const Portfolio = () => {
     if (project.title === 'Folklore') return '/folklore';
     if (project.title === 'South Project') return '/south-project';
     if (project.title === 'Career Cupid') return '/career-cupid';
-    if (project.title === 'MarketPulse') return '/marketpulse';
-    if (project.title === 'Hugging Face landing page redesign') return '/iengage';
+    if (project.title === 'Portfolio Insights') return '/marketpulse';
+    if (project.title === 'HunggingFace') return '/iengage';
     if (project.title === 'iEngage × Hugging Face') return '/iengage';
     if (project.title === 'PlotX') return '/plotx';
     if (project.title === 'Hunch') return '/hunch';
@@ -95,19 +95,14 @@ const Portfolio = () => {
             <AnimatedWords text="thoughtful experiences." delay={1.3} />
           </h1>
 
-          <motion.p
-            className="hero-lede"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: EASE, delay: 1.8 }}
-          >
-            I build interfaces people can use, with WordPress, React, and a commitment to accessible, standards-based code.
-          </motion.p>
+     
         </div>
         
         <div className="image-sidebar">
           {projectList.map((proj, idx) => {
             const projectPath = getProjectPath(proj);
+            const projectLink = proj.data.link;
+            const linkLabel = proj.data.linkLabel ?? (projectLink?.includes('github.com') ? 'View Code' : 'View Live');
             return (
               <div
                 key={idx}
@@ -130,15 +125,15 @@ const Portfolio = () => {
                   onMouseEnter={() => setHoveredIdx(idx)}
                   onMouseLeave={() => setHoveredIdx(null)}
                 >
-                  {proj.data.link && (
+                  {projectLink && (
                     <a
-                      href={proj.data.link}
+                      href={projectLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="view-live-button"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      View Live
+                      {linkLabel}
                     </a>
                   )}
                   <img

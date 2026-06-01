@@ -27,19 +27,72 @@ const FOLKLORE_TABS = [
 
 const snapshotItems = [
   { label: 'Role',     value: 'Front-End Developer' },
-  { label: 'Client',   value: 'University of Washington' },
+  { label: 'For',   value: 'University of Washington' },
   { label: 'Type',     value: 'WordPress plugin' },
   { label: 'Duration', value: '6 months' },
-  { label: 'Tools',    value: 'Figma, WordPress, PHP, jQuery, ACF' },
+  { label: 'Tools',    value: 'WordPress, PHP, jQuery' },
   { label: 'Live',     value: 'View plugin ↗', link: 'https://www.washington.edu/docs/plugins/uw-directory-plugin/directory-example/' },
 ];
 
+const OutcomeIcons = {
+  system: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="14" rx="2" />
+      <path d="M8 20h8" />
+      <path d="M12 18v2" />
+    </svg>
+  ),
+  research: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" />
+      <path d="m21 21-4.35-4.35" />
+    </svg>
+  ),
+  features: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3v18" />
+      <path d="M3 12h18" />
+      <path d="M7 7h.01" />
+      <path d="M17 7h.01" />
+      <path d="M7 17h.01" />
+      <path d="M17 17h.01" />
+    </svg>
+  ),
+  grid: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="7" height="7" rx="1" />
+      <rect x="14" y="3" width="7" height="7" rx="1" />
+      <rect x="3" y="14" width="7" height="7" rx="1" />
+      <rect x="14" y="14" width="7" height="7" rx="1" />
+    </svg>
+  ),
+};
+
 const outcomes = [
-  'Standardized directory component that any UW department can adopt',
-  '38 survey participants across UW students, staff, and professors informed the feature set',
-  'Top 3 features: filtering by category (68.4%), keyword search (57.9%), and contact links (50%)',
-  '65.8% of users preferred grid view over list, validating the default layout decision',
-  'WCAG 2.1 accessibility and FERPA compliance built into the requirements from day one',
+  {
+    iconKey: 'system',
+    value: 'UW-wide',
+    label: 'reusable plugin model',
+    sub: 'Standardized directory plugin that any UW department can adopt.',
+  },
+  {
+    iconKey: 'research',
+    value: '38',
+    label: 'survey participants',
+    sub: 'Students, staff, and professors informed the feature set.',
+  },
+  {
+    iconKey: 'features',
+    value: 'Top 3',
+    label: 'validated core features',
+    sub: 'Filtering, keyword search, and contact links ranked highest.',
+  },
+  {
+    iconKey: 'grid',
+    value: '65.8%',
+    label: 'preferred grid view',
+    sub: 'Validated the default layout direction over list view.',
+  },
 ];
 
 const prdObjectives = [
@@ -349,18 +402,12 @@ const FolkloreCaseStudy = () => {
       {/* ── 01 OVERVIEW ── */}
       <section id="overview" className="folklore-hero" role="tabpanel" aria-labelledby="tab-overview" tabIndex={0}>
         <Reveal className="folklore-hero-copy">
-          <p className="folklore-eyebrow">Folklore / Case Study</p>
-          <h1>A standardized WordPress directory component for the University of Washington.</h1>
+          <p className="folklore-eyebrow">Folklore / Frontend project </p>
+          <h1>A standardized WordPress directory plugin for the University of Washington.</h1>
           <p className="folklore-lede">
             Folklore rethinks the UW directory as a faster, clearer tool for finding
-            contact and department information, with one shared component any department can adopt.
+            contact and department information, with a plugin that any department can adopt.
           </p>
-          <div className="folklore-outcomes-block">
-            <p className="folklore-meta-label" style={{ marginBottom: '12px' }}>Outcomes at a glance</p>
-            <ul className="folklore-outcomes-list">
-              {outcomes.map((o, i) => <li key={i}>{o}</li>)}
-            </ul>
-          </div>
         </Reveal>
 
         <Reveal className="folklore-hero-visual" delay={0.08}>
@@ -382,6 +429,20 @@ const FolkloreCaseStudy = () => {
             ))}
           </div>
         </Reveal>
+
+        <div className="folklore-hero-outcomes">
+          <p className="folklore-outcomes-label">Outcomes at a glance</p>
+          <div className="folklore-outcomes-grid">
+            {outcomes.map((item, i) => (
+              <Reveal key={item.label} delay={0.05 * i} className="folklore-outcome-card">
+                <div className="folklore-outcome-icon">{OutcomeIcons[item.iconKey]}</div>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+                <p>{item.sub}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ── 02 PRODUCT REQUIREMENTS ── */}
@@ -390,7 +451,7 @@ const FolkloreCaseStudy = () => {
           <p className="folklore-kicker">02 / Product Requirements</p>
           <h2>The PRD anchored the project.</h2>
           <p>
-            Before any design or code, I documented what the plugin needed to do, who it served,
+            Before any design or code, I contributed to documented what the plugin needed to do, who it served,
             and which constraints were non-negotiable.
           </p>
         </Reveal>
@@ -687,10 +748,10 @@ const FolkloreCaseStudy = () => {
         </Reveal>
       </section>
 
-      {/* ── NEXT CASE STUDY ── */}
-      <nav className="folklore-next-case" aria-label="Next case study">
+      {/* ── Next ── */}
+      <nav className="folklore-next-case" aria-label="Next">
         <Reveal>
-          <p className="folklore-kicker">Next case study</p>
+          <p className="folklore-kicker">Next</p>
           <button
             type="button"
             className="folklore-next-button"

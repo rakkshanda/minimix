@@ -29,12 +29,12 @@ const BotIcon = () => (
 
 const config = {
   bodyClass: 'marketpulse-page',
-  accent: '#c94f7c',
-  eyebrow: 'MarketPulse / Emerald Advisors',
+  accent: '#1a5c2e',
+  eyebrow: 'Portfolio Insights / Case Study',
   title: 'Cutting analyst research time in half with a smart news sidebar.',
   lede: 'A Chrome extension that overlays curated, AI-enriched financial news directly on the firm\'s stock dashboard - no tab switching, no context loss.',
   heroImage: eag,
-  heroImageAlt: 'MarketPulse Chrome extension interface showing financial news with sentiment tags',
+  heroImageAlt: 'Portfolio Insights Chrome extension interface showing financial news with sentiment tags',
   snapshot: [
     { label: 'Role',     value: 'Software Engineer, Front-end' },
     { label: 'Client',   value: 'Emerald Advisors, Bellevue WA' },
@@ -99,12 +99,6 @@ const config = {
       { title: 'Build alert thresholds earlier.', body: 'Analysts wanted to be notified when a ticker crossed a sentiment threshold. I shipped filtering first - alerts would have been higher impact.' },
       { title: 'Add news source credibility scoring.', body: 'Not all financial news sources are equal. A source-quality signal would have helped analysts triage faster.' },
       { title: 'Track which articles led to trades.', body: 'Without outcome data, it\'s hard to prove which news sources were actually predictive. Connecting the extension to the trade log would close that loop.' },
-    ],
-    nextSteps: [
-      'Custom per-ticker alert thresholds that trigger push notifications',
-      'Historical sentiment trend view per ticker over time',
-      'Integration with internal research notes for a complete analyst workspace',
-      'Source credibility scoring based on historical accuracy',
     ],
   },
   nextCase: { path: '/iengage', label: 'iEngage × Hugging Face' },

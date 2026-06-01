@@ -36,7 +36,7 @@ const config = {
   title: 'What if finding a career felt more like finding a match?',
   lede: 'A research-driven UX project that reframed career exploration as a personality-first matching experience for college seniors overwhelmed by generic job boards.',
   liveLink: 'https://rakshanda.my.canva.site/career-cupid',
-  liveLinkText: 'View project',
+  liveLinkText: 'View',
   heroImage: cc,
   heroImageAlt: 'Career Cupid swipe-based career discovery interface',
   snapshot: [
@@ -111,7 +111,6 @@ const config = {
       'Alumni match network - connect students with alumni in their matched career paths',
     ],
   },
-  nextCase: { path: '/marketpulse', label: 'MarketPulse / Emerald Advisors' },
 };
 
 export default function CareerCupidCaseStudy() {

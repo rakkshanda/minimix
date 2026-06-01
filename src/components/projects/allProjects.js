@@ -10,9 +10,12 @@ import revere from '../../assets/revere.png';
 import eag from '../../assets/eag.gif';
 import claimrunner from '../../assets/claimrunner.png';
 import batchquery from '../../assets/batchquery.png';
-import sp from '../../assets/sp.png';
+import sp from '../../assets/sp2.png';
 import spGif from '../../assets/gifs/sp.gif';
 import cc from '../../assets/cc.gif';
+import aimsGif from '../../assets/gifs/aims.gif';
+import plotxGif from '../../assets/gifs/plotx.gif';
+import claimGif from '../../assets/gifs/claimpt.gif';
 
 // Product Projects (1, 2, 3, 4) - shown at /product
 export const productProjects = [
@@ -26,13 +29,13 @@ export const productProjects = [
       duration: '3 months',
       tech: 'Figma, Miro',
       link: 'https://rakshanda.my.canva.site/career-cupid',
+      linkLabel: 'View',
       images: [cc],
       type: 'UX Research Project',
       agency: 'Academic Project',
       objective: 'Help job seekers discover roles based on values and work styles',
       process: 'Led user research through surveys and interviews, created personas, and designed interactive prototypes',
       audience: 'College seniors exploring first jobs',
-      footerText: 'Developed as part of a UX group project, Career Cupid is a web-based tool that connects user personalities to career paths. Led user research through surveys and interviews, created personas, and designed interactive prototypes focused on clarity, engagement, and user retention.',
       discovery: {
         content: 'We began by interviewing 30+ college seniors about their career search anxieties. The research revealed that traditional job search tools focus heavily on skills matching but ignore personality fit and work-life balance preferences. Surveys showed 78% of respondents felt overwhelmed by generic job listings.',
         findings: [
@@ -88,7 +91,6 @@ export const productProjects = [
       objective: 'Let users walk through civil rights protests in VR to preserve community history',
       process: 'Led user interviews, built immersive prototypes, and designed accessible, emotionally resonant user flows',
       audience: 'Students and community members interested in Black history',
-      footerText: 'Finalist project for an XR hackathon, RevereXR captures the stories of elder Black business owners in a virtual space. Led user interviews, built immersive prototypes, and designed accessible, emotionally resonant user flows.',
       discovery: {
         content: 'Through interviews with elder Black business owners in Seattle, we discovered their stories were at risk of being lost. Many had vivid memories of civil rights protests and community organizing but lacked accessible ways to share these experiences with younger generations. VR offered an opportunity to create immersive, empathetic storytelling.',
         findings: [
@@ -144,7 +146,6 @@ export const productProjects = [
       objective: 'Create a clear, accessible donor experience that earns trust and drives more completed donations.',
       process: 'Mapped end-to-end donor flows, designed responsive UI patterns, and paired with engineers to ship LLM-driven personalization.',
       audience: 'Donors supporting the Young Moms Work & Wellness Bridge program',
-      footerText: 'Led the design of an AI-powered donation platform, defining user flows, interfaces, and interaction patterns to create a clear, accessible donor experience. Partnered with engineers to integrate LLM-driven personalization, improving donor engagement and supporting the enrollment of 100 mothers for the Young Moms Work & Wellness Bridge program.',
       discovery: {
         content: 'Donors were dropping off after selecting an amount because the path to completion felt unclear and generic. The program also needed to show tangible impact for new supporters joining via referrals.',
         findings: [
@@ -187,34 +188,34 @@ export const productProjects = [
 ];
 
 // Frontend Projects - shown at / (default)
-// Order: Claim Runner, AIMS, South Project, Folklore, Career Cupid, MarketPulse, Hugging Face, PlotX, Hunch, VisionDefect AI
+// Order: Claim Runner, AIMS, South Project, Folklore, Career Cupid, Portfolio Insights, Hugging Face, PlotX, Hunch, VisionDefect AI
 export const frontendProjects = [
   {
     title: 'Claim Runner AI',
     image: claimrunner,
+    hoverImage: claimGif,
     type: 'frontend',
     data: {
       title: 'Claim Runner AI',
-      tagline: 'AI assistant that guides users through small claims filing with step-by-step document and form support.',
+      tagline: 'Landing page and prototype for small claims management platform',
       duration: '2024',
       tech: ['React', 'LLM APIs', 'Cloud Services'],
       link: 'https://www.claimrunner.ai',
       images: [claimrunner],
-      footerText: 'Built the React front end for an AI-powered claims intake tool -- designed accessible form flows and structured routing UI to streamline review cycles and reduce manual handling.'
     }
   },
   {
     title: 'AIMS UW',
     image: aims,
+    hoverImage: aimsGif,
     type: 'frontend',
     data: {
       title: 'AIMS UW',
-      tagline: 'RSO website for UW iSchool featuring event workflows, program discovery, and streamlined student engagement.',
+      tagline: 'UW iSchool student community website',
       duration: 'Jan 2025 - Present',
       tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress', 'ACF'],
       link: 'https://aims.ischool.uw.edu/',
       images: [aims],
-      footerText: 'Designed and developed a maintainable WordPress theme with dynamic events (ACF), sponsor highlights, and resource pages -- built to WCAG standards and UW brand guidelines so student officers can update content without developer support.',
       discovery: {
         content: 'AIMS needed a site officers could update without developer help while staying on UW hosting and meeting university accessibility requirements.',
         findings: [
@@ -261,13 +262,11 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'South Project',
-      tagline: 'Community-driven platform helping young mothers stay connected, find events, and access essential support programs.',
+      tagline: 'Events and support website for young moms',
       duration: '2024',
       tech: ['Figma', 'Design Systems', 'HTML/CSS', 'LLM APIs'],
       link: 'https://southprojecttx.com',
       images: [sp],
-      footerText:
-        'Led front-end design and implementation for a nonprofit donation platform -- defining accessible user flows, responsive UI patterns, and interaction states. Applied WCAG-compliant color contrast, focus states, and readable form controls throughout. Partnered with engineers to integrate LLM-driven personalization, supporting the enrollment of 100 mothers in the Young Moms Work & Wellness Bridge program.',
       discovery: {
         content:
           'Donors were dropping off after selecting an amount because the path to completion felt unclear and the UI lacked accessible guidance for mobile users.',
@@ -318,12 +317,11 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'Folklore',
-      tagline: 'WordPress directory plugin for structured discovery with flexible grid and list-based browsing.',
+      tagline: 'WordPress people directory plugin',
       duration: '5 months',
       tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
       link: 'https://www.washington.edu/docs/plugins/uw-directory-plugin/directory-example/',
       images: [folklore2],
-      footerText: 'Built a custom WordPress plugin with namespaced PHP, BEM-scoped SCSS, and vanilla JS. Designed for WCAG compliance with keyboard-navigable views, proper focus management, and optimized database queries that cut load times from 8s+ to under 1s. Architected for non-technical editor handoff and future Google Sheets integration.',
       discovery: {
         content: 'Legacy directory had slow loads, weak mobile UX, and brittle CSS; accessibility and performance audits revealed deep query inefficiency and style conflicts.',
         findings: [
@@ -367,17 +365,17 @@ export const frontendProjects = [
     type: 'product',
     data: {
       title: 'Career Cupid',
-      tagline: 'Swipe-based career discovery platform mapping users to roles through interactive design exploration.',
+      tagline: 'Swipe-based career discovery mobile app ',
       duration: '3 months',
       tech: 'Figma, Miro',
       link: 'https://rakshanda.my.canva.site/career-cupid',
+      linkLabel: 'View',
       images: [cc],
       type: 'UX Research Project',
       agency: 'Academic Project',
       objective: 'Help job seekers discover roles based on values and work styles',
       process: 'Led user research through surveys and interviews, created personas, and designed interactive prototypes',
       audience: 'College seniors exploring first jobs',
-      footerText: 'Developed as part of a UX group project, Career Cupid is a web-based tool that connects user personalities to career paths. Led user research through surveys and interviews, created personas, and designed interactive prototypes focused on clarity, engagement, and user retention.',
       discovery: {
         content: 'We began by interviewing 30+ college seniors about their career search anxieties. The research revealed that traditional job search tools focus heavily on skills matching but ignore personality fit and work-life balance preferences. Surveys showed 78% of respondents felt overwhelmed by generic job listings.',
         findings: [
@@ -418,17 +416,17 @@ export const frontendProjects = [
     }
   },
   {
-    title: 'MarketPulse',
+    title: 'Portfolio Insights',
     image: eag,
     type: 'frontend',
     data: {
-      title: 'MarketPulse',
-      tagline: 'Financial news browser for stocks and ETFs with real-time updates and AI-driven market sentiment insights.',
+      title: 'Portfolio Insights',
+      tagline: 'Financial news browser extension',
       duration: 'May 2025 - Aug 2025',
       tech: ['React', 'Chrome Extension APIs', 'TypeScript', 'OpenAI API', 'Financial News APIs'],
+      link: 'https://github.com/rakkshanda/EA-Chrome-extension/tree/main',
+      linkLabel: 'View',
       images: [eag],
-      footerText:
-        'Overlaid curated news on the firm\'s stock dashboard with sentiment tags, date filters, and impact sorting (-50% research time). Added an in-panel ChatGPT assistant for TL;DRs, risk highlights, and cited sources to cut context switching.',
       discovery: {
         content:
           'Analysts lost hours daily juggling tabs and filtering irrelevant articles; research time audits showed the process consumed a large share of the workday.',
@@ -474,31 +472,31 @@ export const frontendProjects = [
     }
   },
   {
-    title: 'Hugging Face landing page redesign',
+    title: 'HunggingFace',
     image: hf,
     type: 'product',
     data: {
-      title: 'Hugging Face landing page redesign',
-      tagline: 'Data-driven landing page overhaul that boosts retention and paid conversions.',
+      title: 'HunggingFace',
+      tagline: 'Data-driven landing page redesign',
       duration: 'Sprint format',
       tech: ['Figma', 'Zoom', 'UserTesting'],
       link: 'https://rakshanda.my.canva.site/hugging-face-redesign',
+      linkLabel: 'View',
       images: [hf],
-      footerText: 'Applied a condensed Design Thinking framework (Empathize, Define, Ideate, Design, Test) to redesign the HuggingFace landing page around three segmented user paths, grounded in three user interviews, traffic analytics, and a four-company competitive scan.',
     }
   },
   {
     title: 'PlotX',
     image: plotx,
+    hoverImage: plotxGif,
     type: 'frontend',
     data: {
       title: 'PlotX',
-      tagline: 'Real-time crypto prediction market platform built for fast, responsive trading experiences.',
+      tagline: 'Landing page for quiz platform',
       duration: 'Mar 2022 - Apr 2023',
       tech: ['AngularJS', 'SCSS'],
       link: 'https://plotx.io/',
       images: [plotx],
-      footerText: 'Shipped landing and app pages using AngularJS and a structured SCSS architecture, improving performance, cross-browser compatibility, and SEO. Implemented real-time market views with accessible data display patterns and consistent component styles.'
     }
   },
   {
@@ -507,12 +505,11 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'Hunch',
-      tagline: 'Social networking app focused on lightweight interactions and fluid content discovery.',
+      tagline: 'Mobile app pages for a social networking platform',
       duration: 'Mar 2022 - Apr 2023',
-      tech: ['Flutter', 'Figma'],
+      tech: ['React', 'Flutter'],
       link: 'https://hunch.in/',
       images: [hunch],
-      footerText: 'Built and shipped front-end features in Flutter including accessible reading cards, community interaction flows, and notification patterns -- optimized for usability and consistency across Android and iOS.'
     }
   },
   {
@@ -526,8 +523,6 @@ export const frontendProjects = [
       tech: ['React', 'Node.js', 'OpenAI API', 'Image Processing APIs'],
       link: 'https://batch-query-ena2.vercel.app/',
       images: [batchquery],
-      footerText:
-        'Built a unified pipeline that applies one question across up to four images and returns clear, per-image diagnostics. Cut review time by batching visual queries and generating consistent, actionable answers.',
       discovery: {
         content:
           'Teams reviewing product photos often needed to spot defects or inconsistencies across multiple images. Doing this manually was slow and required repeating the same question for each file.',
@@ -578,13 +573,13 @@ export const portfolioProjectOrder = [
   'South Project',
   'Folklore',
   'AIMS UW',
-  'MarketPulse',
+  'Portfolio Insights',
   'PlotX',
   'Hunch',
-  'Career Cupid',
-  'Hugging Face landing page redesign',
   'Claim Runner AI',
-  'VisionDefect AI',
+  'Career Cupid',
+  'HunggingFace',
+  // 'VisionDefect AI',
 ];
 
 export function getOrderedPortfolioProjects() {

@@ -203,7 +203,7 @@ const AIMSCaseStudy = () => {
         {/* HERO */}
         <section id="overview" className="aims-hero">
           <Reveal className="aims-hero-copy">
-            <p className="aims-eyebrow">AIMS UW / Case Study</p>
+            <p className="aims-eyebrow">AIMS UW / Frontend </p>
             <h1>Rebuilding AIMS so any officer can publish, not just the one who knows WordPress.</h1>
             <p className="aims-lede">
               A solo redesign of the Association of Information Management Students website. Custom WordPress
@@ -527,6 +527,19 @@ $breakpoints: (
             </Reveal>
           </div>
         </section>
+
+        <nav className="aims-next-case" aria-label="Next">
+          <Reveal>
+            <p className="aims-kicker">Next</p>
+            <button
+              type="button"
+              className="aims-next-button"
+              onClick={() => navigateWithTransition(navigate, '/marketpulse')}
+            >
+              Portfolio Insights &rarr;
+            </button>
+          </Reveal>
+        </nav>
       </main>
     </>
   );
