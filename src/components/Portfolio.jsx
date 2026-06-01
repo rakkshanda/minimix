@@ -137,9 +137,18 @@ const Portfolio = () => {
                     </a>
                   )}
                   <img
-                    src={hoveredIdx === idx && proj.hoverImage ? proj.hoverImage : proj.image}
+                    src={proj.image}
                     alt={proj.title}
+                    style={{ opacity: hoveredIdx === idx && proj.hoverImage ? 0 : 1 }}
                   />
+                  {proj.hoverImage && (
+                    <img
+                      src={proj.hoverImage}
+                      alt={proj.title}
+                      className="thumb-gif"
+                      style={{ opacity: hoveredIdx === idx ? 1 : 0 }}
+                    />
+                  )}
                 </div>
               </div>
             );
