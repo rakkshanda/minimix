@@ -553,9 +553,9 @@ For important events, I added a homepage modal so visitors could quickly registe
             <button
               type="button"
               className="sp-next-button"
-              onClick={() => navigateWithTransition(navigate, '/aims')}
+              onClick={() => navigateWithTransition(navigate, '/folklore')}
             >
-              AIMS UW - RSO website rebuild ↗
+              Folklore →
             </button>
           </Reveal>
         </nav>

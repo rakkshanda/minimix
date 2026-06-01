@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './AIMSCaseStudy.css';
 import aims from '../assets/aims.png';
 import aims1 from '../assets/aims1.png';
+import aimsGif from '../assets/gifs/aims.gif';
 import { navigateWithTransition } from '../utils/viewTransition';
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -18,10 +19,10 @@ const outcomes = [
 
 const snapshot = [
   { label: 'Role', value: 'Frontend Developer ' },
-  { label: 'Client', value: 'Association of Information Management Students, UW iSchool' },
-  { label: 'Type', value: 'RSO website redesign + custom WordPress theme' },
-  { label: 'Duration', value: 'Jan 2025 – Present' },
-  { label: 'Tools', value: 'Figma, PHP, SCSS, JavaScript, WordPress, ACF Pro, Lighthouse, axe DevTools' },
+  { label: 'For', value: 'UW iSchool' },
+  { label: 'Type', value: 'WordPress theme' },
+  { label: 'Duration', value: 'Jan 2025 – Aug 2025' },
+  { label: 'Tools', value: 'Figma, WordPress' },
   { label: 'Live site', value: 'aims.ischool.uw.edu', link: 'https://aims.ischool.uw.edu/' },
 ];
 
@@ -103,11 +104,8 @@ const nextSteps = [
 ];
 
 const AIMS_TABS = [
-  { id: 'overview', label: 'Overview' },
-  { id: 'discovery', label: 'Discovery' },
-  { id: 'ideation', label: 'Ideation' },
-  { id: 'design', label: 'Design' },
-  { id: 'build', label: 'Build & Handoff' },
+  { id: 'overview',   label: 'Overview'   },
+  { id: 'live-site',  label: 'Live Site'  },
   { id: 'reflection', label: 'Reflection' },
 ];
 
@@ -204,10 +202,9 @@ const AIMSCaseStudy = () => {
         <section id="overview" className="aims-hero">
           <Reveal className="aims-hero-copy">
             <p className="aims-eyebrow">AIMS UW / Frontend </p>
-            <h1>Rebuilding AIMS so any officer can publish, not just the one who knows WordPress.</h1>
+            <h1>Rebuilding the AIMS website for student leaders </h1>
             <p className="aims-lede">
-              A solo redesign of the Association of Information Management Students website. Custom WordPress
-              theme, ACF content model, zero developer tickets in the first eight weeks after handoff.
+             A redesign of the Association of Information Management Students website, built so student leaders could update content easily and maintain the site for years after handoff.
             </p>
             <div className="aims-hero-actions">
               <a
@@ -242,287 +239,42 @@ const AIMSCaseStudy = () => {
           </Reveal>
         </section>
 
-        {/* OUTCOMES */}
-        <section className="aims-outcomes-grid">
-          {outcomes.map((item, i) => (
-            <Reveal key={item.label} delay={0.06 * i} className="aims-outcome-card">
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-              <p>{item.sub}</p>
-            </Reveal>
-          ))}
-        </section>
-
-        {/* TL;DR */}
-        <section className="aims-tldr">
-          <Reveal>
-            <p className="aims-kicker">TL;DR</p>
-            <p className="aims-tldr-body">
-              AIMS was running on a WordPress site that only one officer could update, and she was graduating.
-              I rebuilt it as a custom theme on the _s base with ACF Pro content models designed around how
-              non-technical officers think, not how WordPress works. SCSS design tokens enforce UW brand without
-              policing. Every component ships WCAG 2.2 AA. The handoff was the design: officers now run the site
-              with zero engineering involvement.
-            </p>
-          </Reveal>
-        </section>
-
-        {/* DISCOVERY */}
-        <section id="discovery" className="aims-story-section">
+        {/* LIVE SITE */}
+        <section id="live-site" className="aims-story-section">
           <Reveal className="aims-section-intro">
-            <p className="aims-kicker">01 / Discovery</p>
-            <h2> The real problem was survivability.</h2>
-            <p>
-              When the AIMS president emailed in January, the ask was "the website looks dated." That was
-              the symptom. The actual problem surfaced in the first 20 minutes: only one officer in the
-              eight-person leadership team felt comfortable touching the site. When she graduated in June,
-              the org would lose its only path to publishing.
-            </p>
+            <p className="aims-kicker">01 / Live Site</p>
           </Reveal>
-
-          <div className="aims-research-layout">
-            <Reveal className="aims-research-card" delay={0.06}>
-              <p className="aims-kicker">Research methods</p>
-              <ul>
-                {researchMethods.map((m) => (
-                  <li key={m}>{m}</li>
-                ))}
-              </ul>
-            </Reveal>
-
-            <Reveal className="aims-quote-panel" delay={0.1}>
-              <p className="aims-quote-mark">"</p>
-              <p>
-                I'd rather just not post the event than figure out how to add it.
-                By the time I figure out the photo sizing, the event is over.
-              </p>
-              <span>Events Lead, AIMS</span>
-            </Reveal>
-          </div>
-
-          <Reveal className="aims-findings-block" delay={0.08}>
-            <p className="aims-kicker">Four findings that shaped everything</p>
-            <div className="aims-findings-grid">
-              {findings.map((f, i) => (
-                <div key={f.title} className="aims-finding-item">
-                  <span className="aims-finding-num">{String(i + 1).padStart(2, '0')}</span>
-                  <strong>{f.title}</strong>
-                  <p>{f.body}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
-          {/* <Reveal className="aims-personas-block" delay={0.08}>
-            <p className="aims-kicker">Personas (condensed)</p>
-            <div className="aims-personas-grid">
-              {personas.map((p) => (
-                <div key={p.name} className="aims-persona-card">
-                  <div className="aims-persona-header">
-                    <strong>{p.name}</strong>
-                    <span>{p.role}</span>
-                  </div>
-                  <p>{p.need}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal> */}
-        </section>
-
-        {/* IDEATION */}
-        <section id="ideation" className="aims-story-section">
-          <Reveal className="aims-section-intro">
-            <p className="aims-kicker">02 / Ideation</p>
-            <h2>The editing experience is the product.</h2>
-          </Reveal>
-
-          <Reveal className="aims-hmw" delay={0.06}>
-            <p className="aims-hmw-label">How might we</p>
-            <p className="aims-hmw-body">
-              build a website that an officer with zero technical experience can confidently update on a
-              Tuesday night, while still meeting UW brand and accessibility standards?
-            </p>
-          </Reveal>
-
-          <Reveal className="aims-concepts-block" delay={0.08}>
-            <p className="aims-kicker">Three concepts considered</p>
-            <div className="aims-concepts-table">
-              <div className="aims-concepts-head">
-                <span>Concept</span>
-                <span>Pros</span>
-                <span>Cons</span>
-                <span>Decision</span>
-              </div>
-              {concepts.map((c) => (
-                <div key={c.name} className={`aims-concepts-row${c.chosen ? ' chosen' : ''}`}>
-                  <span>{c.name}</span>
-                  <span>{c.pros}</span>
-                  <span>{c.cons}</span>
-                  <span className={`aims-concept-verdict${c.chosen ? ' chosen' : ''}`}>
-                    {c.chosen ? '✓ Chosen' : '✕ Rejected'}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <p className="aims-concept-rationale">
-              Concept C won because a page builder gives officers infinite rope; a custom ACF content model
-              gives them a guided form with the right fields in the right order, and validation when
-              something's wrong.
-            </p>
-          </Reveal>
-
-          <Reveal className="aims-ia-block" delay={0.08}>
-            <p className="aims-kicker">Information architecture</p>
-            <p>Sketched on paper, validated with three officers via card-sort over Zoom. One surprise: "Resources" moved from a footer link to top-nav because officers said prospective students kept asking for it on the legacy site.</p>
-            <div className="aims-ia-diagram">
-              <div className="aims-ia-node aims-ia-root">Home</div>
-              <div className="aims-ia-connector" />
-              <div className="aims-ia-branches">
-                {['Events', 'About', 'Sponsors', 'Resources', 'Join'].map((n) => (
-                  <div key={n} className="aims-ia-node">{n}</div>
-                ))}
-              </div>
-              <div className="aims-ia-sub">
-                <span>Events sub-nav</span>
-                <div className="aims-ia-pills">
-                  {['Upcoming', 'Past', 'Featured'].map((p) => (
-                    <span key={p} className="aims-ia-pill">{p}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </section>
-
-        {/* DESIGN */}
-        <section id="design" className="aims-story-section">
-          <Reveal className="aims-section-intro">
-            <p className="aims-kicker">03 / Design</p>
-            <h2>Four principles. One sticky note. No exceptions.</h2>
-          </Reveal>
-
-          <div className="aims-principles-grid">
-            {designPrinciples.map((p, i) => (
-              <Reveal key={p.number} delay={0.05 * i} className="aims-principle-card">
-                <span className="aims-principle-num">{p.number}</span>
-                <strong>{p.title}</strong>
-                <p>{p.body}</p>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal className="aims-tokens-block" delay={0.08}>
-            <p className="aims-kicker">Design system, SCSS tokens</p>
-            <p>One file. No hard-coded colors anywhere in the codebase. When UW updated its accent palette in March, the change was a single-file edit.</p>
-            <pre className="aims-code-block">{`// _tokens.scss, single source of truth
-$uw-purple:        #4b2e83;
-$uw-gold:          #b7a57a;
-$uw-metallic-gold: #85754d;
-
-$space-1: 0.25rem;  $space-2: 0.5rem;
-$space-3: 1rem;     $space-4: 1.5rem;
-$space-5: 2.5rem;
-
-$breakpoints: (
-  sm: 480px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1280px
-);`}</pre>
-          </Reveal>
-
-          <Reveal className="aims-screens-block" delay={0.08}>
-            <p className="aims-kicker">Live site</p>
+          <Reveal delay={0.06}>
             <div className="aims-screens-grid">
-              <img src={aims} alt="AIMS homepage" className="aims-screen-img" />
-              <img src={aims1} alt="AIMS secondary view" className="aims-screen-img" />
+              <img src={aims1} alt="AIMS UW secondary view" className="aims-screen-img" />
+              <img src={aimsGif} alt="AIMS UW interaction demo" className="aims-screen-img aims-screen-img--large" />
             </div>
-          </Reveal>
-
-          <Reveal className="aims-a11y-block" delay={0.08}>
-            <p className="aims-kicker">Accessibility audit</p>
-            <div className="aims-a11y-table">
-              <div className="aims-a11y-head">
-                <span>Check</span>
-                <span>Tool</span>
-                <span>Result</span>
-              </div>
-              {a11yChecks.map((row) => (
-                <div key={row.check} className="aims-a11y-row">
-                  <span>{row.check}</span>
-                  <span>{row.tool}</span>
-                  <span className="aims-a11y-pass">{row.result}</span>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </section>
-
-        {/* BUILD */}
-        <section id="build" className="aims-story-section">
-          <Reveal className="aims-section-intro">
-            <p className="aims-kicker">04 / Build & Handoff</p>
-            <h2>The CMS is the design. Documentation makes it last.</h2>
-          </Reveal>
-
-          <div className="aims-stack-grid">
-            {techStack.map((item, i) => (
-              <Reveal key={item.name} delay={0.05 * i} className="aims-stack-card">
-                <strong>{item.name}</strong>
-                <p>{item.reason}</p>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal className="aims-handoff-block" delay={0.08}>
-            <p className="aims-kicker">Handoff documentation</p>
-            <ul>
-              {handoffDocs.map((d) => (
-                <li key={d}>{d}</li>
-              ))}
-            </ul>
           </Reveal>
         </section>
 
         {/* REFLECTION */}
         <section id="reflection" className="aims-story-section">
           <Reveal className="aims-section-intro">
-            <p className="aims-kicker">05 / Reflection</p>
-            <h2>The most important design artifact wasn't a screen.</h2>
-            <p>
-              It was the ACF schema, the thing officers see every Tuesday night when they sit down to
-              publish. Designing for the people who maintain the product, not just the people who use it,
-              is a discipline worth keeping.
-            </p>
+            <p className="aims-kicker">02 / Reflection</p>
           </Reveal>
 
           <div className="aims-reflection-grid">
             <Reveal className="aims-reflection-col" delay={0.04}>
               <p className="aims-kicker">What worked</p>
-              {workedWell.map((w) => (
-                <div key={w.title} className="aims-reflection-item">
-                  <strong>{w.title}</strong>
-                  <p>{w.body}</p>
-                </div>
-              ))}
+              <ul className="aims-next-list">
+                <li>Rebuilding the site gave AIMS a clearer and more professional student-facing presence.</li>
+                <li>Events became easier to organize, update, and highlight for students.</li>
+                <li>The new page structure made it easier for students to find events, updates, and organization information.</li>
+                <li>The layout was built with handoff in mind, making it easier for future student leaders to maintain.</li>
+              </ul>
             </Reveal>
 
             <Reveal className="aims-reflection-col" delay={0.08}>
-              <p className="aims-kicker">What I'd do differently</p>
-              {wouldChange.map((w) => (
-                <div key={w.title} className="aims-reflection-item">
-                  <strong>{w.title}</strong>
-                  <p>{w.body}</p>
-                </div>
-              ))}
-            </Reveal>
-
-            <Reveal className="aims-reflection-col" delay={0.12}>
-              <p className="aims-kicker">What's next (v2)</p>
+              <p className="aims-kicker">Challenges</p>
               <ul className="aims-next-list">
-                {nextSteps.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
+                <li>Planning success metrics earlier, like form submissions and user drop-off.</li>
+                <li>Organizing events, resources, people, and updates so students could find information quickly.</li>
+                <li>Improving the site through feedback instead of treating launch as the final step.</li>
               </ul>
             </Reveal>
           </div>

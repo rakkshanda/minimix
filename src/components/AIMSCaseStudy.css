@@ -757,6 +757,10 @@
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
 }
 
+.aims-screen-img--large {
+  grid-column: 1 / -1;
+}
+
 /* ── A11y table ── */
 .aims-a11y-block {
   padding: 32px;

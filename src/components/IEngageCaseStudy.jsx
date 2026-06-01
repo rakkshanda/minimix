@@ -8,7 +8,7 @@ import personasImg from '../assets/huggingface/personas.png';
 import { navigateWithTransition } from '../utils/viewTransition';
 
 const EASE = [0.22, 1, 0.36, 1];
-const ACCENT = '#c94f7c';
+const ACCENT = '#e85d00';
 
 const IE_TABS = [
   { id: 'overview',  label: 'Overview'  },
@@ -17,8 +17,6 @@ const IE_TABS = [
   { id: 'define',    label: 'Define'    },
   { id: 'ideate',    label: 'Ideate'    },
   { id: 'design',    label: 'Design'    },
-  { id: 'test',      label: 'Test'      },
-  { id: 'summary',   label: 'Summary'   },
 ];
 
 function Reveal({ children, delay = 0, className = '' }) {
@@ -283,12 +281,8 @@ export default function IEngageCaseStudy() {
           </div>
           <div className="cs-snapshot-strip">
             {[
-              { label: 'Role',        value: 'UX Researcher & Designer' },
-              { label: 'Team',        value: 'Kristina Arike, Rakshanda Bhure, Jason Saldaña' },
-              { label: 'Type',        value: 'iEngage × Hugging Face Case Competition' },
-              { label: 'Format',      value: 'Design Thinking sprint, end to end' },
-              { label: 'Tools',       value: 'Figma, Zoom, UserTesting, competitive analysis' },
-              { label: 'Deliverable', value: 'Figma prototype + competition deck' },
+              { label: 'Role',        value: 'Frontend Developer' },
+              { label: 'Format',      value: 'Design Thinking sprint, Information architecture' },
             ].map((item) => (
               <div key={item.label} className="cs-snapshot-cell">
                 <span className="cs-snapshot-label">{item.label}</span>
@@ -353,19 +347,9 @@ export default function IEngageCaseStudy() {
           <p>We identified three fundamentally different visitor types arriving on the same page with incompatible expectations.</p>
         </Reveal>
 
-        <Reveal className="ien-personas-grid" delay={0.06}>
-          {PERSONAS.map((p) => (
-            <div key={p.name} className="ien-persona-card">
-              <strong className="ien-persona-name">{p.name}</strong>
-              <dl className="ien-persona-dl">
-                <dt>Goal</dt>       <dd>{p.goal}</dd>
-                <dt>Needs</dt>      <dd>{p.needs}</dd>
-                <dt>Pain points</dt><dd>{p.painPoints}</dd>
-              </dl>
-            </div>
-          ))}
+  <Reveal className="ien-asset-frame" delay={0.12}>
+          <img src={personasImg} alt="Persona synthesis board for Hugging Face redesign" className="ien-asset-image" />
         </Reveal>
-
         <Reveal delay={0.08}>
           <p className="cs-kicker" style={{ marginTop: 48 }}>User interviews</p>
         </Reveal>
@@ -402,9 +386,7 @@ export default function IEngageCaseStudy() {
           </ul>
         </Reveal>
 
-        <Reveal className="ien-asset-frame" delay={0.12}>
-          <img src={personasImg} alt="Persona synthesis board for Hugging Face redesign" className="ien-asset-image" />
-        </Reveal>
+      
       </section>
 
       {/* ── 04 / DEFINE ── */}
@@ -603,67 +585,7 @@ export default function IEngageCaseStudy() {
         </Reveal>
       </section>
 
-      {/* ── 07 / TEST ── */}
-      <section
-        id="test"
-        role="tabpanel"
-        aria-labelledby="ien-tab-test"
-        tabIndex={0}
-        className="cs-story-section"
-      >
-        <Reveal className="cs-section-intro">
-          <p className="cs-kicker">07 / Test</p>
-          <h2>Proposed testing methods and ethics.</h2>
-          <p>With a high-fidelity prototype, we'd recommend performing the following testing approaches.</p>
-        </Reveal>
 
-        <Reveal className="ien-test-grid" delay={0.06}>
-          {TEST_METHODS.map((tm, i) => (
-            <div key={tm.method} className="ien-test-card">
-              <span className="ien-phase-num">{String(i + 1).padStart(2, '0')}</span>
-              <strong>{tm.method}</strong>
-              <p>{tm.purpose}</p>
-            </div>
-          ))}
-        </Reveal>
-
-        <Reveal className="ien-card-block" delay={0.08}>
-          <p className="cs-kicker">Ethical considerations</p>
-          <ul className="cs-a11y-list">
-            <li>Be intentional about data collection - avoid unnecessary collection, make clear privacy disclosures</li>
-            <li>Favor transparency - be clear about freemium vs. paid features, let users easily compare tiers</li>
-            <li>Follow accessibility best practices - maintain standards and consider user diversity (novices to experienced teams) when writing copy</li>
-            <li>Keep it authentic - verify testimonials and trust signals; don't exaggerate</li>
-          </ul>
-        </Reveal>
-      </section>
-
-      {/* ── 08 / SUMMARY ── */}
-      <section
-        id="summary"
-        role="tabpanel"
-        aria-labelledby="ien-tab-summary"
-        tabIndex={0}
-        className="cs-story-section"
-      >
-        <Reveal className="cs-section-intro">
-          <p className="cs-kicker">08 / Summary</p>
-          <h2>Research-backed insights that drove every decision.</h2>
-          <p>
-            We followed a Design Thinking approach to root our concept in user insight, business goals, and competitive awareness.
-          </p>
-        </Reveal>
-
-        <Reveal className="ien-summary-grid" delay={0.06}>
-          {SUMMARY_INSIGHTS.map((insight, i) => (
-            <div key={i} className="ien-summary-card">
-              <span className="ien-phase-num">{String(i + 1).padStart(2, '0')}</span>
-              <p>{insight}</p>
-            </div>
-          ))}
-        </Reveal>
-
-      </section>
 
       {/* ── Next ── */}
       <nav className="cs-next-case" aria-label="Next">

@@ -600,6 +600,67 @@
   font-style: italic;
 }
 
+/* ── Persona carousel ── */
+.folklore-persona-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.folklore-persona-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(109, 40, 217, 0.25);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--folklore-accent);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  align-self: center;
+}
+
+.folklore-persona-arrow:hover {
+  background: var(--folklore-accent);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.folklore-persona-board {
+  flex: 1;
+  min-width: 0;
+}
+
+.folklore-persona-dots {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.folklore-persona-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(109, 40, 217, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.folklore-persona-dot.active {
+  background: var(--folklore-accent);
+  transform: scale(1.3);
+}
+
 /* ── Persona poster ── */
 .folklore-persona-stack {
   display: flex;
@@ -613,10 +674,10 @@
 
 .folklore-persona-poster {
   display: grid;
-  grid-template-columns: 270px minmax(0, 1fr);
-  gap: 24px;
-  padding: 26px;
-  border-radius: 22px;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+  border-radius: 18px;
   background: #e9e1ca;
   border: 1px solid rgba(61, 44, 102, 0.16);
   box-shadow: 0 24px 60px rgba(54, 40, 91, 0.1);
@@ -625,7 +686,7 @@
 .folklore-persona-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 0;
 }
 
 .folklore-persona-portrait-frame {
@@ -680,14 +741,14 @@
   display: grid;
   grid-template-columns: max-content 1fr;
   gap: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .folklore-persona-fact-row dt,
 .folklore-persona-fact-row dd {
   margin: 0;
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 13px;
+  line-height: 1.35;
   color: #51358b;
 }
 
@@ -703,7 +764,7 @@
 
 .folklore-persona-biography-panel {
   overflow: hidden;
-  border-radius: 22px 0 0 22px;
+  border-radius: 22px;
   background: #fff;
 }
 
@@ -720,14 +781,14 @@
 .folklore-persona-biography-panel p {
   margin: 0;
   padding: 10px 12px 12px;
-  font-size: 12px;
-  line-height: 1.42;
+  font-size: 14px;
+  line-height: 1.5;
   color: #3e3e3e;
 }
 
 .folklore-persona-content {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 146px;
+  grid-template-columns: minmax(0, 1fr) 280px;
   gap: 22px;
 }
 
@@ -735,6 +796,7 @@
   display: flex;
   flex-direction: column;
   gap: 26px;
+  padding-left: 52px;
 }
 
 .folklore-persona-traits {
@@ -754,6 +816,48 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.folklore-stack-block {
+  margin-top: 32px;
+  padding: 24px 28px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(109, 40, 217, 0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.folklore-stack-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--folklore-accent);
+  white-space: nowrap;
+}
+
+.folklore-stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.folklore-stack-pills--vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.folklore-stack-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--folklore-accent-soft);
+  color: var(--folklore-accent-deep);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .folklore-persona-tag {
@@ -792,7 +896,7 @@
 .folklore-persona-list li {
   margin-bottom: 8px;
   color: #2f2f2f;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 1.32;
 }
 
@@ -810,9 +914,9 @@
 }
 
 .folklore-persona-considerations p {
-  margin: 0 0 28px;
+  margin: 0 0 10px;
   color: #47367f;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.35;
   text-align: center;
 }

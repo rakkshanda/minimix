@@ -336,9 +336,9 @@
 
 .claimrunner-story-section--panel,
 .claimrunner-story-section--prototype {
-  padding: 36px;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(17, 17, 17, 0.08);
+  padding: 0;
+  background: none;
+  border: none;
 }
 
 .claimrunner-story-section h2 {
@@ -1373,4 +1373,31 @@
   .claimrunner-module-card p {
     line-height: 1.55;
   }
+}
+
+.claimrunner-next-case {
+  padding: 48px 0 0;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  margin-top: 40px;
+}
+
+.claimrunner-next-button {
+  margin-top: 12px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--type-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #111;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s ease, transform 0.2s ease;
+  line-height: 1.1;
+}
+
+.claimrunner-next-button:hover {
+  color: #2f63d3;
+  transform: translateX(6px);
 }

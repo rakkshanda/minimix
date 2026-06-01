@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import './FolkloreCaseStudy.css';
@@ -29,7 +29,7 @@ const snapshotItems = [
   { label: 'Role',     value: 'Front-End Developer' },
   { label: 'For',   value: 'University of Washington' },
   { label: 'Type',     value: 'WordPress plugin' },
-  { label: 'Duration', value: '6 months' },
+  { label: 'Duration', value: 'Jan 2025 – Aug 2025' },
   { label: 'Tools',    value: 'WordPress, PHP, jQuery' },
   { label: 'Live',     value: 'View plugin ↗', link: 'https://www.washington.edu/docs/plugins/uw-directory-plugin/directory-example/' },
 ];
@@ -98,12 +98,11 @@ const outcomes = [
 const prdObjectives = [
   'Enable users to easily search and access the UW directory',
   'Provide an intuitive UI/UX for efficient search and filtering',
-  'Ensure secure and accurate data retrieval',
   'Integrate smoothly with university web platforms',
 ];
 
 const prdTargetAudience = [
-  'University of Washington students',
+  'Students',
   'Faculty and staff members',
   'Administrative personnel',
 ];
@@ -118,26 +117,11 @@ const prdFunctional = [
   'Implement search by name, department, and role',
   'Display profile details including name, contact, office location, and department',
   'Implement advanced search filters for department, role, and campus',
-  'Provide role-based access control for different user types',
   'Ensure a responsive design across devices',
-  'Integrate autocomplete for search queries',
-  'Ensure secure API connections for data retrieval',
 ];
 
-const prdNonFunctional = [
-  'Response time under 2 seconds for search queries',
-  'FERPA-compliant data privacy',
-  'WCAG 2.1 accessibility standards',
-  'Scalable architecture for high-traffic loads',
-];
 
-const prdUserStories = [
-  'As a student, I want to search for professors by name or department so I can find their contact information.',
-  'As a faculty member, I want to access staff profiles to collaborate on projects.',
-  'As an admin, I need secure access controls to manage directory data visibility.',
-  'As a new user, I want autocomplete suggestions to search more efficiently.',
-  'As a returning user, I want to bookmark profiles I frequently access for quick retrieval.',
-];
+
 
 const researchStats = [
   { stat: '94%',   label: 'viewed directories on laptop or desktop, with mobile a meaningful secondary case' },
@@ -170,9 +154,6 @@ const personaProfiles = [
     facts: [
       { label: 'Work/title', value: 'Student' },
       { label: 'Age', value: '20' },
-      { label: 'Place of employment', value: 'University of Washington' },
-      { label: 'Time at UW', value: '3 years' },
-      { label: 'Location', value: 'Seattle, WA' },
       { label: 'Website usage', value: 'Highly active' },
     ],
     needs: [
@@ -201,9 +182,6 @@ const personaProfiles = [
     facts: [
       { label: 'Work/title', value: 'Associate Professor' },
       { label: 'Age', value: '45' },
-      { label: 'Place of employment', value: 'University of Washington' },
-      { label: 'Time at UW', value: '15 years' },
-      { label: 'Location', value: 'Seattle, WA' },
       { label: 'Website usage', value: 'Highly active' },
     ],
     needs: [
@@ -232,9 +210,6 @@ const personaProfiles = [
     facts: [
       { label: 'Work/title', value: 'Administrative Assistant' },
       { label: 'Age', value: '35' },
-      { label: 'Place of employment', value: 'University of Washington' },
-      { label: 'Time at UW', value: '8 years' },
-      { label: 'Location', value: 'Seattle, WA' },
       { label: 'Website usage', value: 'Highly active' },
     ],
     needs: [
@@ -292,7 +267,8 @@ const testingQuotes = [
 const reflectionWorked = [
   // 'The PRD up front saved weeks of back-and-forth later. Every design and dev decision had a document to point at.',
   'Letting the survey data drive the feature set, not the other way around. The grid-vs-list toggle, filter categories, and contact-link emphasis all came from real numbers.',
-  'Building on the UW CMS testing site early helped stakeholders give better feedback on a real plugin than they would have on a Figma file.',
+  'Building on the UW CMS testing site helped stakeholders give better feedback on a real plugin than they would have on a Figma file.',
+  'The grid view worked well as the default because it made profiles feel easier to scan, while the list view still supported users who wanted a more compact layout.',
 ];
 
 function Reveal({ children, delay = 0, className = '' }) {
@@ -306,6 +282,91 @@ function Reveal({ children, delay = 0, className = '' }) {
     >
       {children}
     </motion.div>
+  );
+}
+
+function PersonaCarousel({ personas }) {
+  const [idx, setIdx] = useState(0);
+  const persona = personas[idx];
+  const prev = () => setIdx((i) => (i - 1 + personas.length) % personas.length);
+  const next = () => setIdx((i) => (i + 1) % personas.length);
+
+  return (
+    <div className="folklore-persona-carousel">
+      <button type="button" className="folklore-persona-arrow folklore-persona-arrow--prev" onClick={prev} aria-label="Previous persona">&#8592;</button>
+
+      <Reveal key={persona.name} className="folklore-persona-board">
+        <article className="folklore-persona-poster">
+          <div className="folklore-persona-sidebar">
+            <div className="folklore-persona-portrait-frame">
+              <img src={persona.img} alt={persona.name} className="folklore-persona-poster-img" />
+            </div>
+            <div className="folklore-persona-identity">
+              <h3>{persona.name}</h3>
+              <p className="folklore-persona-pronouns">{persona.pronouns}</p>
+              <p className="folklore-persona-quote">{persona.quote}</p>
+            </div>
+            <dl className="folklore-persona-facts">
+              {persona.facts.map((fact) => (
+                <div key={`${persona.name}-${fact.label}`} className="folklore-persona-fact-row">
+                  <dt>{fact.label}:</dt>
+                  <dd>{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="folklore-persona-main">
+            <div className="folklore-persona-biography-panel">
+              <h3>Biography</h3>
+              <p>{persona.biography}</p>
+            </div>
+
+            <div className="folklore-persona-content">
+              <div className="folklore-persona-content-main">
+                <div className="folklore-persona-traits">
+                  <span>Personality traits:</span>
+                  <div className="folklore-persona-tag-list">
+                    {persona.traits.map((trait) => (
+                      <span key={`${persona.name}-${trait}`} className="folklore-persona-tag">{trait}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="folklore-persona-section-block">
+                  <h4>Needs + goals</h4>
+                  <ul className="folklore-persona-list">
+                    {persona.needs.map((item) => <li key={`${persona.name}-need-${item}`}>{item}</li>)}
+                  </ul>
+                </div>
+
+                <div className="folklore-persona-section-block">
+                  <h4>Frustrations</h4>
+                  <ul className="folklore-persona-list">
+                    {persona.frustrations.map((item) => <li key={`${persona.name}-frustration-${item}`}>{item}</li>)}
+                  </ul>
+                </div>
+              </div>
+
+              <aside className="folklore-persona-considerations">
+                <h4>Technical challenges + considerations</h4>
+                {persona.considerations.map((item) => (
+                  <p key={`${persona.name}-consideration-${item}`}>{item}</p>
+                ))}
+              </aside>
+            </div>
+          </div>
+        </article>
+      </Reveal>
+
+      <button type="button" className="folklore-persona-arrow folklore-persona-arrow--next" onClick={next} aria-label="Next persona">&#8594;</button>
+
+      <div className="folklore-persona-dots">
+        {personas.map((p, i) => (
+          <button key={p.name} type="button" className={`folklore-persona-dot${i === idx ? ' active' : ''}`} onClick={() => setIdx(i)} aria-label={p.name} />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -449,10 +510,8 @@ const FolkloreCaseStudy = () => {
       <section id="product-requirements" className="folklore-section" role="tabpanel" aria-labelledby="tab-product-requirements" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">02 / Product Requirements</p>
-          <h2>The PRD anchored the project.</h2>
           <p>
-            Before any design or code, I contributed to documented what the plugin needed to do, who it served,
-            and which constraints were non-negotiable.
+            Before any design or code, I helped document what the plugin needed to do, who it served, and which constraints were non-negotiable.
           </p>
         </Reveal>
 
@@ -485,19 +544,9 @@ const FolkloreCaseStudy = () => {
             </ul>
           </div>
 
-          <div className="folklore-prd-group">
-            <h3>Non-Functional Requirements</h3>
-            <ul className="folklore-bullet-list">
-              {prdNonFunctional.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
+       
 
-          <div className="folklore-prd-group">
-            <h3>User Stories</h3>
-            <ul className="folklore-bullet-list">
-              {prdUserStories.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
+       
         </Reveal>
       </section>
 
@@ -507,12 +556,9 @@ const FolkloreCaseStudy = () => {
       <section id="user-research" className="folklore-section" role="tabpanel" aria-labelledby="tab-user-research" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">03 / User Research</p>
-          <h2>38 participants, one consistent signal.</h2>
+          <h2>Survey results helped shape the features</h2>
           <p>
-            A structured survey across three UW audiences: students, staff, and professors.
-            Average completion time: 2 minutes 42 seconds.
-            These recommendations mapped almost one-to-one onto the feature set. The data wrote the spec.
-          </p>
+TThe survey conducted with 38 participants resulted in a clear feature direction, with users prioritizing filtering, keyword search, contact links, and a grid-based layout.  </p>
         </Reveal>
 
         <Reveal className="folklore-stat-grid" delay={0.06}>
@@ -538,96 +584,16 @@ const FolkloreCaseStudy = () => {
       <section id="personas" className="folklore-section" role="tabpanel" aria-labelledby="tab-personas" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">04 / User Personas</p>
-          <h2>Three detailed personas made the research concrete.</h2>
+          <h2>Three personas helped translate research into frontend decisions</h2>
         </Reveal>
 
-        <div className="folklore-persona-stack">
-          {personaProfiles.map((persona, idx) => (
-            <Reveal key={persona.name} className="folklore-persona-board" delay={0.06 + idx * 0.04}>
-              <article className="folklore-persona-poster">
-                <div className="folklore-persona-sidebar">
-                  <div className="folklore-persona-portrait-frame">
-                    <img src={persona.img} alt={persona.name} className="folklore-persona-poster-img" />
-                  </div>
-                  <div className="folklore-persona-identity">
-                    <h3>{persona.name}</h3>
-                    <p className="folklore-persona-pronouns">{persona.pronouns}</p>
-                    <p className="folklore-persona-quote">{persona.quote}</p>
-                  </div>
-                  <dl className="folklore-persona-facts">
-                    {persona.facts.map((fact) => (
-                      <div key={`${persona.name}-${fact.label}`} className="folklore-persona-fact-row">
-                        <dt>{fact.label}:</dt>
-                        <dd>{fact.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-
-                <div className="folklore-persona-main">
-                  <div className="folklore-persona-biography-panel">
-                    <h3>Biography</h3>
-                    <p>{persona.biography}</p>
-                  </div>
-
-                  <div className="folklore-persona-content">
-                    <div className="folklore-persona-content-main">
-                      <div className="folklore-persona-traits">
-                        <span>Personality traits:</span>
-                        <div className="folklore-persona-tag-list">
-                          {persona.traits.map((trait) => (
-                            <span key={`${persona.name}-${trait}`} className="folklore-persona-tag">{trait}</span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="folklore-persona-section-block">
-                        <h4>Needs + goals</h4>
-                        <ul className="folklore-persona-list">
-                          {persona.needs.map((item) => <li key={`${persona.name}-need-${item}`}>{item}</li>)}
-                        </ul>
-                      </div>
-
-                      <div className="folklore-persona-section-block">
-                        <h4>Frustrations</h4>
-                        <ul className="folklore-persona-list">
-                          {persona.frustrations.map((item) => <li key={`${persona.name}-frustration-${item}`}>{item}</li>)}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <aside className="folklore-persona-considerations">
-                      <h4>Technical challenges + considerations</h4>
-                      {persona.considerations.map((item) => (
-                        <p key={`${persona.name}-consideration-${item}`}>{item}</p>
-                      ))}
-                    </aside>
-                  </div>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+        <PersonaCarousel personas={personaProfiles} />
       </section>
 
       {/* ── 05 LOW-FI ── */}
       <section id="low-fi" className="folklore-section" role="tabpanel" aria-labelledby="tab-low-fi" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">05 / Low-Fidelity Prototype</p>
-          <h2>Accessibility, ease of use, and on-brand visual design.</h2>
-          <p>
-            The lo-fi prototype focused on three principles. Layout: a card-based grid with
-            three columns on desktop, stacking responsively on smaller viewports.
-          </p>
-        </Reveal>
-
-        <Reveal className="folklore-card-grid" delay={0.06}>
-          {loFiDecisions.map((item, idx) => (
-            <div key={item} className="folklore-note-card">
-              <span>{String(idx + 1).padStart(2, '0')}</span>
-              <p>{item}</p>
-            </div>
-          ))}
         </Reveal>
 
         <Reveal delay={0.08}>
@@ -646,17 +612,6 @@ const FolkloreCaseStudy = () => {
       <section id="high-fi" className="folklore-section" role="tabpanel" aria-labelledby="tab-high-fi" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">06 / High-Fidelity Prototype</p>
-          <h2>Turn structure into a polished, on-brand directory experience.</h2>
-          <p>
-            The hi-fi prototype expanded the lo-fi structure. The Figma file walked through multiple
-            iterations, refining card density, filter placement, and the grid-to-list toggle interaction.
-          </p>
-        </Reveal>
-
-        <Reveal className="folklore-feature-list" delay={0.06}>
-          <ul className="folklore-bullet-list">
-            {hiFiFeatures.map((f) => <li key={f}>{f}</li>)}
-          </ul>
         </Reveal>
 
         <Reveal delay={0.08}>
@@ -671,16 +626,22 @@ const FolkloreCaseStudy = () => {
       <section id="development" className="folklore-section" role="tabpanel" aria-labelledby="tab-development" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">07 / Development</p>
-          <p>
-            Stack-PHP and jQuery on a WordPress CMS testing site. The plugin was deployed
-            so stakeholders could interact with a live testing build.
+        </Reveal>
+        <Reveal delay={0.04}>
+          <p style={{ fontSize: '18px', lineHeight: 1.7, color: '#2f2f2f', margin: 0 }}>
+            I developed the plugin on a WordPress CMS testing site using PHP and jQuery, turning the research-backed feature plan into an interactive directory experience. The build included real-time search, department-based filtering, grid and list view options, and reusable profile card components. Deploying it early on a testing site allowed stakeholders to interact with the plugin, test real workflows, and give feedback before launch.
           </p>
         </Reveal>
 
-        <Reveal className="folklore-build-panel" delay={0.06}>
-          <ul className="folklore-bullet-list">
-            {devFeatures.map((f) => <li key={f}>{f}</li>)}
-          </ul>
+        <Reveal delay={0.08}>
+          <div className="folklore-stack-block">
+            <p className="folklore-stack-label">Tech stack</p>
+            <div className="folklore-stack-pills">
+              {['PHP', 'jQuery', 'WordPress', 'SCSS', 'ACF', 'Isotope'].map((t) => (
+                <span key={t} className="folklore-stack-pill">{t}</span>
+              ))}
+            </div>
+          </div>
         </Reveal>
 
       </section>
@@ -689,7 +650,7 @@ const FolkloreCaseStudy = () => {
       <section id="testing" className="folklore-section" role="tabpanel" aria-labelledby="tab-testing" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">08 / User Testing</p>
-          <h2>Task-based usability test on the live build.</h2>
+          <h2>Task-based usability test</h2>
         </Reveal>
 
         <Reveal delay={0.06}>
@@ -698,14 +659,12 @@ const FolkloreCaseStudy = () => {
               <thead>
                 <tr>
                   <th scope="col">Task</th>
-                  <th scope="col">What it tested</th>
                 </tr>
               </thead>
               <tbody>
                 {testingTasks.map((row) => (
                   <tr key={row.task}>
                     <td>{row.task}</td>
-                    <td>{row.tested}</td>
                   </tr>
                 ))}
               </tbody>
@@ -723,19 +682,12 @@ const FolkloreCaseStudy = () => {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <p style={{ marginTop: '20px', fontSize: '17px', lineHeight: 1.7, color: '#2f2f2f' }}>
-            These directly informed the next iteration, especially the addition of
-            configurable sort order at the admin level.
-          </p>
-        </Reveal>
       </section>
 
       {/* ── 09 REFLECTION ── */}
       <section id="reflection" className="folklore-section" role="tabpanel" aria-labelledby="tab-reflection" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">09 / Reflection</p>
-          <h2>What this project taught me about leading with data.</h2>
         </Reveal>
 
         <Reveal className="folklore-testing-grid" delay={0.06}>
@@ -743,6 +695,16 @@ const FolkloreCaseStudy = () => {
             <h3 className="folklore-reflection-heading">What worked</h3>
             <ul className="folklore-bullet-list">
               {reflectionWorked.map((item) => <li key={item}>{item}</li>)}
+            </ul>
+          </div>
+
+          <div className="folklore-testing-card">
+            <h3 className="folklore-reflection-heading">Challenges</h3>
+            <ul className="folklore-bullet-list">
+              <li>Keeping the design clean while adding enough text and context for accessibility.</li>
+              <li>Handling longer bios and names without making the profile cards feel crowded.</li>
+              <li>Designing modal views that could show more detail while still feel easy to scan.</li>
+              <li>Managing shared SCSS styles and deciding when to reuse existing UW patterns versus when custom styling was needed.</li>
             </ul>
           </div>
         </Reveal>
@@ -755,9 +717,9 @@ const FolkloreCaseStudy = () => {
           <button
             type="button"
             className="folklore-next-button"
-            onClick={() => navigateWithTransition(navigate, '/career-cupid')}
+            onClick={() => navigateWithTransition(navigate, '/aims')}
           >
-            Career Cupid →
+            AIMS UW →
           </button>
         </Reveal>
       </nav>

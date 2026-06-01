@@ -37,22 +37,13 @@ const config = {
   lede: 'A research-driven UX project that reframed career exploration as a personality-first matching experience for college seniors overwhelmed by generic job boards.',
   liveLink: 'https://rakshanda.my.canva.site/career-cupid',
   liveLinkText: 'View',
-  heroImage: cc,
-  heroImageAlt: 'Career Cupid swipe-based career discovery interface',
+  heroImage: null,
+  heroImageAlt: '',
   snapshot: [
-    { label: 'Role',     value: 'UX Researcher + Interaction Designer' },
-    { label: 'Client',   value: 'Academic Group Project' },
-    { label: 'Type',     value: 'UX Research + Interaction Design' },
+    { label: 'Type',     value: 'Academic Group Project' },
     { label: 'Duration', value: '3 months' },
     { label: 'Tools',    value: 'Figma, Miro, Optimal Workshop' },
-    { label: 'Live site', value: 'View prototype', link: 'https://rakshanda.my.canva.site/career-cupid' },
-  ],
-  outcomes: [
-    { icon: <ResearchIcon />, value: '30+',  label: 'college seniors interviewed',              sub: 'Across majors and career stages' },
-    { icon: <OverwhelmedIcon />, value: '78%', label: 'felt overwhelmed by generic job listings', sub: 'Survey finding across 30 participants' },
-    { icon: <SwipeIcon />,    value: 'Swipe', label: 'based career discovery flow',             sub: 'Card interface inspired by dating app patterns' },
-    { icon: <MatchIcon />,    value: 'Match', label: 'score based on values, not just skills',  sub: 'Work culture and personality alignment weighted equally' },
-    { icon: <UsersIcon />,    value: '3',     label: 'validated personas driving design decisions', sub: 'Derived from interview synthesis' },
+    { label: 'Prototype', value: 'View', link: 'https://rakshanda.my.canva.site/career-cupid' },
   ],
   tldr: 'Career Cupid is an academic UX group project that started from a single observation: traditional job boards optimize for skills matching and completely ignore personality fit, work culture alignment, and work-life balance preferences - which turned out to be what college seniors actually cared about most. I led the user research track, conducting 30+ interviews with college seniors and synthesizing the findings into three personas. The core insight that shaped the design: users didn\'t want to search for jobs. They wanted someone (or something) to match them. We reframed the entire experience around a card-based, swipe-based matching mechanic and built an interactive prototype in Figma.',
   discovery: {
@@ -73,7 +64,6 @@ const config = {
     ],
   },
   ideation: {
-    heading: 'Stop making students act like recruiters. Match them instead.',
     hmw: 'How might we redesign the career exploration experience so that a college senior discovers roles that fit who they are - not just what they\'ve done - in a format that feels engaging rather than overwhelming?',
     archDecisions: [
       { decision: 'Card-based swipe mechanic over search', why: 'Search requires users to know what they\'re looking for. Cards present options one at a time, lowering cognitive load and creating a clear decision per card' },
@@ -83,34 +73,18 @@ const config = {
     ],
   },
   design: {
-    heading: 'Playful enough to feel approachable. Structured enough to feel credible.',
-    intro: 'The visual design had to balance warmth and engagement (so students wouldn\'t feel like they were doing homework) with clarity and credibility (so they\'d trust the results).',
+    imagesLabel: 'Prototype',
     components: [
       { title: 'Career match cards', body: 'Each card surfaced: role title, industry, a one-sentence "what you\'d actually do," a culture-fit score, and three values tags. Designed for 5-second comprehension. Swipe right to save, left to skip.' },
       { title: 'Personality quiz onboarding', body: 'A 7-question interactive quiz that established work style, collaboration preference, and values alignment before showing any results. Results updated immediately on each answer.' },
       { title: 'Match score breakdown', body: 'Tapping a saved match revealed a breakdown: which values aligned, which didn\'t, and why the score was what it was. Transparency was a deliberate design choice to build trust.' },
       { title: 'Saved matches dashboard', body: 'A lightweight comparison view showing all saved roles side by side on the dimensions that mattered most to the user. Helped students have more informed conversations with advisors.' },
     ],
-  },
-  reflection: {
-    heading: 'Reframing the problem is the most important design move.',
-    intro: 'We started with "help students find jobs better." We shipped a product around "help students understand what kind of work they\'d actually be happy doing." Those are different problems with very different solutions.',
-    workedWell: [
-      { title: 'Research-first kept us from building the obvious thing.', body: 'The obvious solution was a better search interface. Research revealed the actual problem was framing - students didn\'t know what to search for. That insight changed everything.' },
-      { title: 'Gamification reduced anxiety around a high-stakes decision.', body: 'Framing career exploration as a matching game lowered the perceived stakes of each interaction. Students described the prototype as "fun" - which is not a word usually associated with job searching.' },
-      { title: 'Transparent match scores built more trust than opaque recommendations.', body: 'Early prototypes just showed a match percentage. When we added the breakdown, participants said they trusted the results more - even when the score was lower.' },
-    ],
-    wouldChange: [
-      { title: 'Test with students who are actively job searching, not just exploring.', body: 'Most participants were juniors in exploration mode. Testing with seniors under active deadline pressure would surface very different usability issues.' },
-      { title: 'Connect to real job listings.', body: 'The biggest gap between the prototype and a real product is that "save match" ends at the career level, not at an actual open role. Integrating live listings would complete the loop.' },
-    ],
-    nextSteps: [
-      'Integration with LinkedIn and Handshake job listings to bridge discovery to application',
-      'Day-in-the-life video content from people in matched roles',
-      'Advisor sharing - let students send match results to their career advisor',
-      'Alumni match network - connect students with alumni in their matched career paths',
+    images: [
+      { src: cc, alt: 'Career Cupid swipe-based career discovery interface' },
     ],
   },
+  nextCase: { path: '/huggingface', label: 'HuggingFace' },
 };
 
 export default function CareerCupidCaseStudy() {

@@ -94,26 +94,7 @@ const config = {
       { src: hf, alt: 'HuggingFace redesigned landing page showing dual CTA structure and improved information hierarchy' },
     ],
   },
-  reflection: {
-    heading: 'Different user segments need different entry points - not different sites.',
-    intro: 'The sprint forced fast, defensible decisions. The most valuable output wasn\'t the prototype - it was the persona-first framing that made every design decision easy to justify.',
-    workedWell: [
-      { title: 'Analytics led, assumptions followed.', body: 'Grounding every decision in real heatmap and bounce data meant the redesign had a clear rationale. When the sprint was judged, every choice had a "because the data showed..." answer.' },
-      { title: 'Dual CTAs are a known pattern that still gets resisted.', body: 'Many product teams default to a single primary CTA to avoid split focus. The research made the case for two clearly: one CTA was actively alienating half the audience.' },
-      { title: 'Progressive disclosure resolved the density problem without removing content.', body: 'The existing page had valuable technical content - it was just in the wrong place. Moving depth below the fold let both user types self-select how deep they went.' },
-    ],
-    wouldChange: [
-      { title: 'Run an actual A/B test.', body: 'The 22% projection is a model, not a measurement. A live A/B test with real traffic would validate or correct it.' },
-      { title: 'Test the onboarding flow with real newcomers, not designers.', body: 'The 3-step flow was tested with 6 participants who all had some technical background. The hardest case - a completely non-technical decision-maker - wasn\'t represented.' },
-    ],
-    nextSteps: [
-      'A/B test the dual CTA approach against the existing single-CTA hero',
-      'Personalized onboarding path based on self-reported experience level',
-      'Interactive model demos embedded directly on the landing page',
-      'Conversion funnel analytics to validate the 22% bounce rate projection',
-    ],
-  },
-  nextCase: { path: '/plotx', label: 'PlotX' },
+  nextCase: { path: '/portfolio', label: 'Back to home' },
 };
 
 export default function HuggingFaceCaseStudy() {

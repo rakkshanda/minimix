@@ -9,7 +9,7 @@ import AIMSCaseStudy from './components/AIMSCaseStudy';
 import FolkloreCaseStudy from './components/FolkloreCaseStudy';
 import SouthProjectCaseStudy from './components/SouthProjectCaseStudy';
 import CareerCupidCaseStudy from './components/CareerCupidCaseStudy';
-import MarketPulseCaseStudy from './components/MarketPulseCaseStudy';
+import MarketPulseCaseStudy from './components/PortfolioInsightsCaseStudy';
 import HuggingFaceCaseStudy from './components/HuggingFaceCaseStudy';
 import PlotXCaseStudy from './components/PlotXCaseStudy';
 import HunchCaseStudy from './components/HunchCaseStudy';

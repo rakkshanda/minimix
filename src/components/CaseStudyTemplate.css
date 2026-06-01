@@ -689,6 +689,98 @@
   object-fit: cover;
 }
 
+.career-cupid-page .cs-screens-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.career-cupid-page .cs-screen-img {
+  aspect-ratio: unset;
+  object-fit: unset;
+  height: auto;
+  width: auto;
+  max-width: 480px;
+}
+
+/* ── Development section: centered single-gif layout (default) ── */
+#development .cs-screens-grid {
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Development section: multi-column grid (Hunch app images) ── */
+.hunch-page #development .cs-screens-grid[style] {
+  max-width: 957px;
+  margin: 0 auto;
+  column-gap: 65px;
+  row-gap: 33px;
+}
+
+.cs-stack-block {
+  margin-top: 28px;
+  padding: 22px 26px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cs-stack-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cs-accent);
+  white-space: nowrap;
+}
+
+.cs-stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cs-stack-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cs-accent) 10%, transparent);
+  color: var(--cs-accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Portfolio Insights gif ── */
+.marketpulse-page #development .cs-screen-img {
+  aspect-ratio: unset;
+  object-fit: unset;
+  height: auto;
+  width: auto;
+  max-width: 360px;
+}
+
+/* ── PlotX website gif ── */
+.plotx-page #development .cs-screen-img {
+  aspect-ratio: unset;
+  object-fit: unset;
+  height: auto;
+  width: auto;
+  max-width: 860px;
+}
+
+/* ── Hunch app grid images ── */
+.hunch-page #development .cs-screen-img--dev {
+  width: 100%;
+  max-width: unset;
+  aspect-ratio: 9 / 19;
+  object-fit: contain;
+  background: #f5f5f5;
+  border-radius: 0;
+  overflow: unset;
+}
+
 /* ── Reflection grid ── */
 .cs-reflection-grid {
   display: grid;

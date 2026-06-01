@@ -7,11 +7,12 @@ import { navigateWithTransition } from '../utils/viewTransition';
 const EASE = [0.22, 1, 0.36, 1];
 
 const CS_TABS = [
-  { id: 'overview',   label: 'Overview'      },
-  { id: 'discovery',  label: 'Discovery'     },
-  { id: 'ideation',   label: 'Ideation'      },
-  { id: 'design',     label: 'Design & Build' },
-  { id: 'reflection', label: 'Reflection'    },
+  { id: 'overview',     label: 'Overview'      },
+  { id: 'discovery',    label: 'Discovery'     },
+  { id: 'ideation',     label: 'Ideation'      },
+  { id: 'design',       label: 'Design & Build' },
+  { id: 'development',  label: 'Development'   },
+  { id: 'reflection',   label: 'Reflection'    },
 ];
 
 function Reveal({ children, delay = 0, className = '' }) {
@@ -53,6 +54,7 @@ const CaseStudyTemplate = ({ config = {} }) => {
     discovery = {},
     ideation = {},
     design = {},
+    development = {},
     reflection = {},
     nextCase = null,
   } = config;
@@ -72,13 +74,32 @@ const CaseStudyTemplate = ({ config = {} }) => {
     setActiveTab(sectionId);
   };
 
+  const hasDiscovery   = Object.keys(discovery).length > 0;
+  const hasIdeation    = Object.keys(ideation).length > 0;
+  const hasDesign      = Object.keys(design).length > 0;
+  const hasDevelopment = Object.keys(development).length > 0;
+  const hasReflection  = Object.keys(reflection).length > 0;
+
+  const activeTabs = CS_TABS.filter(({ id }) => {
+    if (id === 'discovery')   return hasDiscovery;
+    if (id === 'ideation')    return hasIdeation;
+    if (id === 'design')      return hasDesign;
+    if (id === 'development') return hasDevelopment;
+    if (id === 'reflection')  return hasReflection;
+    return true;
+  }).map((tab) =>
+    tab.id === 'development' && development.label
+      ? { ...tab, label: development.label }
+      : tab
+  );
+
   React.useEffect(() => {
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 120);
       const pos = window.scrollY + 180;
-      for (let i = CS_TABS.length - 1; i >= 0; i -= 1) {
-        const section = document.getElementById(CS_TABS[i].id);
-        if (section && section.offsetTop <= pos) { setActiveTab(CS_TABS[i].id); break; }
+      for (let i = activeTabs.length - 1; i >= 0; i -= 1) {
+        const section = document.getElementById(activeTabs[i].id);
+        if (section && section.offsetTop <= pos) { setActiveTab(activeTabs[i].id); break; }
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -94,7 +115,7 @@ const CaseStudyTemplate = ({ config = {} }) => {
       <div className="cs-tabs-header">
         <div className="cs-tabs-shell">
           <div className="cs-tabs">
-            {CS_TABS.map((tab) => (
+            {activeTabs.map((tab) => (
               <button
                 key={tab.id}
                 type="button"
@@ -179,25 +200,22 @@ const CaseStudyTemplate = ({ config = {} }) => {
       )}
 
       {/* DISCOVERY */}
-      <section id="discovery" className="cs-story-section">
+      {hasDiscovery && <section id="discovery" className="cs-story-section">
         <Reveal className="cs-section-intro">
           <p className="cs-kicker">01 / Discovery</p>
           <h2>{discovery.heading || 'Research and findings.'}</h2>
           {discovery.intro && <p>{discovery.intro}</p>}
         </Reveal>
 
-        {discovery.methods?.length > 0 ? (
+        {discovery.methods?.length > 0 && (
           <Reveal className="cs-research-card" delay={0.06}>
             <p className="cs-kicker">Research methods</p>
             <ul>{discovery.methods.map((m) => <li key={m}>{m}</li>)}</ul>
           </Reveal>
-        ) : (
-          <Placeholder label="Research methods - content coming soon." />
         )}
 
-        {discovery.findings?.length > 0 ? (
+        {discovery.findings?.length > 0 && (
           <Reveal className="cs-findings-block" delay={0.08}>
-            <p className="cs-kicker">What I learned</p>
             <div className="cs-findings-grid">
               {discovery.findings.map((f, i) => (
                 <div key={f.title} className="cs-finding-item">
@@ -208,28 +226,24 @@ const CaseStudyTemplate = ({ config = {} }) => {
               ))}
             </div>
           </Reveal>
-        ) : (
-          <Placeholder label="Key findings - content coming soon." />
         )}
-      </section>
+      </section>}
 
       {/* IDEATION */}
-      <section id="ideation" className="cs-story-section">
+      {hasIdeation && <section id="ideation" className="cs-story-section">
         <Reveal className="cs-section-intro">
           <p className="cs-kicker">02 / Ideation</p>
           <h2>{ideation.heading || 'Framing the design challenge.'}</h2>
         </Reveal>
 
-        {ideation.hmw ? (
+        {ideation.hmw && (
           <Reveal className="cs-hmw" delay={0.06}>
             <p className="cs-hmw-label">How might we</p>
             <p className="cs-hmw-body">{ideation.hmw}</p>
           </Reveal>
-        ) : (
-          <Placeholder label="HMW statement - content coming soon." />
         )}
 
-        {ideation.archDecisions?.length > 0 ? (
+        {ideation.archDecisions?.length > 0 && (
           <Reveal className="cs-arch-block" delay={0.08}>
             <p className="cs-kicker">Key decisions</p>
             <div className="cs-arch-table" role="table" aria-label="Key decisions">
@@ -245,13 +259,11 @@ const CaseStudyTemplate = ({ config = {} }) => {
               ))}
             </div>
           </Reveal>
-        ) : (
-          <Placeholder label="Key decisions table - content coming soon." />
         )}
-      </section>
+      </section>}
 
       {/* DESIGN & BUILD */}
-      <section id="design" className="cs-story-section">
+      {hasDesign && <section id="design" className="cs-story-section">
         <Reveal className="cs-section-intro">
           <p className="cs-kicker">03 / Design & Build</p>
           <h2>{design.heading || 'Key components and decisions.'}</h2>
@@ -276,7 +288,7 @@ const CaseStudyTemplate = ({ config = {} }) => {
           </Reveal>
         )}
 
-        {design.components?.length > 0 ? (
+        {design.components?.length > 0 && (
           <Reveal className="cs-components-block" delay={0.08}>
             <p className="cs-kicker">Key components</p>
             <div className="cs-components-grid">
@@ -289,8 +301,6 @@ const CaseStudyTemplate = ({ config = {} }) => {
               ))}
             </div>
           </Reveal>
-        ) : (
-          <Placeholder label="Component breakdowns - content coming soon." />
         )}
 
         {design.a11y?.length > 0 && (
@@ -304,7 +314,7 @@ const CaseStudyTemplate = ({ config = {} }) => {
 
         {design.images?.length > 0 && (
           <Reveal className="cs-screen-block" delay={0.08}>
-            <p className="cs-kicker">Live site</p>
+            <p className="cs-kicker">{design.imagesLabel || 'Live site'}</p>
             <div className="cs-screens-grid">
               {design.images.map((img) => (
                 <img key={img.src} src={img.src} alt={img.alt} className="cs-screen-img" />
@@ -312,13 +322,45 @@ const CaseStudyTemplate = ({ config = {} }) => {
             </div>
           </Reveal>
         )}
-      </section>
+      </section>}
+
+      {/* DEVELOPMENT */}
+      {hasDevelopment && <section id="development" className="cs-story-section">
+        <Reveal className="cs-section-intro">
+          <p className="cs-kicker">{String(activeTabs.findIndex(t => t.id === 'development')).padStart(2, '0')} / {development.label || 'Development'}</p>
+          {development.heading && <h2>{development.heading}</h2>}
+          {development.intro && <p>{development.intro}</p>}
+        </Reveal>
+        {development.images?.length > 0 && (
+          <Reveal delay={0.06}>
+            <div
+              className="cs-screens-grid"
+              style={development.columns ? { gridTemplateColumns: `repeat(${development.columns}, 1fr)`, display: 'grid' } : undefined}
+            >
+              {development.images.map((img) => (
+                <img key={img.src} src={img.src} alt={img.alt} className={`cs-screen-img${development.columns ? ' cs-screen-img--dev' : ''}`} />
+              ))}
+            </div>
+          </Reveal>
+        )}
+        {development.techStack?.length > 0 && (
+          <Reveal delay={0.08}>
+            <div className="cs-stack-block">
+              <p className="cs-stack-label">Tech stack</p>
+              <div className="cs-stack-pills">
+                {development.techStack.map((t) => (
+                  <span key={t} className="cs-stack-pill">{t}</span>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        )}
+      </section>}
 
       {/* REFLECTION */}
-      <section id="reflection" className="cs-story-section">
+      {hasReflection && <section id="reflection" className="cs-story-section">
         <Reveal className="cs-section-intro">
-          <p className="cs-kicker">04 / Reflection</p>
-          <h2>{reflection.heading || 'What I learned.'}</h2>
+          <p className="cs-kicker">{String(activeTabs.findIndex(t => t.id === 'reflection')).padStart(2, '0')} / Reflection</p>
           {reflection.intro && <p>{reflection.intro}</p>}
         </Reveal>
 
@@ -337,7 +379,7 @@ const CaseStudyTemplate = ({ config = {} }) => {
           </Reveal>
 
           <Reveal className="cs-reflection-col" delay={0.08}>
-            <p className="cs-kicker">What I'd do differently</p>
+            <p className="cs-kicker">Challenges</p>
             {reflection.wouldChange?.length > 0
               ? reflection.wouldChange.map((w) => (
                   <div key={w.title} className="cs-reflection-item">
@@ -349,19 +391,16 @@ const CaseStudyTemplate = ({ config = {} }) => {
             }
           </Reveal>
 
-          <Reveal className="cs-reflection-col cs-reflection-col--dark" delay={0.12}>
-            <p className="cs-kicker">What's next</p>
-            {reflection.nextSteps?.length > 0
-              ? (
-                <ul className="cs-next-list">
-                  {reflection.nextSteps.map((s) => <li key={s}>{s}</li>)}
-                </ul>
-              )
-              : <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.4)' }}>Content coming soon.</p>
-            }
-          </Reveal>
+          {reflection.nextSteps?.length > 0 && (
+            <Reveal className="cs-reflection-col cs-reflection-col--dark" delay={0.12}>
+              <p className="cs-kicker">What's next</p>
+              <ul className="cs-next-list">
+                {reflection.nextSteps.map((s) => <li key={s}>{s}</li>)}
+              </ul>
+            </Reveal>
+          )}
         </div>
-      </section>
+      </section>}
 
       {/* Next */}
       {nextCase && (

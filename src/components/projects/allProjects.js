@@ -15,7 +15,7 @@ import spGif from '../../assets/gifs/sp.gif';
 import cc from '../../assets/cc.gif';
 import aimsGif from '../../assets/gifs/aims.gif';
 import plotxGif from '../../assets/gifs/plotx.gif';
-import claimGif from '../../assets/gifs/claimpt.gif';
+import claimGif from '../../assets/gifs/claimw.gif';
 
 // Product Projects (1, 2, 3, 4) - shown at /product
 export const productProjects = [
@@ -477,7 +477,7 @@ export const frontendProjects = [
     type: 'product',
     data: {
       title: 'HunggingFace',
-      tagline: 'Data-driven landing page redesign',
+      tagline: 'Data-driven information architecture redesign',
       duration: 'Sprint format',
       tech: ['Figma', 'Zoom', 'UserTesting'],
       link: 'https://rakshanda.my.canva.site/hugging-face-redesign',
