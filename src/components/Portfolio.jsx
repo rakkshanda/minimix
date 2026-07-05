@@ -6,7 +6,7 @@ import '../App.css';
 import './Portfolio.css';
 import './About.css';
 import { getOrderedPortfolioProjects } from './projects/allProjects';
-import profileImage from '../assets/image.png';
+import profileImage from './rakuu.png';
 import { navigateWithTransition } from '../utils/viewTransition';
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -30,6 +30,36 @@ function AnimatedWords({ text, delay, className, style }) {
     </div>
   );
 }
+
+function RotatingHeroLine({ phrases, className, style }) {
+  const reduced = useReducedMotion();
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  useEffect(() => {
+    if (reduced || phrases.length <= 1) return undefined;
+
+    const intervalId = window.setInterval(() => {
+      setPhraseIndex((prev) => (prev + 1) % phrases.length);
+    }, 2000);
+
+    return () => window.clearInterval(intervalId);
+  }, [phrases, reduced]);
+
+  return (
+    <motion.div
+      key={phrases[phraseIndex]}
+      className={`hero-line${className ? ' ' + className : ''}`}
+      initial={reduced ? false : { opacity: 0, y: '20%' }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45, ease: EASE }}
+      style={{ display: 'block', ...style }}
+    >
+      {phrases[phraseIndex]}
+    </motion.div>
+  );
+}
+
+const HERO_PHRASES = ['crafting thoughtful', 'building accessible', 'designing delightful', 'engineering seamless', 'shipping memorable'];
 
 const Portfolio = () => {
   const navigate = useNavigate();
@@ -90,9 +120,9 @@ const Portfolio = () => {
         
 
           <h1 className="hero-heading">
-            <AnimatedWords text="Front-end developer," delay={0.5} />
-            <AnimatedWords text="crafting accessible," delay={0.9} className="hero-line--accent" />
-            <AnimatedWords text="thoughtful experiences." delay={1.3} />
+            <AnimatedWords text="Full-stack developer," delay={0.5} />
+            <RotatingHeroLine phrases={HERO_PHRASES} className="hero-line--accent" delay={0.9} />
+            <AnimatedWords text="experiences." delay={1.3} />
           </h1>
 
      

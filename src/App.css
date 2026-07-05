@@ -72,9 +72,9 @@ body {
     background 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.blob--violet  { width: 520px; height: 520px; background: #6B4EFF; top: -10%; left: -10%; }
-.blob--peach   { width: 480px; height: 480px; background: #FFD9C9; top:  30%; left:  60%; }
-.blob--lavender{ width: 560px; height: 560px; background: #B5A8FF; top:  80%; left:  30%; }
+.blob--violet  { width: 520px; height: 520px; background: #8fb4aa; top: -10%; left: -10%; }
+.blob--peach   { width: 480px; height: 480px; background: #8fb4aa; top:  30%; left:  60%; }
+.blob--lavender{ width: 560px; height: 560px; background: #8fb4aa; top:  80%; left:  30%; }
 
 .container {
   max-width: 1200px;
