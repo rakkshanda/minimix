@@ -317,7 +317,7 @@ export const frontendProjects = [
     type: 'frontend',
     data: {
       title: 'Folklore',
-      tagline: 'WordPress people directory plugin',
+      tagline: 'People directory tool',
       duration: '5 months',
       tech: ['PHP', 'SCSS', 'JavaScript', 'WordPress Hooks', 'Figma', 'Miro', 'Optimal Workshop'],
       link: 'https://www.washington.edu/docs/plugins/uw-directory-plugin/directory-example/',

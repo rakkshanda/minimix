@@ -120,7 +120,7 @@ const Portfolio = () => {
         
 
           <h1 className="hero-heading">
-            <AnimatedWords text="Full-stack developer," delay={0.5} />
+            {/* <AnimatedWords text="Full-stack developer," delay={0.5} /> */}
             <RotatingHeroLine phrases={HERO_PHRASES} className="hero-line--accent" delay={0.9} />
             <AnimatedWords text="experiences." delay={1.3} />
           </h1>
