@@ -6,7 +6,7 @@ import '../App.css';
 import './Portfolio.css';
 import './About.css';
 import { getOrderedPortfolioProjects } from './projects/allProjects';
-import profileImage from './rakuu.png';
+import profileImage from './raksseattle.png';
 import { navigateWithTransition } from '../utils/viewTransition';
 
 const EASE = [0.22, 1, 0.36, 1];
