@@ -18,9 +18,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
+    "start:pm": "REACT_APP_SITE=pm react-scripts start",
+    "build:pm": "CI=false REACT_APP_SITE=pm PUBLIC_URL=/ BUILD_PATH=build-pm react-scripts build && PUBLIC_URL=/ node scripts/prepare-pm-build.js",
+    "deploy:pm": "npm run build:pm && vercel link --cwd build-pm --project ${PM_VERCEL_PROJECT:-rakspm} --yes && node scripts/guard-pm-deploy.js && vercel deploy --cwd build-pm --prod --yes",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy:tech": "npm run build && node scripts/prepare-tech-build.js && vercel link --cwd build --project minimix --yes && vercel deploy --cwd build --prod --yes",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },

@@ -1,0 +1,6 @@
+/* PM case study tweaks layered on top of GenericCaseStudy.css.
+   The PM meta strip can carry 5 cells (Role/Timeline/Team/Context/Users); without
+   this the odd cell leaves a visible empty grid slot. */
+.gcs-meta-strip .gcs-meta-cell:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}

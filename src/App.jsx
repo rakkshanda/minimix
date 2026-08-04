@@ -17,8 +17,40 @@ import VisionDefectCaseStudy from './components/VisionDefectCaseStudy';
 import IEngageCaseStudy from './components/IEngageCaseStudy';
 import GenericCaseStudy from './components/GenericCaseStudy';
 import Cursor from './components/Cursor';
+// The PM site (GitHub Pages) and the tech site (rakkshanda.com) build from this
+// same source. Only `npm run build:pm` sets REACT_APP_SITE=pm; the default build
+// renders exactly the tech site it always has. PM screens are lazy-loaded so their
+// code (and CSS side effects) stay out of the tech site's main bundle.
+const IS_PM_SITE = process.env.REACT_APP_SITE === 'pm';
+
+const PMPortfolio = React.lazy(() => import('./pm/PMPortfolio'));
+const PMCaseStudy = React.lazy(() => import('./pm/PMCaseStudy'));
+
+function PMApp() {
+  return (
+    <>
+      <Cursor />
+      <div className="atmosphere" aria-hidden="true">
+        <div className="blob blob--violet" />
+        <div className="blob blob--peach" />
+        <div className="blob blob--lavender" />
+      </div>
+      <Router basename={process.env.PUBLIC_URL}>
+        <React.Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<PMPortfolio />} />
+            <Route path="/case/:slug" element={<PMCaseStudy />} />
+            <Route path="*" element={<PMPortfolio />} />
+          </Routes>
+        </React.Suspense>
+      </Router>
+    </>
+  );
+}
 
 function App() {
+  if (IS_PM_SITE) return <PMApp />;
+
   return (
     <>
     <Cursor />
