@@ -4,7 +4,9 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
-      "Bash(npx vercel *)"
+      "Bash(npx vercel *)",
+      "Bash(grep -rniE \"blob|background|aqua|cyan|teal|#[0-9a-f]{3,6}|linear-gradient|radial-gradient\" src/App.css)",
+      "Bash(grep -rniE \"#[0-9a-f]{3,6}|pink|logo|name|monogram\" src/components/Portfolio.css)"
     ]
   }
 }
