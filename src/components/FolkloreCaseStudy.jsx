@@ -26,7 +26,7 @@ const FOLKLORE_TABS = [
 ];
 
 const snapshotItems = [
-  { label: 'Role',     value: 'Front-End Developer' },
+  { label: 'Role',     value: 'Full-Stack Developer' },
   { label: 'For',   value: 'University of Washington' },
   { label: 'Type',     value: 'WordPress plugin' },
   { label: 'Duration', value: 'Jan 2025 – Aug 2025' },
@@ -463,7 +463,7 @@ const FolkloreCaseStudy = () => {
       {/* ── 01 OVERVIEW ── */}
       <section id="overview" className="folklore-hero" role="tabpanel" aria-labelledby="tab-overview" tabIndex={0}>
         <Reveal className="folklore-hero-copy">
-          <p className="folklore-eyebrow">Folklore / Frontend project </p>
+          <p className="folklore-eyebrow">Folklore / Full-stack project </p>
           <h1>A standardized WordPress directory plugin for the University of Washington.</h1>
           <p className="folklore-lede">
             Folklore rethinks the UW directory as a faster, clearer tool for finding
@@ -584,7 +584,7 @@ TThe survey conducted with 38 participants resulted in a clear feature direction
       <section id="personas" className="folklore-section" role="tabpanel" aria-labelledby="tab-personas" tabIndex={0}>
         <Reveal className="folklore-section-intro">
           <p className="folklore-kicker">04 / User Personas</p>
-          <h2>Three personas helped translate research into frontend decisions</h2>
+          <h2>Three personas helped translate research into design and build decisions</h2>
         </Reveal>
 
         <PersonaCarousel personas={personaProfiles} />

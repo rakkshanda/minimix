@@ -281,7 +281,7 @@ export default function IEngageCaseStudy() {
           </div>
           <div className="cs-snapshot-strip">
             {[
-              { label: 'Role',        value: 'Frontend Developer' },
+              { label: 'Role',        value: 'Full-stack Developer' },
               { label: 'Format',      value: 'Design Thinking sprint, Information architecture' },
             ].map((item) => (
               <div key={item.label} className="cs-snapshot-cell">
@@ -533,7 +533,7 @@ export default function IEngageCaseStudy() {
         <Reveal className="ien-card-block" delay={0.08}>
           <p className="cs-kicker">Tech stack</p>
           <ul className="cs-a11y-list">
-            <li>Frontend built in React / Next.js (leveraging the existing Hugging Face design-system components)</li>
+            <li>Built in React / Next.js (leveraging the existing Hugging Face design-system components)</li>
             <li>Tailwind CSS for rapid, consistent styling</li>
           </ul>
         </Reveal>

@@ -145,7 +145,7 @@ const Portfolio = () => {
                 <div className="project-header">
                   <div className="project-info">
                     <h3 className="project-title">{proj.title}</h3>
-                    {/* <p className="project-category">{proj.type === 'frontend' ? 'Frontend Development' : 'Product Design'}</p> */}
+                    {/* <p className="project-category">{proj.type === 'fullstack' ? 'Full-stack Development' : 'Product Design'}</p> */}
                   </div>
                   <p className="project-tagline">{proj.data.tagline}</p>
                 </div>

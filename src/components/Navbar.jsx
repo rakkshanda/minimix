@@ -100,7 +100,7 @@ const Navbar = ({ activeSection }) => {
             {showDropdown && (
               <div className="dropdown-menu">
                 <div className="submenu">
-                  <div className="submenu-title" onClick={() => toggleSubmenu('frontend')}>Frontend Projects</div>
+                  <div className="submenu-title" onClick={() => toggleSubmenu('frontend')}>Full-stack Projects</div>
                   {activeSubmenu === 'frontend' && (
                     <div className="sub-submenu">
                       <div onClick={() => goToPortfolio('frontend', 'KPI Dashboard')}>KPI Dashboard</div>

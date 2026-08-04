@@ -187,14 +187,14 @@ export const productProjects = [
   }
 ];
 
-// Frontend Projects - shown at / (default)
+// Full-stack Projects - shown at / (default)
 // Order: Claim Runner, AIMS, South Project, Folklore, Career Cupid, Portfolio Insights, Hugging Face, PlotX, Hunch, VisionDefect AI
 export const frontendProjects = [
   {
     title: 'Claim Runner AI',
     image: claimrunner,
     hoverImage: claimGif,
-    type: 'frontend',
+    type: 'fullstack',
     data: {
       title: 'Claim Runner AI',
       tagline: 'Landing page and prototype for small claims management platform',
@@ -208,7 +208,7 @@ export const frontendProjects = [
     title: 'AIMS UW',
     image: aims,
     hoverImage: aimsGif,
-    type: 'frontend',
+    type: 'fullstack',
     data: {
       title: 'AIMS UW',
       tagline: 'UW iSchool student community website',
@@ -259,7 +259,7 @@ export const frontendProjects = [
     title: 'South Project',
     image: sp,
     hoverImage: spGif,
-    type: 'frontend',
+    type: 'fullstack',
     data: {
       title: 'South Project',
       tagline: 'Events and support website for young moms',
@@ -314,7 +314,7 @@ export const frontendProjects = [
   {
     title: 'Folklore',
     image: folklore,
-    type: 'frontend',
+    type: 'fullstack',
     data: {
       title: 'Folklore',
       tagline: 'People directory tool',
@@ -332,7 +332,7 @@ export const frontendProjects = [
         ]
       },
       ideation: {
-        content: 'A WordPress plugin leveraged the existing CMS while enabling modern, accessible frontend patterns without adding framework overhead.',
+        content: 'A WordPress plugin leveraged the existing CMS while enabling modern, accessible UI patterns without adding framework overhead.',
         approach: [
           'Namespaced PHP plugin architecture',
           'Vanilla JS with ARIA attributes for accessible interactions',
@@ -418,7 +418,7 @@ export const frontendProjects = [
   {
     title: 'Portfolio Insights',
     image: eag,
-    type: 'frontend',
+    type: 'fullstack',
     data: {
       title: 'Portfolio Insights',
       tagline: 'Financial news browser extension',
@@ -489,7 +489,7 @@ export const frontendProjects = [
     title: 'PlotX',
     image: plotx,
     hoverImage: plotxGif,
-    type: 'frontend',
+    type: 'fullstack',
     data: {
       title: 'PlotX',
       tagline: 'Landing page for quiz platform',
@@ -502,7 +502,7 @@ export const frontendProjects = [
   {
     title: 'Hunch',
     image: hunch,
-    type: 'frontend',
+    type: 'fullstack',
     data: {
       title: 'Hunch',
       tagline: 'Mobile app pages for a social networking platform',
@@ -515,7 +515,7 @@ export const frontendProjects = [
   {
     title: 'VisionDefect AI',
     image: batchquery,
-    type: 'frontend + ai',
+    type: 'fullstack + ai',
     data: {
       title: 'VisionDefect AI',
       tagline: 'Multimodal image analysis tool that identifies product types and detects visual defects across multiple uploads.',

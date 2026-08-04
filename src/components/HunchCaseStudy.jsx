@@ -19,7 +19,7 @@ const config = {
   heroImage: hunch,
   heroImageAlt: 'Hunch social discovery app interface',
   snapshot: [
-    { label: 'Role',      value: 'Software Engineer, Front-end' },
+    { label: 'Role',      value: 'Software Engineer, Full-stack' },
     { label: 'Client',    value: 'Hunch' },
     { label: 'Type',      value: 'Mobile App' },
     { label: 'Duration',  value: 'Jan 2023 - Aug 2023' },

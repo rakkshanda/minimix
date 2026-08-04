@@ -56,7 +56,7 @@ const outcomes = [
 const visibleOutcomes = outcomes.slice(0, 4);
 
 const snapshot = [
-  { label: 'Role', value: 'Front-end Developer' },
+  { label: 'Role', value: 'Full-stack Developer' },
   { label: 'Company', value: 'South Project TX' },
   { label: 'Type', value: 'Full website overhaul + ongoing development' },
   { label: 'Duration', value: 'Sept 2025 – Present' },
@@ -289,7 +289,7 @@ const SouthProjectCaseStudy = () => {
         {/* ── OVERVIEW ── */}
         <section id="overview" className="sp-hero">
          <Reveal className="sp-hero-copy">
-  <p className="sp-eyebrow">South Project TX / Frontend </p>
+  <p className="sp-eyebrow">South Project TX / Full-stack </p>
   <h1>Building a more usable, mobile-friendly WordPress site for a nonprofit community.</h1>
   <p className="sp-lede">
     Improved event pages, registration forms, homepage content, navigation, and blog SEO so visitors
@@ -459,7 +459,7 @@ For important events, I added a homepage modal so visitors could quickly registe
         <section id="design" className="sp-story-section">
           <Reveal className="sp-section-intro">
              <p className="sp-kicker">03 / Development</p>
-    <h2>Frontend updates, content structure, and mobile improvements.</h2>
+    <h2>Full-stack updates, content structure, and mobile improvements.</h2>
     <p>
       I focused on improving the pages and flows visitors interacted with most, including event pages,
       registration forms, homepage updates, navigation, and blog content. The goal was to make the site
@@ -471,7 +471,7 @@ For important events, I added a homepage modal so visitors could quickly registe
      
 
           <Reveal className="sp-components-block" delay={0.08}>
-            <p className="sp-kicker">Key frontend updates</p>
+            <p className="sp-kicker">Key full-stack updates</p>
             <div className="sp-components-grid">
               {components.map((c, i) => (
                 <div key={c.title} className="sp-component-card">
@@ -507,7 +507,7 @@ For important events, I added a homepage modal so visitors could quickly registe
     <p className="sp-kicker">04 / Reflection</p>
     <h2>What this project taught me about building maintainable nonprofit websites.</h2>
     <p>
-      This project showed me how small frontend and content-structure improvements can make a big difference
+      This project showed me how small technical and content-structure improvements can make a big difference
       for a nonprofit team. The most important work was making event
       updates easier to manage, improving the mobile experience, and keeping the site consistent as new blogs,
       events, and homepage updates were added over time.

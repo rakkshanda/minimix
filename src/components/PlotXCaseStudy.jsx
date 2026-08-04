@@ -13,9 +13,9 @@ const config = {
   heroImage: plotx,
   heroImageAlt: 'PlotX crypto prediction platform interface',
   snapshot: [
-    { label: 'Role',      value: 'Software Engineer, Front-end' },
+    { label: 'Role',      value: 'Software Engineer, Full-stack' },
     { label: 'Client',    value: 'PlotX' },
-    { label: 'Type',      value: 'Frontend Development' },
+    { label: 'Type',      value: 'Full-stack Development' },
     { label: 'Duration',  value: 'Jun 2022 - Aug 2023' },
     { label: 'Tools',     value: 'React' },
     { label: 'Live site', value: 'plotx.io', link: 'https://plotx.io/' },

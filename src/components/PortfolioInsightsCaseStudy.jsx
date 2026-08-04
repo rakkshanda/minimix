@@ -5,20 +5,20 @@ import eag from '../assets/eag.gif';
 const config = {
   bodyClass: 'marketpulse-page',
   accent: '#1a5c2e',
-  eyebrow: 'Emerald Advisors / Frontend Case Study',
+  eyebrow: 'Emerald Advisors / Full-stack Case Study',
   title: 'Building a browser extension for faster financial news research.',
-  lede: 'A front-end browser extension that brings stock-related news, filters, summaries, and a chatbot panel into an existing analyst dashboard.',
+  lede: 'A browser extension that brings stock-related news, filters, summaries, and a chatbot panel into an existing analyst dashboard.',
   heroImage: ealogo,
   heroImageAlt: 'Emerald Advisors logo',
   snapshot: [
-    { label: 'Role',     value: 'Frontend Engineer / Practicum Developer' },
+    { label: 'Role',     value: 'Full-stack Engineer / Practicum Developer' },
     { label: 'For',      value: 'Emerald Advisors' },
     { label: 'Type',     value: 'Browser Extension / Dashboard Overlay' },
     { label: 'Duration', value: 'May 2025 - Aug 2025' },
     { label: 'Tools',    value: 'JavaScript, Node.js, Browser Extension APIs, Financial News APIs, OpenAI API' },
     { label: 'View',     value: 'View on GitHub ↗', link: 'https://github.com/rakkshanda/EA-Chrome-extension/tree/main' },
   ],
-  tldr: 'For my practicum, I worked at Emerald Advisorsas the main technical contributor on a browser extension that supported financial research inside an existing stock dashboard. The extension added a popup overlay where analysts could view relevant news, filter articles, scan sentiment labels, and use an AI-powered chat panel for summaries and follow-up questions. My focus was the front-end implementation: building the extension UI, rendering API data, handling article states, organizing the popup overlay layout, and making the tool feel useful without forcing users to leave their existing workflow.',
+  tldr: 'For my practicum, I worked at Emerald Advisorsas the main technical contributor on a browser extension that supported financial research inside an existing stock dashboard. The extension added a popup overlay where analysts could view relevant news, filter articles, scan sentiment labels, and use an AI-powered chat panel for summaries and follow-up questions. My focus was the end-to-end implementation: building the extension UI, wiring up and rendering API data, handling article states, organizing the popup overlay layout, and making the tool feel useful without forcing users to leave their existing workflow.',
   discovery: {
     heading: 'Narrowing the scope to one workflow problem',
     intro: 'The initial ask was broad, with several possible directions like news research, summaries, filters, and chatbot support. Since the practicum timeline was limited, we narrowed the scope to one clear problem: reducing context switching during stock research. We focused the extension on bringing relevant news, filters, summaries, and chatbot support directly into the analyst’s existing dashboard.',
@@ -39,7 +39,7 @@ const config = {
     components: [
       { title: 'Injected popup overlay layout', body: 'I implemented a popup overlay-style interface that could sit alongside the dashboard. The layout kept the extension contained, so users could access news and chat without losing the context of the page they were already viewing.' },
       { title: 'Article card UI', body: 'Each article was rendered as a structured card with the most important information first: title, source, date, sentiment, and summary/action controls. This made the news feed easier to scan than a raw API response or long text list.' },
-      { title: 'Filtering controls', body: 'I added front-end controls for narrowing articles by date, impact, and sentiment. The goal was to help users move from a broad list of articles to a smaller, more relevant set of results.' },
+      { title: 'Filtering controls', body: 'I added controls for narrowing articles by date, impact, and sentiment. The goal was to help users move from a broad list of articles to a smaller, more relevant set of results.' },
       { title: 'AI chat panel', body: 'I built a chat section inside the extension where users could ask follow-up questions and receive summaries or risk highlights. The challenge was making the chat feel connected to the article workflow rather than like a separate tool.' },
       { title: 'Loading and empty states', body: 'I paid attention to states like loading, no results, and unavailable data so the extension did not feel broken when an API response was slow or when no articles matched the selected filters.' },
     ],
@@ -51,7 +51,7 @@ const config = {
     techStack: ['JavaScript', 'Node.js'],
   },
   reflection: {
-    intro: 'The biggest challenge was not just building features, but making them fit into an existing workflow. Because this was a short practicum project with multiple stakeholders, I also had to balance scope, technical feasibility, and front-end quality.',
+    intro: 'The biggest challenge was not just building features, but making them fit into an existing workflow. Because this was a short practicum project with multiple stakeholders, I also had to balance scope, technical feasibility, and implementation quality.',
     workedWell: [
       { title: 'Narrowed to one clear workflow problem.', body: 'Focusing on reducing context switching during stock research gave the project a concrete direction.' },
       { title: 'Popup overlay over a separate app.', body: 'Analysts stayed inside their existing dashboard instead of switching to a new tool.' },

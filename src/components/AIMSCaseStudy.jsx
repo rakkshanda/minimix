@@ -18,7 +18,7 @@ const outcomes = [
 ];
 
 const snapshot = [
-  { label: 'Role', value: 'Frontend Developer ' },
+  { label: 'Role', value: 'Full-stack Developer' },
   { label: 'For', value: 'UW iSchool' },
   { label: 'Type', value: 'WordPress theme' },
   { label: 'Duration', value: 'Jan 2025 – Aug 2025' },
@@ -201,7 +201,7 @@ const AIMSCaseStudy = () => {
         {/* HERO */}
         <section id="overview" className="aims-hero">
           <Reveal className="aims-hero-copy">
-            <p className="aims-eyebrow">AIMS UW / Frontend </p>
+            <p className="aims-eyebrow">AIMS UW / Full-stack </p>
             <h1>Rebuilding the AIMS website for student leaders </h1>
             <p className="aims-lede">
              A redesign of the Association of Information Management Students website, built so student leaders could update content easily and maintain the site for years after handoff.
